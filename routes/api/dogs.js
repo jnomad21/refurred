@@ -7,7 +7,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 router.get('/', ensureLoggedIn, dogsController.index)
 router.post('/', ensureLoggedIn, dogsController.create);
 router.get('/:id', ensureLoggedIn, dogsController.detail);
-router.delete('/:id',ensureLoggedIn, dogsController.deleteEvent);
+router.delete('/:id',ensureLoggedIn, dogsController.deleteDog);
 router.put('/:id',ensureLoggedIn, dogsController.update)
 
 module.exports = router;

@@ -4,7 +4,7 @@ module.exports = {
     index,
     create,
     detail,
-    deleteEvent,
+    deleteDog,
     update
 }
 
@@ -39,7 +39,7 @@ async function detail(req, res){
     }
 }
 
-async function deleteEvent(req, res){
+async function deleteDog(req, res){
     try{
         await Event.findByIdAndDelete(req.params.id)
         res.status(200).json({
