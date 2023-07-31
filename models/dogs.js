@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const dogsSchema = new Schema({
     breed: { type: String, required: true},
-    sizeGroup: {type: Number, enum:[1, 2, 3, 4, 5, 6],require: true},
+    sizeGroup: {type: Number, enum:[1, 2, 3, 4, 5, 6], required: true},
     sizeActual: {type: String}, required: true,
     vocal: { type: Number,enum:[1, 2, 3], required: true},
     shed: { type: Number,enum:[1, 2, 3], required: true},
