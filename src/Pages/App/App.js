@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import { getUser } from '../../utilities/users-service';
 import NewDogPage from '../NewDogPage/NewDogPage';
-import NavBar from '../../Components/NavBar';
+import NavBar from '../../Components/NavBar/NavBar';
 import './App.css';
 
 export default function App() {

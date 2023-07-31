@@ -1,4 +1,4 @@
-import NewDogForm from "../../Components/NewDogForm";
+import NewDogForm from "../../Components/NewDogForm/NewDogForm";
 
 export default function NewDogPage() {
     return(
