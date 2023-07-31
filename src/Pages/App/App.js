@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <>
+    <h1>Pet App</h1>
       <Routes>
         <Route path="/dogs/new" element={<NewDogPage />} />
       </Routes>
