@@ -63,19 +63,19 @@ async function update(req, res){
 
 // 3pd party dogsApi:
 
-async function apiCreate (req,res) {
-    try{
-        // Grab the API information 1st as a whole, then use the parsed user info below in 
-        req.body.user = req.user._id;
-        const dogApiData = await Event.create(req.body);
-        console.log(dogApiData)
-        res.json({
-            success: true,
-            status: 200,
-            dogApi: dogApiData // dogApiData is what gets compared to entire dog dataset.
-        })
-    }catch(err){
-        console.log(err)
-        res.status(400).json(err)
-    }
-}
+// async function apiCreate (req,res) {
+//     try{
+//         // Grab the API information 1st as a whole, then use the parsed user info below in 
+//         req.body.user = req.user._id;
+//         const dogApiData = await fetch ...
+//         console.log(dogApiData)
+//         res.json({
+//             success: true,
+//             status: 200,
+//             dogApi: dogApiData // dogApiData is what gets compared to entire dog dataset.
+//         })
+//     }catch(err){
+//         console.log(err)
+//         res.status(400).json(err)
+//     }
+// }
