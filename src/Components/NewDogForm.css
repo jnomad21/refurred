@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+    margin: 2rem;
+}
+
+form {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#newDogButton {
+    display: block;
+    margin: 0 auto;
+}
