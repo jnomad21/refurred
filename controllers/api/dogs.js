@@ -5,8 +5,7 @@ module.exports = {
     create,
     detail,
     deleteDog,
-    update,
-    apiCreate
+    update
 }
 
 async function index(req, res){
