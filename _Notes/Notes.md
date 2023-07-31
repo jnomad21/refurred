@@ -16,3 +16,4 @@ Loose structure
 4 - Create a new route for the API request.
 
 Consuming 3rd party APIs
+- Server that responds with requests from an app.
