@@ -26,11 +26,18 @@ export default function NewDogForm(){
     const mentalStimRef = useRef('')
     const aboutRef = useRef('')
 
+    function capitalizeFirstLetter(str) {
+        return str.replace(/\b\w/g, (char) => char.toUpperCase());
+      }      
+
     async function handleSubmit(e){
         e.preventDefault()
         setError('')
+
+        const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
+
         const newDog = {
-            breed: breedRef.current.value,
+            breed: capitalizedBreed,
             size_group: sizeGroupRef.current.value,
             size_actual: sizeActualRef.current.value,
             affection: affectionRef.current.value,
