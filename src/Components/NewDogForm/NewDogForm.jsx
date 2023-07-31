@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState } from 'react';
-import { createDogRequest} from '../utilities/dogs-api';
+import { createDogRequest} from '../../utilities/dogs-api';
 import "./NewDogForm.css";
 
 export default function NewDogForm(){
