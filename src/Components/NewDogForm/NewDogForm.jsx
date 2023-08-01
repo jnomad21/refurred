@@ -255,7 +255,7 @@ export default function NewDogForm() {
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="about">About</label><br />
-                    <textarea name="" id="" cols="60" rows="6">
+                    <textarea name="about" id="about" cols="60" rows="6">
                     </textarea>
                 </div>
                 <button type="submit" className="btn btn-primary" id="newDogButton">Create the Dog</button>
