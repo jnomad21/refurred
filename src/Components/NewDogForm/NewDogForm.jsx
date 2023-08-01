@@ -39,8 +39,8 @@ export default function NewDogForm(){
 
         const newDog = {
             breed: capitalizedBreed,
-            size_group: sizeGroupRef.current.value,
-            size_actual: sizeActualRef.current.value,
+            sizeGroup: sizeGroupRef.current.value,
+            sizeActual: sizeActualRef.current.value,
             affection: affectionRef.current.value,
             children: childrenRef.current.value,
             otherDogs: otherDogsRef.current.value,
