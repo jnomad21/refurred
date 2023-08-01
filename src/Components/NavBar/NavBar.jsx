@@ -14,13 +14,13 @@ export default function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/dogs">Home</Link>
+                                <Link className="nav-link" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/dogs">Index</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/new">Add a dog</Link>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Link 3</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Link 4</a>
