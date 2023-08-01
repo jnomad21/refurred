@@ -20,7 +20,7 @@ async function index(req, res){
 
 async function create(req, res){
     try{
-        req.body.uploaded_by = req.user._id;
+        // req.body.uploaded_by = req.user._id;
         const newDog = await Dog.create(req.body);
         console.log(req.body)
         res.status(201).json(newDog)
