@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import { getUser } from '../../utilities/users-service';
+import HomePage from '../HomePage/HomePage';
 import NewDogPage from '../NewDogPage/NewDogPage';
 import NavBar from '../../Components/NavBar/NavBar';
+import AuthPage from '../AuthPage/AuthPage'
 import './App.css';
 
 export default function App() {
@@ -12,9 +14,10 @@ export default function App() {
   return (
     <>
     <NavBar/>
-    <h1>Pet App</h1>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/dogs/new" element={<NewDogPage />} />
+        <Route path="/dogs/auth" element={<AuthPage />} />
       </Routes>
     </>
   );
