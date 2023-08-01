@@ -5,7 +5,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 // BASE URL: /api/dogs
 router.get('/', ensureLoggedIn, dogsController.index)
-router.post('/', ensureLoggedIn, dogsController.create);
+router.post('/', dogsController.create);
 router.get('/:id', ensureLoggedIn, dogsController.detail);
 router.delete('/:id',ensureLoggedIn, dogsController.deleteDog);
 router.put('/:id',ensureLoggedIn, dogsController.update)

@@ -9,6 +9,7 @@ const dogsSchema = new Schema({
     children: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     otherDogs: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     shed: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
+    drool: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     groom: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     coatType: {type: String, enum:["Wiry", "Rough", "Curly", "Hairless", "Corded", "Wavy", "Smooth", "Double", "Silky"]},
     coatLength: {type: String, enum:["Short", "Medium", "Long"]},
