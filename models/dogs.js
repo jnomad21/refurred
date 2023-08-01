@@ -26,4 +26,4 @@ const dogsSchema = new Schema({
 }, 
 );
 
-module.exports = mongoose.model('Event', dogsSchema);
+module.exports = mongoose.model('Dogs', dogsSchema);
