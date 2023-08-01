@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import NewDogPage from '../NewDogPage/NewDogPage';
 import NavBar from '../../Components/NavBar/NavBar';
+import AuthPage from '../AuthPage/AuthPage'
 import './App.css';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dogs/new" element={<NewDogPage />} />
+        <Route path="/dogs/auth" element={<AuthPage />} />
       </Routes>
     </>
   );

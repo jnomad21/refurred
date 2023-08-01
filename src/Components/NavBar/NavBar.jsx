@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import * as userService from '../../utilities/users-service';
 import "./NavBar.css";
 
 
@@ -23,7 +24,7 @@ export default function NavBar() {
                                 <Link className="nav-link" to="/dogs/new">Add a dog</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Link 4</a>
+                                <Link className="nav-link" to="/dogs/auth">Login/Sign Up</Link>
                             </li>
                         </ul>
                     </div>
