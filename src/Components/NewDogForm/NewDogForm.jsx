@@ -14,6 +14,7 @@ export default function NewDogForm(){
     const otherDogsRef = useRef('')
     const shedRef = useRef('')
     const groomRef = useRef('')
+    const droolRef = useRef('')
     const coatTypeRef = useRef('')
     const coatLengthRef = useRef('')
     const strangersRef = useRef('')
@@ -45,6 +46,7 @@ export default function NewDogForm(){
             otherDogs: otherDogsRef.current.value,
             shed: shedRef.current.value,
             groom: groomRef.current.value,
+            drool: groomRef.current.value,
             coatType: coatTypeRef.current.value,
             coatLength: coatLengthRef.current.value,
             strangers: strangersRef.current.value,
@@ -137,6 +139,16 @@ export default function NewDogForm(){
                     <option value="3">3 </option>
                     <option value="4">4 </option>
                     <option value="5">5 - Daily</option>
+                </select>
+            </div>
+            <div className="form-group mb-3">
+                <label htmlFor="drool">Drooling Level</label>
+                <select name="drrol" id="drool" className="form-control" ref={droolRef}>
+                    <option value="1">1 - Hardly</option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 - Constant</option>
                 </select>
             </div>
             <div className="form-group mb-3">
