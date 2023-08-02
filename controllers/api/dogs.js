@@ -10,8 +10,8 @@ module.exports = {
 
 async function index(req, res){
     try{
-        const userId = req.user._id;
-        const dogs = await Dog.find({ uploaded_by: userId }).sort('date');        
+        // const userId = req.user._id;
+        const dogs = await Dog.find();        
         res.status(200).json(dogs)
     }catch(err){
         res.status(400).json(err)
@@ -60,4 +60,3 @@ async function update(req, res){
         res.status(400).json('Bad Request')
     }
 }
-

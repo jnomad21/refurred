@@ -1,9 +1,8 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useRef, useState } from 'react';
-import { createDogRequest } from '../../utilities/dogs-api';
-import "./NewDogForm.css";
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { updateDogRequest } from '../../../utilities/dogs-api';
 
-export default function NewDogForm() {
+export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
     const navigate = useNavigate();
     const [error, setError] = useState('')
     const breedRef = useRef('')
@@ -30,14 +29,12 @@ export default function NewDogForm() {
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
     }
-
-    async function handleSubmit(e) {
-        e.preventDefault()
-        setError('')
+    
+    async function handleSubmit(e){
+        e.prdogDefault()
 
         const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
-
-        const newDog = {
+        const updatedDog = {
             breed: capitalizedBreed,
             sizeGroup: sizeGroupRef.current.value,
             sizeActual: sizeActualRef.current.value,
@@ -59,19 +56,19 @@ export default function NewDogForm() {
             mentalStim: mentalStimRef.current.value,
             about: aboutRef.current.value,
         }
-        try {
-            const newDogResponse = await createDogRequest(newDog)
-            navigate('/dogs')
-        } catch (err) {
-            setError(err)
+        try{
+            const newDog = await updateDogRequest(dog._id, updatedDog)
+            setDog(newDog)
+            setEditFormIsOpen(false)
+        }catch(err){
+            setError("Bad Update, Man")
         }
     }
-
-    return (
+    return(
         <>
-
-            {error && <p>{JSON.stringify(error)}</p>}
-            <form onSubmit={handleSubmit}>
+        <h3>EDIT</h3>
+        { error && <p>{JSON.stringify(error)}</p>}
+        <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
                     <label htmlFor="breed">Breed:</label>
                     <input type="text" id="breed" className="form-control" ref={breedRef} />
@@ -257,9 +254,9 @@ export default function NewDogForm() {
                     <label htmlFor="about">About</label><br />
                     <input type="textarea" rows="6" cols="60" id="about" ref={aboutRef} />
                 </div>
-                <button type="submit" className="btn btn-primary" id="newDogButton">Create the Dog</button>
+                <button>Edit the Dog</button>
             </form>
 
-        </>
+            </>
     )
 }
