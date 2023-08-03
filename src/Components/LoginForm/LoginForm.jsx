@@ -17,7 +17,7 @@ export default function LoginForm({ setUser }) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
+      // The promise returned by the signUp service method
       // will resolve to the user object included in the
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
@@ -31,11 +31,26 @@ export default function LoginForm({ setUser }) {
     <div className="login">
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button className="authButton" type="submit">LOG IN</button>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input
+              type="text"
+              name="email"
+              className="form-control"
+              value={credentials.email}
+              onChange={handleChange} required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              value={credentials.password}
+              onChange={handleChange}
+              required />
+          </div>
+          <button className="btn btn-dark" type="submit">LOG IN</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
