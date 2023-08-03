@@ -24,6 +24,9 @@ export default function NavBar() {
                                 <Link className="nav-link" to="/dogs/new">Add a dog</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" to="/dogs/quiz">Breed Match Quiz</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/auth">Login/Sign Up</Link>
                             </li>
                         </ul>
