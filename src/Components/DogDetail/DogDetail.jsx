@@ -24,7 +24,7 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 <h4>Good with other dogs: {dog.otherDogs}</h4>
                 <h4>Shedding: {dog.shed}</h4>
                 <h4>Drool Level: {dog.drool}</h4>
-                <h4>Grooming Level: {dog.website}</h4>
+                <h4>Grooming Level: {dog.groom}</h4>
                 <h4>Coat Type: {dog.coatType}</h4>
                 <h4>Coat Length: {dog.coatLength}</h4>
                 <h4>Openness to Strangers: {dog.strangers}</h4>
