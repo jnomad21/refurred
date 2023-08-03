@@ -11,7 +11,7 @@ module.exports = {
 async function index(req, res){
     try{
         // const userId = req.user._id;
-        const dogs = await Dog.find();        
+        const dogs = await Dog.find().sort('breed');        
         res.status(200).json(dogs)
     }catch(err){
         res.status(400).json(err)
