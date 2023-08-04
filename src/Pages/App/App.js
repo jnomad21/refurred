@@ -9,6 +9,7 @@ import './App.css';
 import DogIndexPage from '../DogIndexPage/DogIndexPage';
 import DogDetailPage from '../DogDetailPage/DogDetailPage'
 import QuizPage from '../QuizPage/QuizPage';
+import EditDogPage from '../EditDogPage/EditDogPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/dogs/:dogId" element={<DogDetailPage />} />
         <Route path="/dogs/quiz" element={<QuizPage />} />
         <Route path="/dogs/auth" element={<AuthPage setUser={setUser}/>} />
+        <Route path="/dogs/:dogId/edit" element={<EditDogPage />} />
       </Routes>
     </>
   );

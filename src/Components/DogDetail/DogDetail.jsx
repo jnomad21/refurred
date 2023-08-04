@@ -1,5 +1,8 @@
 import { useState} from 'react'
-import EditDogForm from './EditDogForm/EditDogForm'
+import { Link } from 'react-router-dom'
+
+
+
 
 
 
@@ -8,12 +11,7 @@ export default function DogDetail({dog, handleDelete, setDog}){
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
 
 
-    function toggleEditForm(){
-        setEditFormIsOpen((prevState) => {
-            return !prevState
-            }
-        )
-    }
+    
     return (
         <>
             <div>
@@ -38,13 +36,12 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 <h4>Additional Info: {dog.about}</h4>
 
 
-                <button className="btn btn-dark" onClick={handleDelete}>DELETE {dog.breed}</button><span> </span>
-                <button className="btn btn-dark" onClick={toggleEditForm}>
-                    {editFormIsOpen ? "Close Editor" : "Edit"}
-                </button>
-                { editFormIsOpen &&
-                    <EditDogForm dog={dog} setDog={setDog} setEditFormIsOpen={setEditFormIsOpen}></EditDogForm>
-                }
+                <button className="btn btn-dark" onClick={handleDelete}>Delete {dog.breed}</button><span> </span>
+                <Link to={`/dogs/${dog._id}/edit`}>
+                <button className="btn btn-dark" >Edit {dog.breed}</button>
+                </Link>
+                
+               
             </div>
         </>
     )

@@ -5,7 +5,8 @@ module.exports = {
     create,
     detail,
     deleteDog,
-    update
+    update,
+    edit
 }
 
 async function index(req, res){
@@ -58,5 +59,15 @@ async function update(req, res){
     }catch(err){
         console.log(err);
         res.status(400).json('Bad Request')
+    }
+}
+
+async function edit(req, res){
+    try{
+        const dog = await Dog.findById(req.params.id)
+        res.status(200).json(dog)
+    }catch(err){
+        console.log(err)
+        res.status(400).json(err)
     }
 }

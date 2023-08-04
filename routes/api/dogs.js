@@ -9,5 +9,6 @@ router.post('/', dogsController.create);
 router.get('/:id', dogsController.detail);
 router.delete('/:id', dogsController.deleteDog);
 router.put('/:id', dogsController.update)
+router.get('/:id/edit', dogsController.edit)
 
 module.exports = router;
