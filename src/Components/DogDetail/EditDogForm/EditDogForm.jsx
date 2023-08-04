@@ -29,7 +29,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
     }
-    
+
     async function handleSubmit(e){
         e.preventDefault()
 
@@ -66,7 +66,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
     }
     return(
         <>
-        <h3>EDIT</h3>
+        <h1>EDIT</h1>
         { error && <p>{JSON.stringify(error)}</p>}
         <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
@@ -101,7 +101,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 <div className="form-group mb-3">
                     <label htmlFor="children">Good with children</label>
                     <select name="children" id="children" className="form-control" ref={childrenRef} defaultValue={dog.children}>
-                        <option value="1">1 - Not reccommended</option>
+                        <option value="1">1 - Not Recommended</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
                         <option value="4">4 </option>
@@ -111,7 +111,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 <div className="form-group mb-3">
                     <label htmlFor="otherDogs">Good with other dogs</label>
                     <select name="otherDogs" id="otherDogs" className="form-control" ref={otherDogsRef} defaultValue={dog.otherDogs}>
-                        <option value="1">1 - Not Reccommended</option>
+                        <option value="1">1 - Not Recommended</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
                         <option value="4">4 </option>
@@ -252,9 +252,9 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="about">About</label><br />
-                    <input type="textarea" rows="6" cols="60" id="about" ref={aboutRef} defaultValue={dog.about}/>
+                    <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} defaultValue={dog.about}/>
                 </div>
-                <button>Edit the Dog</button>
+                <button className="btn btn-dark">Edit the Dog</button>
             </form>
 
             </>

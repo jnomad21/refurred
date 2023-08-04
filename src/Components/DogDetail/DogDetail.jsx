@@ -6,8 +6,8 @@ import EditDogForm from './EditDogForm/EditDogForm'
 
 export default function DogDetail({dog, handleDelete, setDog}){
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
-    
-    
+
+
     function toggleEditForm(){
         setEditFormIsOpen((prevState) => {
             return !prevState
@@ -36,13 +36,13 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 <h4>Barking Level: {dog.vocal}</h4>
                 <h4>Mental Stimulation Needs: {dog.mentalStim}</h4>
                 <h4>Additional Info: {dog.about}</h4>
-                
 
-                <button onClick={handleDelete}>DELETE {dog.breed}</button>
-                <button onClick={toggleEditForm}>
+
+                <button className="btn btn-dark" onClick={handleDelete}>DELETE {dog.breed}</button><span> </span>
+                <button className="btn btn-dark" onClick={toggleEditForm}>
                     {editFormIsOpen ? "Close Editor" : "Edit"}
                 </button>
-                { editFormIsOpen && 
+                { editFormIsOpen &&
                     <EditDogForm dog={dog} setDog={setDog} setEditFormIsOpen={setEditFormIsOpen}></EditDogForm>
                 }
             </div>
