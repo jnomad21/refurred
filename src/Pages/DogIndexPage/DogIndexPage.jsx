@@ -16,18 +16,17 @@ export default function DogIndexPage(){
         await deleteDogRequest(dogToDelete);
         const updatedDogs = dogs.filter(dog => dog._id !== dogToDelete);
         setDogs(updatedDogs);
-    } 
-  
-        
+    }
+
+
     return(
         <>
-        
-      
+        <main>
         <h1>All Dogs</h1>
         <div className="myDogs">
         <DogsList dogs={dogs} handleDelete={handleDelete}/>
         </div>
-        
+        </main>
         </>
     )
 }

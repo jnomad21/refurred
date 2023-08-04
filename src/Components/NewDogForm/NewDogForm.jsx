@@ -104,7 +104,7 @@ export default function NewDogForm() {
                 <div className="form-group mb-3">
                     <label htmlFor="children">Good with children</label>
                     <select name="children" id="children" className="form-control" ref={childrenRef}>
-                        <option value="1">1 - Not reccommended</option>
+                        <option value="1">1 - Not Recommended</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
                         <option value="4">4 </option>
@@ -114,7 +114,7 @@ export default function NewDogForm() {
                 <div className="form-group mb-3">
                     <label htmlFor="otherDogs">Good with other dogs</label>
                     <select name="otherDogs" id="otherDogs" className="form-control" ref={otherDogsRef}>
-                        <option value="1">1 - Not Reccommended</option>
+                        <option value="1">1 - Not Recommended</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
                         <option value="4">4 </option>
@@ -255,7 +255,7 @@ export default function NewDogForm() {
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="about">About</label><br />
-                    <input type="textarea" rows="6" cols="60" id="about" ref={aboutRef} />
+                    <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} />
                 </div>
                 <button type="submit" className="btn btn-primary" id="newDogButton">Create the Dog</button>
             </form>

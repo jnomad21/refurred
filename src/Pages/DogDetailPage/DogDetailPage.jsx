@@ -34,13 +34,16 @@ async function handleDelete(e){
 }
 return (
     <>
+    <main>
     <h1>Is this your new best friend??</h1>
     { loading ? <p>Loading....</p>
     :
-    error ? <p>{error}</p> 
+    error ? <p>{error}</p>
     :
     <DogDetail dog={dog} handleDelete={handleDelete} setDog={setDog}></DogDetail>
     }
+    </main>
     </>
+
 )
 }

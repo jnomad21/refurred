@@ -21,7 +21,7 @@ export default function QuizForm(){
     const mentalStimRef = useRef('')
 
     const newDog = {
-        
+
         sizeGroup: sizeGroupRef.current.value,
         affection: affectionRef.current.value,
         children: childrenRef.current.value,
@@ -43,7 +43,7 @@ export default function QuizForm(){
         e.preventDefault()
         setError('')
     }
-    
+
     return(
         <>
         <form onSubmit={handleSubmit}>
@@ -71,7 +71,7 @@ export default function QuizForm(){
         <div className="form-group mb-3">
             <label htmlFor="children">Good with children</label>
             <select name="children" id="children" className="form-control" ref={childrenRef}>
-                <option value="1">1 - Not reccommended</option>
+                <option value="1">1 - Not Recommended</option>
                 <option value="2">2 </option>
                 <option value="3">3 </option>
                 <option value="4">4 </option>
@@ -81,7 +81,7 @@ export default function QuizForm(){
         <div className="form-group mb-3">
             <label htmlFor="otherDogs">Good with other dogs</label>
             <select name="otherDogs" id="otherDogs" className="form-control" ref={otherDogsRef}>
-                <option value="1">1 - Not Reccommended</option>
+                <option value="1">1 - Not Recommended</option>
                 <option value="2">2 </option>
                 <option value="3">3 </option>
                 <option value="4">4 </option>
@@ -199,7 +199,7 @@ export default function QuizForm(){
             </select>
         </div>
         <br />
-        
+
         <button type="submit" className="btn btn-primary" id="newDogButton">See Results</button>
     </form>
 

@@ -6,7 +6,7 @@ import "./NavBar.css";
 export default function NavBar() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-bg-body-tertiary navbar-custom">
+            <nav className="navbar navbar-expand-lg navbar-bg-body-tertiary navbar-custom fixed-top">
                 <div className="container-fluid">
                     <div className="navbar-brand">Pet App</div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
