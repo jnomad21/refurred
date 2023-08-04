@@ -12,19 +12,14 @@ export default function DogIndexPage(){
         getDogs();
     }, [])
 
-    async function handleDelete(dogToDelete){
-        await deleteDogRequest(dogToDelete);
-        const updatedDogs = dogs.filter(dog => dog._id !== dogToDelete);
-        setDogs(updatedDogs);
-    }
-
 
     return(
         <>
         <main>
         <h1>All Dogs</h1>
         <div className="myDogs">
-        <DogsList dogs={dogs} handleDelete={handleDelete}/>
+        <DogsList dogs={dogs} />
+        {/* <DogsList dogs={dogs} handleDelete={handleDelete}/> */}
         </div>
         </main>
         </>
