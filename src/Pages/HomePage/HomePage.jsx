@@ -2,14 +2,11 @@ import './HomePage.css';
 
 
 import heroPlaceholder2 from '../../assets/images/heroPlaceholder2.jpg'
-import jason from '../../assets/images/jason.jpeg'
-import joel from '../../assets/images/joel.png'
-import kristin from '../../assets/images/kristin.jpeg'
+// import jason from '../../assets/images/jason.jpeg'
+// import joel from '../../assets/images/joel.png'
+// import kristin from '../../assets/images/kristin.jpeg'
 
 import { Link } from 'react-router-dom';
-
-
-
 
 export default function HomePage() {
   return (
