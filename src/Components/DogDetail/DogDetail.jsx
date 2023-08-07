@@ -51,6 +51,7 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 <h4>{renderEmojisWithOpacity('Energy Level', dog.energy)}</h4>
                 <h4>{renderEmojisWithOpacity('Barking Level', dog.vocal)}</h4>
                 <h4>{renderEmojisWithOpacity('Mental Stimulation Needs', dog.mentalStim)}</h4>
+                <br />
                 <h4>Additional Info: {dog.about}</h4>
 
 
