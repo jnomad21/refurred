@@ -1,5 +1,5 @@
 import './HomePage.css';
-import heroPlaceholder from '../../assets/images/heroPlaceholder.jpg'
+import heroPlaceholder2 from '../../assets/images/heroPlaceholder2.jpg'
 import jason from '../../assets/images/jason.jpeg'
 import joel from '../../assets/images/joel.png'
 import kristin from '../../assets/images/kristin.jpeg'
@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
         <div className="hero-image">
-          <img src={heroPlaceholder} alt="Hero" width="100%" height="100%" />
+          <img src={heroPlaceholder2} alt="Hero" width="100%" height="100%" />
           <div className="container">
             <div className="carousel-caption">
               <h1 className="home-h1">COMING SOON</h1>
