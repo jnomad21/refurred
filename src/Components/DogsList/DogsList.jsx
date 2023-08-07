@@ -8,15 +8,21 @@ export default function DogsList({dogs, handleDelete}){
 
     const filterDogsByLetter = (letter) => {
         setSelectedLetter(letter);
-      };
+    };
+
+    const showAllDogs = () => {
+        setSelectedLetter(null); 
+    };
 
     const filteredDogs = selectedLetter
     ? dogs.filter((dog) => dog.breed.charAt(0).toUpperCase() === selectedLetter)
     : dogs;
     return (
         <>
-            {/* Step 2: Create buttons for each unique letter */}
             <div className="letterButtons">
+                    <button onClick={showAllDogs} className={`btn btn-dark m-1 ${selectedLetter === null ? "selected" : ""}`}>
+                        Show All
+                    </button>
                 {firstLetters.map((letter, index) => (
                     <button
                         key={index}
@@ -27,6 +33,7 @@ export default function DogsList({dogs, handleDelete}){
                         {letter}
                     </button>
                 ))}
+                    
             </div>
 
             <div className="row m-3">
