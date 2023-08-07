@@ -1,4 +1,11 @@
 import './HomePage.css';
+
+
+import heroPlaceholder2 from '../../assets/images/heroPlaceholder2.jpg'
+import jason from '../../assets/images/jason.jpeg'
+import joel from '../../assets/images/joel.png'
+import kristin from '../../assets/images/kristin.jpeg'
+
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +15,10 @@ export default function HomePage() {
   return (
     <>
         <div className="hero-image">
-          <img src="/images/heroPlaceholder.jpg" alt="Hero" width="100%" height="100%" />
+
+
+          <img src={heroPlaceholder2} alt="Hero" width="100%" height="100%" />
+
           <div className="container">
             <div className="carousel-caption">
               <h1 className="home-h1">Pet App - Coming Soon</h1>
