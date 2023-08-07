@@ -33,16 +33,16 @@ export default function DogDetail({dog, handleDelete, setDog}){
     return (
         <>
             <div>
-                <h3>{dog.breed}</h3>
+                <h3>{dog.breed}</h3><br />
                 <h4>Size: {dog.sizeActual}</h4>
+                <h4>Coat Type: {dog.coatType}</h4>
+                <h4>Coat Length: {dog.coatLength}</h4><br />
                 <h4>{renderEmojisWithOpacity('Affection Level', dog.affection)}</h4>
                 <h4>{renderEmojisWithOpacity('Good With Children', dog.children)}</h4>
                 <h4>{renderEmojisWithOpacity('Good With Other Dogs', dog.otherDogs)}</h4>
                 <h4>{renderEmojisWithOpacity('Shedding Level', dog.shed)}</h4>
                 <h4>{renderEmojisWithOpacity('Drooling Level', dog.drool)}</h4>
                 <h4>{renderEmojisWithOpacity('Grooming Level', dog.groom)}</h4>
-                <h4>Coat Type: {dog.coatType}</h4>
-                <h4>Coat Length: {dog.coatLength}</h4>
                 <h4>{renderEmojisWithOpacity('Openness', dog.strangers)}</h4>
                 <h4>{renderEmojisWithOpacity('Playfullness Level', dog.play)}</h4>
                 <h4>{renderEmojisWithOpacity('Watchdog/Protective Level', dog.protect)}</h4>
