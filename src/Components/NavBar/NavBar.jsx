@@ -19,6 +19,9 @@ export default function NavBar() {
                         </div>
                         <ul className="navbar-nav col-lg-6 justify-content-lg-center">
                             <li className="nav-item">
+                                <Link className="nav-link" to="/map">Google Maps</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/dogs">Dog Breeds</Link>
                             </li>
                             <li className="nav-item">
@@ -26,6 +29,9 @@ export default function NavBar() {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/quiz">Breed Selector</Link>
+                            </li>
+                             <li className="nav-item">
+                                <Link className="nav-link" to="/map">Google Maps</Link>
                             </li>
                         </ul>
                         <div class="d-lg-flex col-lg-3 justify-content-lg-end">

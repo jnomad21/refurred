@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
+import GoogleMaps from '../GoogleMaps/GoogleMaps';
 import HomePage from '../HomePage/HomePage';
 import NewDogPage from '../NewDogPage/NewDogPage';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -17,14 +18,16 @@ export default function App() {
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <Routes>
+    
+        <Route path="/map" element={<GoogleMaps/>} />
         <Route path="/" element={<HomePage />} />
         <Route path="/dogs" element={<DogIndexPage />} />
         <Route path="/dogs/new" element={<NewDogPage />} />
         <Route path="/dogs/:dogId" element={<DogDetailPage />} />
         <Route path="/dogs/quiz" element={<QuizPage />} />
-        <Route path="/dogs/auth" element={<AuthPage setUser={setUser}/>} />
+        <Route path="/dogs/auth" element={<AuthPage setUser={setUser} />} />
         <Route path="/dogs/:dogId/edit" element={<EditDogPage />} />
       </Routes>
     </>
