@@ -5,13 +5,14 @@ module.exports = {
     create,
     detail,
     deleteDog,
-    update
+    update,
+    edit
 }
 
 async function index(req, res){
     try{
-        const userId = req.user._id;
-        const dogs = await Dog.find({ uploaded_by: userId }).sort('date');        
+        // const userId = req.user._id;
+        const dogs = await Dog.find().sort('breed');        
         res.status(200).json(dogs)
     }catch(err){
         res.status(400).json(err)
@@ -61,3 +62,12 @@ async function update(req, res){
     }
 }
 
+async function edit(req, res){
+    try{
+        const dog = await Dog.findById(req.params.id)
+        res.status(200).json(dog)
+    }catch(err){
+        console.log(err)
+        res.status(400).json(err)
+    }
+}
