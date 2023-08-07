@@ -17,6 +17,18 @@
 .navbar-custom .navbar-nav .nav-item .nav-link {
 	color: white;
     font-weight: bold;
+	margin: 0 .5rem;
 }
 
 
+.auth{
+	font-weight: bold;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link:hover{
+	color: skyblue;
+}
+
+.navbar-brand:hover{
+	color: green;
+}
