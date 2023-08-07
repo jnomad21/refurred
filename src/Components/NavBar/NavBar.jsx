@@ -18,6 +18,9 @@ export default function NavBar() {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" to="/map">Google Maps</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/dogs">Index</Link>
                             </li>
                             <li className="nav-item">
