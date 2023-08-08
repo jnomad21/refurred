@@ -10,25 +10,29 @@
 	font-size: 1.4rem;
 	letter-spacing: 0.1rem;
 	font-weight: bold;
-    color: white;
+	color: white;
 
 }
 
 .navbar-custom .navbar-nav .nav-item .nav-link {
 	color: white;
-    font-weight: bold;
+	font-weight: bold;
 	margin: 0 .5rem;
 }
 
 
-.auth{
+.auth {
 	font-weight: bold;
 }
 
-.navbar-custom .navbar-nav .nav-item .nav-link:hover{
+.navbar-custom .navbar-nav .nav-item .nav-link:hover {
 	color: skyblue;
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
 	color: green;
+}
+
+.navbar-toggler {
+	background-color: white;
 }
