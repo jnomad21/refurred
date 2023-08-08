@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
     margin: '12% auto',
@@ -7,7 +7,7 @@ const containerStyle = {
     height: '300px',
 };
 
-const googleKey = process.env.REACT_APP_GOOGLE;
+
 
 export default function GoogleMaps() {
     const [center, setCenter] = useState({
@@ -38,17 +38,15 @@ export default function GoogleMaps() {
 
     return (
         <>
-            <LoadScript googleMapsApiKey={googleKey}>
-                <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={10}
-                >
-                    {userLocation && (
-                        <Marker position={userLocation} />
-                    )}
-                </GoogleMap>
-            </LoadScript>
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={10}
+            >
+                {userLocation && (
+                    <Marker position={userLocation} />
+                )}
+            </GoogleMap>
         </>
     );
 }

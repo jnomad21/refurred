@@ -27,7 +27,7 @@ export default function NavBar() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/quiz">Breed Selector</Link>
                             </li>
-                             <li className="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/map">Google Maps</Link>
                             </li>
                         </ul>
