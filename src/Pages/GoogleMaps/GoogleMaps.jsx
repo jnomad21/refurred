@@ -1,4 +1,5 @@
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
     margin: '12% auto',
@@ -6,15 +7,34 @@ const containerStyle = {
     height: '300px',
 };
 
-//todo Needs set to users lat and lng
-const center = {
-    lat: 41.8220656,
-    lng: -88.440897,
-};
-
-const googleKey = process.env.REACT_APP_GOOGLE
+const googleKey = process.env.REACT_APP_GOOGLE;
 
 export default function GoogleMaps() {
+    const [center, setCenter] = useState({
+        lat: 41.8220656,
+        lng: -88.440897,
+    });
+
+    const [userLocation, setUserLocation] = useState(null);
+
+    useEffect(() => {
+        // Request geolocation permission
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+                    setCenter({ lat: userLat, lng: userLng });
+                    setUserLocation({ lat: userLat, lng: userLng });
+                },
+                (error) => {
+                    console.error('Error getting geolocation:', error);
+                }
+            );
+        } else {
+            console.error('Geolocation is not available');
+        }
+    }, []);
 
     return (
         <>
@@ -24,9 +44,11 @@ export default function GoogleMaps() {
                     center={center}
                     zoom={10}
                 >
-                    {/* You can add markers, info windows and other components here */}
+                    {userLocation && (
+                        <Marker position={userLocation} />
+                    )}
                 </GoogleMap>
             </LoadScript>
         </>
-    )
+    );
 }
