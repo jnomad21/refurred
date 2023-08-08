@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './DogDetail.css'
 
 
+
 export default function DogDetail({dog, handleDelete, setDog}){
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
 
@@ -52,7 +53,8 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 <h4>{renderEmojisWithOpacity('Barking Level', dog.vocal)}</h4>
                 <h4>{renderEmojisWithOpacity('Mental Stimulation Needs', dog.mentalStim)}</h4>
                 <br />
-                <h4>Additional Info: {dog.about}</h4>
+                <h3>Additional Info:</h3>
+                <h5>{dog.about}</h5>
 
 
                 <button className="btn btn-dark" onClick={handleDelete}>Delete {dog.breed}</button><span> </span>
@@ -62,6 +64,7 @@ export default function DogDetail({dog, handleDelete, setDog}){
                 
                
             </div>
+            
         </>
     )
 }
