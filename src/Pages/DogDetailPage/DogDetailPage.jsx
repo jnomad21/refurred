@@ -35,7 +35,6 @@ async function handleDelete(e){
 return (
     <>
     <main>
-    <h1>Is this your new best friend??</h1>
     { loading ? <p>Loading....</p>
     :
     error ? <p>{error}</p>

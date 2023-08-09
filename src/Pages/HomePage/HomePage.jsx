@@ -20,7 +20,7 @@ export default function HomePage() {
       <section className="features">
         <div className="row featurette">
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">Find Your Match with the Breed Selector Quiz.<span className="text-body-secondary"> Discover Your Perfect Breed.</span></h2>
+            <h2 className="featurette-heading fw-normal lh-1">Find Your Match with our Breed Selector.<span className="text-body-secondary"> Discover Your Perfect Breed.</span></h2>
             <p className="lead">Not sure which breed is right for you? Take our fun and interactive breed selector quiz. Answer a few questions about your lifestyle and preferences, and we'll recommend dog breeds that match your personality and living situation.</p>
           </div>
           <div className="col-md-5">
@@ -36,7 +36,7 @@ export default function HomePage() {
             <p className="lead">Learn about the unique qualities of different dog breeds. From size and energy level to grooming needs and compatibility with children, our breed profiles provide valuable insights to help you make an informed decision.</p>
           </div>
           <div className="col-md-5 order-md-1">
-            <img src="/images/dogcomputer.jpg" alt="dogcomputer" width="575" height="420" />
+            <img src="/images/dogcomputer.jpg" alt="dogcomputer" className="img-fluid" width="575" height="440" />
           </div>
         </div>
 
