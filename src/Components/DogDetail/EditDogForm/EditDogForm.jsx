@@ -5,26 +5,26 @@ import { updateDogRequest } from '../../../utilities/dogs-api';
 export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
     const navigate = useNavigate();
     const [error, setError] = useState('')
-    const breedRef = useRef('')
-    const sizeGroupRef = useRef('')
-    const sizeActualRef = useRef('')
-    const affectionRef = useRef('')
-    const childrenRef = useRef('')
-    const otherDogsRef = useRef('')
-    const shedRef = useRef('')
-    const groomRef = useRef('')
-    const droolRef = useRef('')
-    const coatTypeRef = useRef('')
-    const coatLengthRef = useRef('')
-    const strangersRef = useRef('')
-    const playRef = useRef('')
-    const protectRef = useRef('')
-    const adaptRef = useRef('')
-    const trainRef = useRef('')
-    const energyRef = useRef('')
-    const vocalRef = useRef('')
-    const mentalStimRef = useRef('')
-    const aboutRef = useRef('')
+    const breedRef = useRef(dog.breed)
+    const sizeGroupRef = useRef(dog.sizeGroup)
+    const sizeActualRef = useRef(dog.sizeActual)
+    const affectionRef = useRef(dog.affection)
+    const childrenRef = useRef(dog.children)
+    const otherDogsRef = useRef(dog.otherDogs)
+    const shedRef = useRef(dog.shed)
+    const groomRef = useRef(dog.groom)
+    const droolRef = useRef(dog.drool)
+    const coatTypeRef = useRef(dog.coatType)
+    const coatLengthRef = useRef(dog.coatLength)
+    const strangersRef = useRef(dog.strangers)
+    const playRef = useRef(dog.play)
+    const protectRef = useRef(dog.protect)
+    const adaptRef = useRef(dog.adapt)
+    const trainRef = useRef(dog.train)
+    const energyRef = useRef(dog.energy)
+    const vocalRef = useRef(dog.vocal)
+    const mentalStimRef = useRef(dog.mental)
+    const aboutRef = useRef(dog.about)
 
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -71,7 +71,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
         <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
                     <label htmlFor="breed">Breed:</label>
-                    <input type="text" id="breed" className="form-control" ref={breedRef} value={dog.breed} />
+                    <input type="text" id="breed" className="form-control" ref={breedRef} defaultValue={dog.breed} />
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeGroup">Size Group:</label>
@@ -86,7 +86,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeActual">Weight:</label>
-                    <input type="text" id="sizeActual" className="form-control" ref={sizeActualRef} value={dog.sizeActual}/>
+                    <input type="text" id="sizeActual" className="form-control" ref={sizeActualRef} defaultValue={dog.sizeActual}/>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="affection">Affection level</label>
@@ -252,7 +252,7 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="about">About</label><br />
-                    <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} value={dog.about}/>
+                    <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} defaultValue={dog.about}/>
                 </div>
                 <button className="btn btn-dark">Edit the Dog</button>
             </form>
