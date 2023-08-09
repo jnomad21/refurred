@@ -33,28 +33,28 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
     async function handleSubmit(e){
         e.preventDefault()
 
-        const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
+        const capitalizedBreed = capitalizeFirstLetter(breedRef.current.defaultValue);
         const updatedDog = {
             breed: capitalizedBreed,
-            sizeGroup: sizeGroupRef.current.value,
-            sizeActual: sizeActualRef.current.value,
-            affection: affectionRef.current.value,
-            children: childrenRef.current.value,
-            otherDogs: otherDogsRef.current.value,
-            shed: shedRef.current.value,
-            groom: groomRef.current.value,
-            drool: droolRef.current.value,
-            coatType: coatTypeRef.current.value,
-            coatLength: coatLengthRef.current.value,
-            strangers: strangersRef.current.value,
-            play: playRef.current.value,
-            protect: protectRef.current.value,
-            adapt: adaptRef.current.value,
-            train: trainRef.current.value,
-            energy: energyRef.current.value,
-            vocal: vocalRef.current.value,
-            mentalStim: mentalStimRef.current.value,
-            about: aboutRef.current.value,
+            sizeGroup: sizeGroupRef.current.defaultValue,
+            sizeActual: sizeActualRef.current.defaultValue,
+            affection: affectionRef.current.defaultValue,
+            children: childrenRef.current.defaultValue,
+            otherDogs: otherDogsRef.current.defaultValue,
+            shed: shedRef.current.defaultValue,
+            groom: groomRef.current.defaultValue,
+            drool: droolRef.current.defaultValue,
+            coatType: coatTypeRef.current.defaultValue,
+            coatLength: coatLengthRef.current.defaultValue,
+            strangers: strangersRef.current.defaultValue,
+            play: playRef.current.defaultValue,
+            protect: protectRef.current.defaultValue,
+            adapt: adaptRef.current.defaultValue,
+            train: trainRef.current.defaultValue,
+            energy: energyRef.current.defaultValue,
+            vocal: vocalRef.current.defaultValue,
+            mentalStim: mentalStimRef.current.defaultValue,
+            about: aboutRef.current.defaultValue,
         }
         try{
             const newDog = await updateDogRequest(dog._id, updatedDog)
@@ -75,13 +75,13 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeGroup">Size Group:</label>
-                    <select name="sizeGroup" id="sizeGroup" className="form-control" ref={sizeGroupRef} value={dog.sizeGroup}>
-                        <option value="1">1-10 Pounds</option>
-                        <option value="2">11-20 Pounds</option>
-                        <option value="3">21-40 Pounds</option>
-                        <option value="4">41-70 Pounds</option>
-                        <option value="5">71-90 Pounds</option>
-                        <option value="6">91+ Pounds</option>
+                    <select name="sizeGroup" id="sizeGroup" className="form-control" ref={sizeGroupRef} defaultValue={dog.sizeGroup}>
+                        <option defaultValue="1">1-10 Pounds</option>
+                        <option defaultValue="2">11-20 Pounds</option>
+                        <option defaultValue="3">21-40 Pounds</option>
+                        <option defaultValue="4">41-70 Pounds</option>
+                        <option defaultValue="5">71-90 Pounds</option>
+                        <option defaultValue="6">91+ Pounds</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
@@ -90,164 +90,164 @@ export default function EditDogForm({dog, setDog, setEditFormIsOpen}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="affection">Affection level</label>
-                    <select name="affection" id="affection" className="form-control" ref={affectionRef} value={dog.affection}>
-                        <option value="1">1 - Independent</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Lovey-Dovey</option>
+                    <select name="affection" id="affection" className="form-control" ref={affectionRef} defaultValue={dog.affection}>
+                        <option defaultValue="1">1 - Independent</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Lovey-Dovey</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="children">Good with children</label>
-                    <select name="children" id="children" className="form-control" ref={childrenRef} value={dog.children}>
-                        <option value="1">1 - Not Recommended</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Great with Children</option>
+                    <select name="children" id="children" className="form-control" ref={childrenRef} defaultValue={dog.children}>
+                        <option defaultValue="1">1 - Not Recommended</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Great with Children</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="otherDogs">Good with other dogs</label>
-                    <select name="otherDogs" id="otherDogs" className="form-control" ref={otherDogsRef} value={dog.otherDogs}>
-                        <option value="1">1 - Not Recommended</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Great with other dogs</option>
+                    <select name="otherDogs" id="otherDogs" className="form-control" ref={otherDogsRef} defaultValue={dog.otherDogs}>
+                        <option defaultValue="1">1 - Not Recommended</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Great with other dogs</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="shed">Level of Shedding</label>
-                    <select name="shed" id="shed" className="form-control" ref={shedRef} value={dog.shed}>
-                        <option value="1">1 - No Shedding</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Fur Everywhere!</option>
+                    <select name="shed" id="shed" className="form-control" ref={shedRef} defaultValue={dog.shed}>
+                        <option defaultValue="1">1 - No Shedding</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Fur Everywhere!</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="groom">Grooming Requirement</label>
-                    <select name="groom" id="groom" className="form-control" ref={groomRef} value={dog.groom}>
-                        <option value="1">1 - Monthly</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Daily</option>
+                    <select name="groom" id="groom" className="form-control" ref={groomRef} defaultValue={dog.groom}>
+                        <option defaultValue="1">1 - Monthly</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Daily</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="drool">Drooling Level</label>
-                    <select name="drrol" id="drool" className="form-control" ref={droolRef} value={dog.drool}>
-                        <option value="1">1 - Hardly</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Constant</option>
+                    <select name="drrol" id="drool" className="form-control" ref={droolRef} defaultValue={dog.drool}>
+                        <option defaultValue="1">1 - Hardly</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Constant</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="coatType">Coat Type</label>
-                    <select name="coatType" id="coatType" className="form-control" ref={coatTypeRef} value={dog.coatType}>
-                        <option value="Wiry">Wiry</option>
-                        <option value="Rough">Rough</option>
-                        <option value="Curly">Curly</option>
-                        <option value="Hairless">Hairless</option>
-                        <option value="Corded">Corded</option>
-                        <option value="Wavy">Wavy</option>
-                        <option value="Smooth">Smooth</option>
-                        <option value="Double">Double</option>
-                        <option value="Silky">Silky</option>
+                    <select name="coatType" id="coatType" className="form-control" ref={coatTypeRef} defaultValue={dog.coatType}>
+                        <option defaultValue="Wiry">Wiry</option>
+                        <option defaultValue="Rough">Rough</option>
+                        <option defaultValue="Curly">Curly</option>
+                        <option defaultValue="Hairless">Hairless</option>
+                        <option defaultValue="Corded">Corded</option>
+                        <option defaultValue="Wavy">Wavy</option>
+                        <option defaultValue="Smooth">Smooth</option>
+                        <option defaultValue="Double">Double</option>
+                        <option defaultValue="Silky">Silky</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="coatLength">Coat Length</label>
-                    <select name="coatLength" id="coatLength" className="form-control" ref={coatLengthRef}value={dog.coatLength}>
-                        <option value="Short">Short</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Long">Long</option>
+                    <select name="coatLength" id="coatLength" className="form-control" ref={coatLengthRef}defaultValue={dog.coatLength}>
+                        <option defaultValue="Short">Short</option>
+                        <option defaultValue="Medium">Medium</option>
+                        <option defaultValue="Long">Long</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="strangers">Openness to Strangers</label>
-                    <select name="strangers" id="strangers" className="form-control" ref={strangersRef} value={dog.strangers}>
-                        <option value="1">1 - Reserved</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Very friendly with anyone</option>
+                    <select name="strangers" id="strangers" className="form-control" ref={strangersRef} defaultValue={dog.strangers}>
+                        <option defaultValue="1">1 - Reserved</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Very friendly with anyone</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="play">Playfulness Level</label>
-                    <select name="play" id="play" className="form-control" ref={playRef}value={dog.play}>
-                        <option value="1">1 - Doesn't play often</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Non-stop</option>
+                    <select name="play" id="play" className="form-control" ref={playRef}defaultValue={dog.play}>
+                        <option defaultValue="1">1 - Doesn't play often</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Non-stop</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="protect">Watchdog/Protection Level</label>
-                    <select name="protect" id="protect" className="form-control" ref={protectRef}value={dog.protect}>
-                        <option value="1">1 - Lax</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Vigilant/Very Protective</option>
+                    <select name="protect" id="protect" className="form-control" ref={protectRef}defaultValue={dog.protect}>
+                        <option defaultValue="1">1 - Lax</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Vigilant/Very Protective</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="adapt">Adaptability Level</label>
-                    <select name="adapt" id="adapt" className="form-control" ref={adaptRef}value={dog.adapt}>
-                        <option value="1">1 - Lives for Routine</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Highly Adaptable</option>
+                    <select name="adapt" id="adapt" className="form-control" ref={adaptRef}defaultValue={dog.adapt}>
+                        <option defaultValue="1">1 - Lives for Routine</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Highly Adaptable</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="train">Trainability Level</label>
-                    <select name="train" id="train" className="form-control" ref={trainRef}value={dog.train}>
-                        <option value="1">1 - Strong-willed, defiant</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Eager to please</option>
+                    <select name="train" id="train" className="form-control" ref={trainRef}defaultValue={dog.train}>
+                        <option defaultValue="1">1 - Strong-willed, defiant</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Eager to please</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="energy">Energy Level</label>
-                    <select name="energy" id="energy" className="form-control" ref={energyRef}value={dog.energy}>
-                        <option value="1">1 - Couch potato</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Very high energy</option>
+                    <select name="energy" id="energy" className="form-control" ref={energyRef}defaultValue={dog.energy}>
+                        <option defaultValue="1">1 - Couch potato</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Very high energy</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="vocal">Vocal/Barking Level</label>
-                    <select name="vocal" id="vocal" className="form-control" ref={vocalRef}value={dog.vocal}>
-                        <option value="1">1 - Minimal Vocality</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Very vocal</option>
+                    <select name="vocal" id="vocal" className="form-control" ref={vocalRef}defaultValue={dog.vocal}>
+                        <option defaultValue="1">1 - Minimal Vocality</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Very vocal</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="mentalStim">Mental Stimulation Needs</label>
-                    <select name="mentalStim" id="mentalStim" className="form-control" ref={mentalStimRef}value={dog.mentalStim}>
-                        <option value="1">1 - Happy to lounge around</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 - Consistently looking for something to do</option>
+                    <select name="mentalStim" id="mentalStim" className="form-control" ref={mentalStimRef}defaultValue={dog.mentalStim}>
+                        <option defaultValue="1">1 - Happy to lounge around</option>
+                        <option defaultValue="2">2 </option>
+                        <option defaultValue="3">3 </option>
+                        <option defaultValue="4">4 </option>
+                        <option defaultValue="5">5 - Consistently looking for something to do</option>
                     </select>
                 </div>
                 <div className="form-group mb-3">
