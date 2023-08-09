@@ -31,7 +31,7 @@ export default function NavBar() {
                                 <Link className="nav-link" to="/map">Google Maps</Link>
                             </li>
                         </ul>
-                        <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                        <div className="d-lg-flex col-lg-3 justify-content-lg-end">
                             <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
                         </div>
                     </div>
