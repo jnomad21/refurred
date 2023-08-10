@@ -2,10 +2,11 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { updateDogRequest } from '../../../utilities/dogs-api';
 
-export default function EditDogForm({dog, setDog,}){
+export default function EditDogForm({dog, setDog}){
+    
     const navigate = useNavigate();
     const [error, setError] = useState('')
-    const breedRef = useRef(dog.breed)
+    const breedRef = useRef(dog.breed);
     const sizeGroupRef = useRef(dog.sizeGroup)
     const sizeActualRef = useRef(dog.sizeActual)
     const affectionRef = useRef(dog.affection)
@@ -23,12 +24,14 @@ export default function EditDogForm({dog, setDog,}){
     const trainRef = useRef(dog.train)
     const energyRef = useRef(dog.energy)
     const vocalRef = useRef(dog.vocal)
-    const mentalStimRef = useRef(dog.mental)
+    const mentalStimRef = useRef(dog.mentalStim)
     const aboutRef = useRef(dog.about)
+    
 
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
     }
+
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -59,7 +62,7 @@ export default function EditDogForm({dog, setDog,}){
         try{
             const newDog = await updateDogRequest(dog._id, updatedDog)
             setDog(newDog)
-            
+            navigate(`/dogs/${newDog._id}`);
         }catch(err){
             setError("Bad Update, Man")
         }
@@ -90,7 +93,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="affection">Affection level</label>
-                    <select name="affection" id="affection" className="form-control" ref={affectionRef} devaultValue={dog.affection}>
+                    <select name="affection" id="affection" className="form-control" ref={affectionRef} defaultValue={dog.affection} >
                         <option value="1">1 - Independent</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -164,7 +167,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="coatLength">Coat Length</label>
-                    <select name="coatLength" id="coatLength" className="form-control" ref={coatLengthRef}defaultValue={dog.coatLength}>
+                    <select name="coatLength" id="coatLength" className="form-control" ref={coatLengthRef} defaultValue={dog.coatLength}>
                         <option value="Short">Short</option>
                         <option value="Medium">Medium</option>
                         <option value="Long">Long</option>
@@ -182,7 +185,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="play">Playfulness Level</label>
-                    <select name="play" id="play" className="form-control" ref={playRef}defaultValue={dog.play}>
+                    <select name="play" id="play" className="form-control" ref={playRef} defaultValue={dog.play}>
                         <option value="1">1 - Doesn't play often</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -192,7 +195,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="protect">Watchdog/Protection Level</label>
-                    <select name="protect" id="protect" className="form-control" ref={protectRef}defaultValue={dog.protect}>
+                    <select name="protect" id="protect" className="form-control" ref={protectRef} defaultValue={dog.protect}>
                         <option value="1">1 - Lax</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -202,7 +205,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="adapt">Adaptability Level</label>
-                    <select name="adapt" id="adapt" className="form-control" ref={adaptRef}defaultValue={dog.adapt}>
+                    <select name="adapt" id="adapt" className="form-control" ref={adaptRef} defaultValue={dog.adapt}>
                         <option value="1">1 - Lives for Routine</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -212,7 +215,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="train">Trainability Level</label>
-                    <select name="train" id="train" className="form-control" ref={trainRef}defaultValue={dog.train}>
+                    <select name="train" id="train" className="form-control" ref={trainRef} defaultValue={dog.train}>
                         <option value="1">1 - Strong-willed, defiant</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -222,7 +225,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="energy">Energy Level</label>
-                    <select name="energy" id="energy" className="form-control" ref={energyRef}defaultValue={dog.energy}>
+                    <select name="energy" id="energy" className="form-control" ref={energyRef} defaultValue={dog.energy}>
                         <option value="1">1 - Couch potato</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -232,7 +235,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="vocal">Vocal/Barking Level</label>
-                    <select name="vocal" id="vocal" className="form-control" ref={vocalRef}defaultValue={dog.vocal}>
+                    <select name="vocal" id="vocal" className="form-control" ref={vocalRef} defaultValue={dog.vocal}>
                         <option value="1">1 - Minimal Vocality</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -242,7 +245,7 @@ export default function EditDogForm({dog, setDog,}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="mentalStim">Mental Stimulation Needs</label>
-                    <select name="mentalStim" id="mentalStim" className="form-control" ref={mentalStimRef}defaultValue={dog.mentalStim}>
+                    <select name="mentalStim" id="mentalStim" className="form-control" ref={mentalStimRef} defaultValue={dog.mentalStim}>
                         <option value="1">1 - Happy to lounge around</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
