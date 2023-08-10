@@ -12,7 +12,13 @@ export default function NavBar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <div className="navbar-brand col-lg-3 me-0">
+                        <div className="navbar-brand d-flex align-items-center col-lg-3 me-0">
+                            <img
+                                alt="templogo"
+                                src="/templogo.png"
+                                width="30"
+                                height="30"
+                            />&nbsp;
                             <Link className="navbar-brand" to="/">
                                 PetApp
                             </Link>
