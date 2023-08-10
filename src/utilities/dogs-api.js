@@ -20,3 +20,14 @@ export async function deleteDogRequest(dogId){
 export async function updateDogRequest(dogId, dogData){
     return sendRequest(`${BASE_URL}/${dogId}`, "PUT", dogData)
 }
+export async function createBreederRequest(breederData){
+    return sendRequest(`${BASE_URL}/newbreeder`, "POST", breederData)
+}
+
+export async function breederIndexRequest(){
+    return sendRequest(`${BASE_URL}/breeders`);
+}
+
+export async function getBreederRequest(breederId){
+    return sendRequest(`${BASE_URL}/breeders/${breederId}`) 
+}
