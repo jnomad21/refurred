@@ -25,3 +25,11 @@ label {
     display: block;
     margin: 0 auto;
 }
+
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

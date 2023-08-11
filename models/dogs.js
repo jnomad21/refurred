@@ -22,9 +22,10 @@ const dogsSchema = new Schema({
     vocal: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     mentalStim: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     about: { type: String},
+    image: { type: String },
 
-    
-}, 
+
+},
 );
 
 module.exports = mongoose.model('Dogs', dogsSchema);

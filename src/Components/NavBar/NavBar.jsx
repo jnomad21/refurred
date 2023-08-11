@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import "./NavBar.css";
 
-
 export default function NavBar() {
     return (
         <>
@@ -27,28 +26,41 @@ export default function NavBar() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs">Dog Breeds</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/dogs/new">Add a dog</Link>
-                            </li>
+
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/quiz">Breed Selector</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs/breeders">Breeders</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/dogs/newbreeder">Add a Breeder</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/map">Google Maps</Link>
-                            </li>
+
+
                         </ul>
-                        <div className="d-lg-flex col-lg-3 justify-content-lg-end">
-                            <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
+                        <div className="nav d-lg-flex col-lg-3 justify-content-lg-end">
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li className="nav-item dropdown">
+                                        <Link className="nav-link" to="/dogs/new">Add a dog</Link>
+                                    </li>
+
+                                    <li className="nav-item dropdown">
+                                        <Link className="nav-link" to="/dogs/newbreeder">Add a Breeder</Link>
+                                    </li>
+                                    <li className="nav-item dropdown">
+                                        <Link className="nav-link" to="/map">Google Maps</Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li >
+                                <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
+                            </li>
                         </div>
                     </div>
                 </div>
             </nav>
         </>
-    )
+    );
 }
