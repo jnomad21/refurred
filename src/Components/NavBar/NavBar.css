@@ -36,3 +36,17 @@
 .navbar-toggler {
 	background-color: white;
 }
+
+.dropdown-menu{
+	background-color: black;
+	color: white;
+}
+
+
+.nav-link{
+	color: white;
+}
+
+.nav-link:hover{
+	color: skyblue;
+}

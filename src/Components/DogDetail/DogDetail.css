@@ -47,3 +47,17 @@
     margin-right: .3rem;
 
   }
+
+  @media (max-width: 767px) {
+    .dog-emojis {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .dog-emojis {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }

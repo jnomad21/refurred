@@ -4,6 +4,8 @@ import { createDogRequest } from '../../utilities/dogs-api';
 import "./NewDogForm.css";
 
 export default function NewDogForm() {
+    const [image, setImage] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
     const navigate = useNavigate();
     const [error, setError] = useState('')
     const breedRef = useRef('')
@@ -26,16 +28,32 @@ export default function NewDogForm() {
     const vocalRef = useRef('')
     const mentalStimRef = useRef('')
     const aboutRef = useRef('')
+    const imageRef = useRef(null);
+
+    const handleImageChange = (e) => {
+        const selectedImage = e.target.files[0];
+        setImage(selectedImage);
+
+        if (selectedImage) {
+            const imageURL = URL.createObjectURL(selectedImage);
+            setImagePreview(imageURL);
+        }
+    };
+
+
 
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
     }
+
+
 
     async function handleSubmit(e) {
         e.preventDefault()
         setError('')
 
         const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
+
 
         const newDog = {
             breed: capitalizedBreed,
@@ -59,6 +77,7 @@ export default function NewDogForm() {
             mentalStim: mentalStimRef.current.value,
             about: aboutRef.current.value,
         }
+
         try {
             const newDogResponse = await createDogRequest(newDog)
             navigate('/dogs')
@@ -257,6 +276,12 @@ export default function NewDogForm() {
                     <label htmlFor="about">About</label><br />
                     <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} />
                 </div>
+                <div className="form-group mb-3">
+                    <label htmlFor="image">Upload Image:</label>
+                    <input type="file" id="image" accept="image/*" ref={imageRef} onChange={handleImageChange} />
+                </div>
+                {imagePreview && <img src={imagePreview} alt="imageSelected" className="image-preview" />}
+
                 <button type="submit" className="btn btn-primary" id="newDogButton">Create the Dog</button>
             </form>
 
