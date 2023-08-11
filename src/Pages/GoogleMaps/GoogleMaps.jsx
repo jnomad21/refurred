@@ -51,23 +51,15 @@ export default function GoogleMaps() {
         <form className="">
             <div className="form-group mb-3">Within how many miles?
                 <select value={selectedDistance} onChange = {(e) => setSelectedDistance(Number(e.target.value))} name="" className="form-control">
-                    {console.log(selectedDistance)}
-                    <option value={5}>5 miles</option>
-                    <option value={10}>10 miles</option>
-                    <option value={25}>25 miles</option>
-                    <option value={50}>50 miles</option>
-                    <option value={250}>51-250 miles</option>
+                    <option value={10}> Within 10 miles</option>
+                    <option value={25}> Within 25 miles</option>
+                    <option value={75}> Within 75 miles</option>
+                    <option value={150}> Within 150 miles</option>
+                    <option value={500}> Within 500 miles</option>
                 </select>
             </div>
             <div className="form-group mb-3">For which breeds?
                 <select className="form-control">
-                {/* <BreedersByMiles />
-                1 - Return list (.map()) with selectable markers of breeders within 'setSelectedDistance' value from the users current lat/lang sorted by closest to furthest. Ideally, these would have a popup 'card' with some basic info and website/contact to click.
-                    1 - Google: How to convert the differences between lat and lng into miles?
-                    2 - Marker component (New component needed?) to adjust for state changes with selecting and deselecting on the map.
-                2 - Search button will need 'onSubmit' or similar. It will then render the component returning breeders
-                3 - Best way to generate a reliable list of breeders from all over the country (maybe world, but we'll do country to start)
-                */}
                     <option value={1}>Shnouzer</option>
                     <option value={2}>Laberdoodle</option>
                     <option value={3}>German Sheppard</option>
@@ -85,7 +77,24 @@ export default function GoogleMaps() {
             >
                 {userLocation && (
                     <Marker position={userLocation} />
-                )}
+                )}        
+                {/*
+                <BreedersByMiles breeders={setBreeders}/>
+                1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance displayed clearly. 
+                    1.1 - On the map, and ideally, these would have a popup 'card' with some basic info and website/contact to click.
+                    1.2 - Google: How to convert the differences between lat and lng into miles?
+                2 - Search button will need 'onSubmit' or similar. It will then render the component returning breeders
+                3 - Best way to generate a reliable list of breeders from all over the country (maybe world, but we'll do country to start)...
+                
+                 <--- COMPONENT MOCK UP --->
+                {breeders.map((breeder, index) => (
+                <Marker
+                key={index}
+                position={{ lat: breeder.lat, lng: breeder.lng }} 
+                />
+                ))} 
+                */}
+   
             </GoogleMap>
         </>
     );
