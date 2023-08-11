@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, Marker } from '@react-google-maps/api';
+import BreederPage from '../BreedersPage/BreedersPage';
 
 const containerStyle = {
-    margin: '12% auto',
-    width: '90%',
-    height: '300px',
+    margin: '8% auto',
+    width: '70%',
+    height: '500px',
 };
 
 
 
 export default function GoogleMaps() {
+
     // Set the distance state starting at 5
     const [selectedDistance, setSelectedDistance] = useState(5)
     const [center, setCenter] = useState({
@@ -59,6 +61,7 @@ export default function GoogleMaps() {
                 </select>
             </div>
             <div className="form-group mb-3">For which breeds?
+            {/* Breeds component with dropdown goes here instead of static dropdown below. */}
                 <select className="form-control">
                     <option value={1}>Shnouzer</option>
                     <option value={2}>Laberdoodle</option>
@@ -69,16 +72,14 @@ export default function GoogleMaps() {
             </div>
             <button className="btn btn-primary">Search</button>
         </form>
-        
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={10}
-            >
-                {userLocation && (
-                    <Marker position={userLocation} />
-                )}        
-                {/*
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="row featurette">
+          <div className="col-md-3">
+            <BreederPage/>
+             {/*
                 <BreedersByMiles breeders={setBreeders}/>
                 1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance displayed clearly. 
                     1.1 - On the map, and ideally, these would have a popup 'card' with some basic info and website/contact to click.
@@ -94,8 +95,19 @@ export default function GoogleMaps() {
                 />
                 ))} 
                 */}
-   
+          </div>
+          <div className="col-md-9">
+          <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={10}
+            >
+                {userLocation && (
+                    <Marker position={userLocation} />
+                )} 
             </GoogleMap>
+            </div>
+        </div>    
         </>
     );
 }
