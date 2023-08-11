@@ -1,4 +1,5 @@
 const Dog = require('../../models/dogs')
+const Breeder = require('../../models/breeder')
 
 module.exports = {
     index,
@@ -6,7 +7,10 @@ module.exports = {
     detail,
     deleteDog,
     update,
-    edit
+    edit,
+    breederCreate,
+    breederIndex,
+    breederDetail,
 }
 
 async function index(req, res){
@@ -70,4 +74,36 @@ async function edit(req, res){
         console.log(err)
         res.status(400).json(err)
     }
+}async function breederCreate(req, res){
+    try{
+        // req.body.uploaded_by = req.user._id;
+        const newBreeder = await Breeder.create(req.body);
+        console.log(req.body)
+        res.status(201).json(newBreeder)
+    }catch(err){
+        console.log(err)
+        res.status(400).json(err)
+    }
 }
+async function breederIndex(req, res){
+    try{
+        // const userId = req.user._id;
+        const breeders = await Breeder.find();        
+        res.status(200).json(breeders)
+    }catch(err){
+        res.status(400).json(err)
+    }
+}
+
+async function breederDetail(req, res){
+    try{
+        const breeder = await Breeder.findById(req.params.id)
+        res.status(200).json(breeder)
+    }catch(err){
+        console.log(err)
+        res.status(400).json(err)
+    }
+}
+
+
+

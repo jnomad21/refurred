@@ -34,6 +34,12 @@ export default function NavBar() {
                                 <Link className="nav-link" to="/dogs/quiz">Breed Selector</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" to="/dogs/breeders">Breeders</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/dogs/newbreeder">Add a Breeder</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/map">Google Maps</Link>
                             </li>
                         </ul>
