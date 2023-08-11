@@ -1,3 +1,8 @@
 gmp-map {
     height: 500px;
   }
+
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
