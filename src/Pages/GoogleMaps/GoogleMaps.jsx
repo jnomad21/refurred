@@ -51,6 +51,7 @@ export default function GoogleMaps() {
         <form className="">
             <div className="form-group mb-3">Within how many miles?
                 <select value={selectedDistance} onChange = {(e) => setSelectedDistance(Number(e.target.value))} name="" className="form-control">
+                    {console.log(selectedDistance)}
                     <option value={5}>5 miles</option>
                     <option value={10}>10 miles</option>
                     <option value={25}>25 miles</option>
@@ -60,7 +61,13 @@ export default function GoogleMaps() {
             </div>
             <div className="form-group mb-3">For which breeds?
                 <select className="form-control">
-                {/* Return list of breeds within 'setSelected' value from the users current lat/lang (Upon form submission?). Then, filter to return the list closest to furthest */}
+                {/* <BreedersByMiles />
+                1 - Return list (.map()) with selectable markers of breeders within 'setSelectedDistance' value from the users current lat/lang sorted by closest to furthest. Ideally, these would have a popup 'card' with some basic info and website/contact to click.
+                    1 - Google: How to convert the differences between lat and lng into miles?
+                    2 - Marker component (New component needed?) to adjust for state changes with selecting and deselecting on the map.
+                2 - Search button will need 'onSubmit' or similar. It will then render the component returning breeders
+                3 - Best way to generate a reliable list of breeders from all over the country (maybe world, but we'll do country to start)
+                */}
                     <option value={1}>Shnouzer</option>
                     <option value={2}>Laberdoodle</option>
                     <option value={3}>German Sheppard</option>
@@ -68,6 +75,7 @@ export default function GoogleMaps() {
                     <option value={5}>Collie</option>
                 </select>
             </div>
+            <button className="btn btn-primary">Search</button>
         </form>
         
             <GoogleMap
