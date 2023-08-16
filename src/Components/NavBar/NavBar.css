@@ -6,7 +6,7 @@
 }
 
 .navbar-custom .navbar-brand {
-	text-transform: uppercase;
+	text-transform: lowercase;
 	font-size: 1.4rem;
 	letter-spacing: 0.1rem;
 	font-weight: bold;
@@ -49,4 +49,17 @@
 
 .nav-link:hover{
 	color: skyblue;
+}
+.furr{
+	background: linear-gradient(35deg, rgba(221,78,19,1) 0%, rgba(253,128,29,1) 35%, rgba(252,202,69,1) 60%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	text-transform: lowercase;
+	/* font-family: 'Cherry Bomb One', cursive; */
+
+}
+
+#paw-logo img{
+	padding-right: 10px;
 }
