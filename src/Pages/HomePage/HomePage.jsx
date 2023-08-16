@@ -7,13 +7,22 @@ export default function HomePage() {
       <div className="hero-image">
         <img src="/images/heroPlaceholder2.jpg" alt="Hero" width="100%" height="100%" />
         <div className="container">
-          <div className="hero-text">
-            <h2 className="home-h1">Pet App</h2>
-            <h3 className="home-p">Discover the perfect companion for your family. Browse through a variety of dog breeds and find the ideal furry friend to join your household.</h3> <br />
-            <Link className="btn btn-success btn-lg mb-4" to="/dogs">View Dog Breeds</Link>
-          </div>
-        </div>
-      </div> <br /> <br />
+        <div className="hero-text">
+  <h2 className="home-h1">Welcome to re
+    <span className="gradient-text">furr</span>ed
+  </h2>
+  <h3 className="home-p">
+    Discover the perfect companion for your family. Browse through a variety
+    of dog breeds and find the ideal furry friend to join your household.
+  </h3>
+  <br />
+  {/* <Link className="btn btn-success btn-lg mb-4" to="/dogs">
+    View Dog Breeds
+  </Link> */}
+</div>
+</div>
+</div>
+      <br /> <br />
 
 
 
