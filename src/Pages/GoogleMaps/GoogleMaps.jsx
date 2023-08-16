@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
@@ -10,9 +11,16 @@ const containerStyle = {
     height: '700px',
 };
 
+export default function MapSetup() {
+    const {isLoaded} = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE
+    })
 
+    if(!isLoaded) return <div>Loading...</div>
+    return <Map />
+}
 
-export default function GoogleMaps() {
+function Map() {
     const [zoom, setZoom] = useState(10)
     const [selectedDistance, setSelectedDistance] = useState(5)
     const [center, setCenter] = useState({
@@ -49,25 +57,35 @@ export default function GoogleMaps() {
         }
     }, [selectedDistance])
     
+
     useEffect(() => {
-        // Request geolocation permission
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const userLat = position.coords.latitude;
-                    const userLng = position.coords.longitude;
-                    setCenter({ lat: userLat, lng: userLng });
-                    setUserLocation({ lat: userLat, lng: userLng });
-                },
-                (error) => {
-                    console.error('Error getting geolocation:', error);
-                }
-            );
+        // Grab the user location if it exists. If not, create it
+        const storedLocation = JSON.parse(localStorage.getItem('userLocation'));
+        if (storedLocation) {
+            setCenter(storedLocation);
+            setUserLocation(storedLocation);
         } else {
-            console.error('Geolocation is not available');
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLat = position.coords.latitude;
+                        const userLng = position.coords.longitude;
+                        const newUserLocation = { lat: userLat, lng: userLng };
+                        setCenter(newUserLocation);
+                        setUserLocation(newUserLocation);
+                        // Store the newUserLocation in localStorage
+                        localStorage.setItem('userLocation', JSON.stringify(newUserLocation));
+                    },
+                    (error) => {
+                        console.error('Error getting geolocation:', error);
+                    }
+                );
+            } else {
+                console.error('Geolocation is not available');
+            }
         }
     }, []);
-
+    
     return (
         <>
         <br />
@@ -76,6 +94,7 @@ export default function GoogleMaps() {
         <br />
         <h1>Find a nearby Breeder:</h1>
         <form className="">
+
             <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
             <BreedsDropdown />
             <button className="btn btn-primary">Search</button>
@@ -83,8 +102,9 @@ export default function GoogleMaps() {
         <br />
         <br />
         <div className="row featurette">
-          <div className="col-md-3">
+            <div className="col-md-3">
             <BreederPage/>
+
              {/*
                 <BreedersByMiles breeders={setBreeders}/>
                 1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance/miles displayed clearly. 
@@ -103,7 +123,7 @@ export default function GoogleMaps() {
                 */}
           </div>
           <div className="col-md-9">
-          <GoogleMap
+            <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={zoom}
@@ -113,8 +133,8 @@ export default function GoogleMaps() {
                     <Marker position={userLocation} />
                 )} 
             </GoogleMap>
-            </div>
-        </div>    
+        </div>
+        </div>
         </>
-    );
+    )
 }

@@ -6,3 +6,9 @@ gmp-map {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
+.map-container {
+    margin: 8% auto;
+    width: 70%;
+    height: 500px
+};
