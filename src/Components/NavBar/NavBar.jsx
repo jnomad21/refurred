@@ -55,9 +55,9 @@ export default function NavBar() {
                                     </li>
                                 </ul>
                             </li>
-                            <li >
+                            {/* <li >
                                 <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
-                            </li>
+                            </li> */}
                         </div>
                     </div>
                 </div>

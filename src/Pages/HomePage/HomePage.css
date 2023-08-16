@@ -2,7 +2,7 @@ body {
   padding-bottom: 3rem;
 }
 
-.home-h1{
+.home-h1 {
   font-size: 5rem;
 }
 
@@ -33,7 +33,7 @@ body {
 
 
 
-.features{
+.features {
   margin: 0 2rem;
 }
 
@@ -48,6 +48,15 @@ body {
   margin-left: .75rem;
 }
 
+.gradient-text {
+  background: linear-gradient(35deg, rgba(221,78,19,1) 0%, rgba(253,128,29,1) 35%, rgba(252,202,69,1) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+
 
 
 .featurette-divider {
@@ -59,7 +68,8 @@ body {
   .home-h1 {
     font-size: 2.5rem;
   }
-  .home-p{
+
+  .home-p {
     font-size: 1rem;
   }
 }
@@ -75,4 +85,3 @@ body {
     margin-top: 7rem;
   }
 }
-
