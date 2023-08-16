@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { useLoadScript } from '@react-google-maps/api';
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
 import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';

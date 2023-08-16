@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState, useEffect } from 'react';
 import { toolTipData } from '../DogDetail/ToolTipData';
+import { quizRequest } from "../../utilities/dogs-api";
+import QuizResult from "../../Pages/QuizResult/QuizResult";
 import './QuizForm.css';
 
 
@@ -13,6 +15,7 @@ export default function QuizForm() {
     }, []);
 
     const navigate = useNavigate();
+    const [quizAns, setQuizAns] = useState([])
     const [error, setError] = useState('')
     const sizeGroupRef = useRef('')
     const affectionRef = useRef('')
@@ -30,7 +33,11 @@ export default function QuizForm() {
     const vocalRef = useRef('')
     const mentalStimRef = useRef('')
 
-    const newDog = {
+    async function handleSubmit(e) {
+        e.preventDefault()
+        setError('')
+
+    const quizResult = {
         sizeGroup: sizeGroupRef.current.value,
         affection: affectionRef.current.value,
         children: childrenRef.current.value,
@@ -47,14 +54,16 @@ export default function QuizForm() {
         vocal: vocalRef.current.value,
         mentalStim: mentalStimRef.current.value,
     }
+    console.log(quizResult)
 
-    async function handleSubmit(e) {
-        e.preventDefault()
-        setError('')
+    
+    
     }
+    
 
     return (
         <>
+            {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeGroup">Size Group:</label>
@@ -295,6 +304,8 @@ export default function QuizForm() {
 
                 <button type="submit" className="btn btn-success" id="newDogButton">See Results</button>
             </form>
+
+            
 
         </>
     )
