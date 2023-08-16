@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import "./NavBar.css";
 
+
 export default function NavBar() {
     return (
         <>
@@ -11,7 +12,7 @@ export default function NavBar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <div className="navbar-brand d-flex align-items-center col-lg-3 me-0">
+                        <div className="navbar-brand d-flex align-items-center col-lg-3 me-0" >
                             <img
                                 alt="templogo"
                                 src="/templogo.png"
@@ -19,7 +20,7 @@ export default function NavBar() {
                                 height="30"
                             />&nbsp;
                             <Link className="navbar-brand" to="/">
-                                PetApp
+                                re<span className="furr">furr</span>ed
                             </Link>
                         </div>
                         <ul className="navbar-nav col-lg-6 justify-content-lg-center">
