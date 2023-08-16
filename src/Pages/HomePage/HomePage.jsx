@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="row featurette">
           <div className="col-md-7">
             <h2 className="featurette-heading fw-normal lh-1">Browse for your buddy.<span className="text-body-secondary"> Explore Breeds.</span></h2>
-            <p className="lead">Access a wide range of dog breeds, each with unique characteristics and traits. Whether you're looking for a playful companion or a loyal guardian, Pet App has the perfect match for you.</p>
+            <p className="lead">Access a wide range of dog breeds, each with unique characteristics and traits. Whether you're looking for a playful companion or a loyal guardian, refurred has the perfect match for you.</p>
 
           </div>
           <div className="col-md-5">
@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="col-lg-4">
             <img src="/images/jason.jpeg" alt="jason" className="rounded-circle" width="140" height="140" />
             <h2 className="fw-normal">Jason McGrath</h2>
-            <p>Backend/Architecture/Full Stack</p>
+            <p>Architecture/Backend/Full Stack</p>
             <p><a className="btn btn-dark" href="https://www.github.com/jnomad21">Github &raquo;</a></p>
           </div>
           <div className="col-lg-4">
@@ -84,7 +84,7 @@ export default function HomePage() {
           <div className="col-lg-4">
             <img src="/images/joel.png" alt="joel" className="rounded-circle" width="140" height="140" />
             <h2 className="fw-normal">Joel Fuelling</h2>
-            <p>Backend/Architecture/Full Stack</p>
+            <p>Architecture/Backend/Full Stack</p>
             <p><a className="btn btn-dark" href="https://www.github.com/joelfuelling">Github &raquo;</a></p>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function HomePage() {
 
       <footer className="container">
         <p className="float-end"><a href="/#" className="btn btn-dark">Back to top</a></p>
-        <p>&copy; 2023 Pet App</p>
+        <p>&copy; 2023 refurred</p>
       </footer>
     </>
 
