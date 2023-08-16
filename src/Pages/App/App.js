@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import { LoadScript } from '@react-google-maps/api';
 import './App.css';
 import GoogleMaps from '../GoogleMaps/GoogleMaps';
 import HomePage from '../HomePage/HomePage';
@@ -16,14 +15,13 @@ import BreedersPage from '../BreedersPage/BreedersPage';
 import NewBreederPage from '../NewBreeder/NewBreederPage';
 import BreederDetailPage from '../BreederDetailPage/BreederDetailPage';
 
-const googleKey = process.env.REACT_APP_GOOGLE;
 export default function App() {
   const [user, setUser] = useState(getUser());
 
 
   return (
     <>
-    <LoadScript googleMapsApiKey={googleKey}>
+
       <NavBar />
       <Routes>
         <Route path="/map" element={<GoogleMaps/>} />
@@ -37,11 +35,7 @@ export default function App() {
         <Route path="/dogs/breeders" element={<BreedersPage />} />
         <Route path="/dogs/breeders/:breederId" element={<BreederDetailPage />} />
         <Route path="/dogs/newbreeder" element={<NewBreederPage />} />
-
-
-
       </Routes>
-    </LoadScript>
     </>
   );
 }
