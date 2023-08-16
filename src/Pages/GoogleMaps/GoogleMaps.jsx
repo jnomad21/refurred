@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, Marker } from '@react-google-maps/api';
+import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
 import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';
 import BreederPage from '../BreedersPage/BreedersPage';
 
@@ -12,8 +13,7 @@ const containerStyle = {
 
 
 export default function GoogleMaps() {
-
-    // Set the distance state starting at 5
+    const [zoom, setZoom] = useState(10)
     const [selectedDistance, setSelectedDistance] = useState(5)
     const [center, setCenter] = useState({
         lat: 41.8220656,
@@ -23,7 +23,27 @@ export default function GoogleMaps() {
     const [userLocation, setUserLocation] = useState(null);
 
     
-
+    useEffect(() => {
+        switch(selectedDistance){
+            case 10:
+                setZoom(10)
+                break
+            case 25:
+                setZoom(9)
+                break
+            case 75:
+                setZoom(8)
+                break
+            case 150:
+                setZoom(7)
+                break
+            case 500:
+                setZoom(6)
+                break
+            default:
+                setZoom(10)
+        }
+    }, [selectedDistance])
     useEffect(() => {
         // Request geolocation permission
         if (navigator.geolocation) {
@@ -51,17 +71,8 @@ export default function GoogleMaps() {
         <br />
         <h1>Find a nearby Breeder:</h1>
         <form className="">
-            <DistanceDropdown/>
-            <div className="form-group mb-3">For which breed?
-            {/* Breeds component with dropdown goes here instead of static dropdown below. */}
-                <select className="form-control">
-                    <option value={1}>Shnouzer</option>
-                    <option value={2}>Laberdoodle</option>
-                    <option value={3}>German Sheppard</option>
-                    <option value={4}>Dauchsund</option>
-                    <option value={5}>Collie</option>
-                </select>
-            </div>
+            <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
+            <BreedsDropdown />
             <button className="btn btn-primary">Search</button>
         </form>
         <br />
@@ -90,7 +101,7 @@ export default function GoogleMaps() {
           <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10}
+                zoom={zoom}
             >
                 {userLocation && (
                     <Marker position={userLocation} />
