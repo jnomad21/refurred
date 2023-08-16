@@ -20,6 +20,10 @@ export default function GoogleMaps() {
         lng: -88.440897,
     });
 
+    const onMapLoad = (map) => {
+        map.setMapTypeId('hybrid');
+        map.setTilt(45);
+    };
     const [userLocation, setUserLocation] = useState(null);
 
     
@@ -38,12 +42,13 @@ export default function GoogleMaps() {
                 setZoom(7)
                 break
             case 500:
-                setZoom(6)
+                setZoom(5)
                 break
             default:
-                setZoom(10)
+                setZoom(14)
         }
     }, [selectedDistance])
+    
     useEffect(() => {
         // Request geolocation permission
         if (navigator.geolocation) {
@@ -102,6 +107,7 @@ export default function GoogleMaps() {
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={zoom}
+                onLoad={onMapLoad}
             >
                 {userLocation && (
                     <Marker position={userLocation} />
