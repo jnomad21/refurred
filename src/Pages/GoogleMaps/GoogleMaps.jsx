@@ -1,8 +1,15 @@
-import './GoogleMaps.css'
-import {useState, useEffect, useMemo} from 'react'
-import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
-import BreederPage from '../BreedersPage/BreedersPage'
 
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, Marker } from '@react-google-maps/api';
+import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
+import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';
+import BreederPage from '../BreedersPage/BreedersPage';
+
+const containerStyle = {
+    margin: '5% auto',
+    width: '70%',
+    height: '700px',
+};
 
 export default function MapSetup() {
     const {isLoaded} = useLoadScript({
@@ -14,9 +21,43 @@ export default function MapSetup() {
 }
 
 function Map() {
-    const [selectedDistance, setSelectedDistance] = useState(10)
-    const [center, setCenter] = useState({ lat: 44, lng: -80 });
+    const [zoom, setZoom] = useState(10)
+    const [selectedDistance, setSelectedDistance] = useState(5)
+    const [center, setCenter] = useState({
+        lat: 41.8220656,
+        lng: -88.440897,
+    });
+
+    const onMapLoad = (map) => {
+        map.setMapTypeId('hybrid');
+        map.setTilt(45);
+    };
     const [userLocation, setUserLocation] = useState(null);
+
+    
+    useEffect(() => {
+        switch(selectedDistance){
+            case 10:
+                setZoom(10)
+                break
+            case 25:
+                setZoom(9)
+                break
+            case 75:
+                setZoom(8)
+                break
+            case 150:
+                setZoom(7)
+                break
+            case 500:
+                setZoom(5)
+                break
+            default:
+                setZoom(14)
+        }
+    }, [selectedDistance])
+    
+
     useEffect(() => {
         // Grab the user location if it exists. If not, create it
         const storedLocation = JSON.parse(localStorage.getItem('userLocation'));
@@ -51,59 +92,47 @@ function Map() {
         <br />
         <br />
         <br />
-        <br />
         <h1>Find a nearby Breeder:</h1>
         <form className="">
-            <div className="form-group mb-3">Within how many miles?
-                <select value={selectedDistance} onChange = {(e) => setSelectedDistance(Number(e.target.value))} name="" className="form-control">
-                    <option value={10}> Within 10 miles</option>
-                    <option value={25}> Within 25 miles</option>
-                    <option value={75}> Within 75 miles</option>
-                    <option value={150}> Within 150 miles</option>
-                    <option value={500}> Within 500 miles</option>
-                </select>
-            </div>
-                <div className="form-group mb-3">For which breeds?
-                {/* Breeds component with dropdown goes here instead of static dropdown below. */}
-                    <select className="form-control">
-                        <option value={1}>Shnouzer</option>
-                        <option value={2}>Laberdoodle</option>
-                        <option value={3}>German Sheppard</option>
-                        <option value={4}>Dauchsund</option>
-                        <option value={5}>Collie</option>
-                    </select>
-                </div>
+
+            <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
+            <BreedsDropdown />
             <button className="btn btn-primary">Search</button>
         </form>
-        <br />
-        <br />
         <br />
         <br />
         <div className="row featurette">
             <div className="col-md-3">
             <BreederPage/>
-            {/*
-            <BreedersByMiles breeders={setBreeders}/>
-            1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance displayed clearly. 
-                1.1 - On the map, and ideally, these would have a popup 'card' with some basic info and website/contact to click.
-                1.2 - Google: How to convert the differences between lat and lng into miles?
-            2 - Search button will need 'onSubmit' or similar. It will then render the component returning breeders
-            3 - Best way to generate a reliable list of breeders from all over the country (maybe world, but we'll do country to start)...
-            
-                <--- COMPONENT MOCK UP --->
-            {breeders.map((breeder, index) => (
-            <Marker
-            key={index}
-            position={{ lat: breeder.lat, lng: breeder.lng }} 
-            />
-            ))} 
-            */}
-            </div>
-        
-        <div className='col-md-9'>
-        <GoogleMap zoom={10} center={userLocation} mapContainerClassName="map-container">
-            <Marker position={center}/>
-        </GoogleMap>
+
+             {/*
+                <BreedersByMiles breeders={setBreeders}/>
+                1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance/miles displayed clearly. 
+                    1.1 - On the map, and ideally, these would have a popup 'card' with some basic info and website/contact to click on hover.
+                    1.2 - Google: How to convert the differences between lat and lng into miles?
+                2 - Search button will need 'onSubmit' or similar. It will then render the component returning breeders
+                3 - Best way to generate a reliable list of breeders from all over the country (maybe world, but we'll do country to start)...
+                
+                 <--- COMPONENT MOCK UP --->
+                {breeders.map((breeder, index) => (
+                <Marker
+                key={index}
+                position={{ lat: breeder.lat, lng: breeder.lng }} 
+                />
+                ))} 
+                */}
+          </div>
+          <div className="col-md-9">
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={zoom}
+                onLoad={onMapLoad}
+            >
+                {userLocation && (
+                    <Marker position={userLocation} />
+                )} 
+            </GoogleMap>
         </div>
         </div>
         </>
