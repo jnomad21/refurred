@@ -13,5 +13,10 @@ router.get('/:id', dogsController.detail);
 router.delete('/:id', dogsController.deleteDog);
 router.put('/:id', dogsController.update)
 router.get('/:id/edit', dogsController.edit)
+router.get('/quizResult', (req, res) => {
+    // You can send a JSON response or render an HTML template if needed
+    res.json({ message: 'This is the QuizResult page' });
+});
+
 
 module.exports = router;

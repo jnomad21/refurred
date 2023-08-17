@@ -14,6 +14,7 @@ import EditDogPage from '../EditDogPage/EditDogPage';
 import BreedersPage from '../BreedersPage/BreedersPage';
 import NewBreederPage from '../NewBreeder/NewBreederPage';
 import BreederDetailPage from '../BreederDetailPage/BreederDetailPage';
+import QuizResult from '../QuizResult/QuizResult';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/dogs/breeders" element={<BreedersPage />} />
         <Route path="/dogs/breeders/:breederId" element={<BreederDetailPage />} />
         <Route path="/dogs/newbreeder" element={<NewBreederPage />} />
+        <Route path="/dogs/quizResult" element={<QuizResult />} />
       </Routes>
     </>
   );

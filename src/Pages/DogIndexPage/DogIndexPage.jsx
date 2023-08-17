@@ -2,6 +2,7 @@ import { dogsIndexRequest, deleteDogRequest } from '../../utilities/dogs-api';
 import { useEffect, useState } from 'react'
 import DogsList from '../../Components/DogsList/DogsList';
 
+
 export default function DogIndexPage(){
     const [dogs, setDogs] = useState([])
     useEffect(()=>{
