@@ -38,7 +38,7 @@ export default function DogsList({dogs, handleDelete}){
 
             <div className="row m-3">
                 {filteredDogs.map((dog) => (
-                    <DogsListItem key={dog._id} dog={dog} handleDelete={handleDelete} />
+                    <DogsListItem key={dog._id} dog={dog}  />
                 ))}
             </div>
         </>

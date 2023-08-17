@@ -30,7 +30,10 @@
 }
 
 .navbar-brand:hover {
-	color: green;
+	background: linear-gradient(35deg, rgba(221,78,19,1) 0%, rgba(253,128,29,1) 35%, rgba(252,202,69,1) 60%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
 }
 
 .navbar-toggler {

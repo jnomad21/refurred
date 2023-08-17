@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState, useEffect } from 'react';
 import { toolTipData } from '../DogDetail/ToolTipData';
-import { quizRequest } from "../../utilities/dogs-api";
 import QuizResult from "../../Pages/QuizResult/QuizResult";
 import './QuizForm.css';
 
@@ -54,7 +53,7 @@ export default function QuizForm() {
         vocal: vocalRef.current.value,
         mentalStim: mentalStimRef.current.value,
     }
-    console.log(quizResult)
+    navigate('/dogs/quizResult', { state: { quizResult } });
 
     
     
