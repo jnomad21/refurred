@@ -1,63 +1,83 @@
-.dog-detail-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 50rem;
-  }
+.progress-section {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
 
-  .dog-breed-title {
-    font-size: 3rem;
-  }
+.progress-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 
-  .dog-info {
-    margin-bottom: 20px;
-  }
-
-  .emoji-container {
-    margin-left: .5rem;
-    margin-bottom: .3rem;
-
-  }
+}
 
 
-  .emoji-title {
-    display: flex;
-    align-items: center;
-  }
+.bi-info-circle {
+  display: inline-flex;
+  font-size: .8rem;
+  margin-right: .3rem;
 
-  .dog-emojis{
-    margin-left: 6rem;
-  }
+}
+
+.progress-bar-container {
+  height: 20px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
 
 
-  .dog-about {
-    margin-bottom: 20px;
-  }
 
-  .button-section {
-    display: flex;
-    justify-content: space-between;
-  }
+.dog-breed-title {
+  font-size: 3rem;
+}
 
-  .bi-info-circle{
-    font-size: .75rem;
-    margin-top: -1rem;
-    margin-right: .3rem;
 
-  }
 
-  @media (max-width: 767px) {
-    .dog-emojis {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-  }
 
-  @media (max-width: 991px) {
-    .dog-emojis {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-  }
+.dog-info {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+
+
+.dog-about {
+  margin-bottom: 20px;
+
+}
+
+
+.detail-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mini-progress-bars-container {
+  display: flex;
+  /* margin-left: 1rem; */
+}
+
+.mini-progress-bar {
+  width: 6rem;
+  height: .8rem;
+  background-color: #ccc;
+  margin-right: 5px;
+  margin-top: .5rem;
+  border-radius: 5px;
+}
+
+.mini-progress-bar.filled {
+  background-color: green;
+  border-radius: 5px;
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-between;
+}
