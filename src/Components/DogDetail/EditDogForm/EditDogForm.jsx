@@ -4,6 +4,7 @@ import { updateDogRequest } from '../../../utilities/dogs-api';
 import ImageUpload from '../ImageUpload';
 
 
+
 export default function EditDogForm({dog, setDog}){
 
     const navigate = useNavigate();
@@ -32,6 +33,7 @@ export default function EditDogForm({dog, setDog}){
 
     const handleUpload = async (imageUrl) => {
         setImage(imageUrl); // Update the image URL when image is uploaded
+        // console.log(imageUrl)
     };
 
 

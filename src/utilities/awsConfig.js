@@ -1,4 +1,6 @@
 import AWS from 'aws-sdk';
+process.env.AWS_SDK_LOAD_CONFIG = '1';
+
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,

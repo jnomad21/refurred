@@ -29,7 +29,7 @@ export default function EditDogPage() {
         getDog();
     }, [dogId]);
 
-    console.log(dog);
+    // console.log(dog);
 
     return (
         <main>
