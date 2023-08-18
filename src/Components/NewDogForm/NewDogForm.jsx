@@ -1,6 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState } from 'react';
 import { createDogRequest } from '../../utilities/dogs-api';
+import { uploadImageToS3 } from "../../utilities/uploadImageToS3";
+
+
 import "./NewDogForm.css";
 
 export default function NewDogForm() {
@@ -79,12 +82,18 @@ export default function NewDogForm() {
         }
 
         try {
+            if (image) {
+                const imageUrl = await uploadImageToS3(image);
+                newDog.image = imageUrl; // Add the uploaded image URL to the newDog object
+            }
             const newDogResponse = await createDogRequest(newDog)
             navigate('/dogs')
         } catch (err) {
             setError(err)
         }
     }
+
+
 
     return (
         <>
@@ -108,7 +117,7 @@ export default function NewDogForm() {
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeActual">Weight:</label>
-                    <input type="text" id="sizeActual" className="form-control" ref={sizeActualRef} />
+                    <textarea type="text" id="sizeActual" className="form-control" ref={sizeActualRef} />
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="affection">Affection level</label>

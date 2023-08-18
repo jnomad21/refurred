@@ -12,14 +12,14 @@ export default function DogIndexPage(){
             console.log(dogs)
         }
         getDogs();
-        
+
     }, [])
 
 
     return(
         <>
         <main>
-        <h1>All Dogs</h1>
+        <h1>Dog Breeds</h1>
         <div className="myDogs">
         <DogsList dogs={dogs} />
         {/* <DogsList dogs={dogs} handleDelete={handleDelete}/> */}
