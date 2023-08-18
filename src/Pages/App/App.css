@@ -3,7 +3,11 @@
 }
 
 main{
-  margin-top: 6rem;
+  margin-top: 8rem;
+}
+
+main h1{
+  font-size: 3rem;
 }
 
 .App-logo {

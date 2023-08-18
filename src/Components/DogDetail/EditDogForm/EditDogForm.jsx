@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { updateDogRequest } from '../../../utilities/dogs-api';
+import ImageUpload from '../ImageUpload';
+
 
 export default function EditDogForm({dog, setDog}){
-    
+
     const navigate = useNavigate();
     const [error, setError] = useState('')
     const breedRef = useRef(dog.breed);
@@ -26,7 +28,13 @@ export default function EditDogForm({dog, setDog}){
     const vocalRef = useRef(dog.vocal)
     const mentalStimRef = useRef(dog.mentalStim)
     const aboutRef = useRef(dog.about)
-    
+    const [image, setImage] = useState(dog.image)
+
+    const handleUpload = async (imageUrl) => {
+        setImage(imageUrl); // Update the image URL when image is uploaded
+    };
+
+
 
     function capitalizeFirstLetter(str) {
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -58,6 +66,7 @@ export default function EditDogForm({dog, setDog}){
             vocal: vocalRef.current.value,
             mentalStim: mentalStimRef.current.value,
             about: aboutRef.current.value,
+            image: image,
         }
         try{
             const newDog = await updateDogRequest(dog._id, updatedDog)
@@ -89,7 +98,7 @@ export default function EditDogForm({dog, setDog}){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="sizeActual">Weight:</label>
-                    <input type="text" id="sizeActual" className="form-control" ref={sizeActualRef} defaultValue={dog.sizeActual}/>
+                    <textarea type="text" id="sizeActual" className="form-control" ref={sizeActualRef} defaultValue={dog.sizeActual}/>
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="affection">Affection level</label>
@@ -257,6 +266,11 @@ export default function EditDogForm({dog, setDog}){
                     <label htmlFor="about">About</label><br />
                     <textarea type="text" className="form-control" rows="6" cols="60" id="about" ref={aboutRef} defaultValue={dog.about}/>
                 </div>
+                <div className="form-group mb-3">
+                <label htmlFor="image">Upload Image:</label>
+                <ImageUpload onUpload={handleUpload} />
+            </div>
+            {image && <img src={image} alt="Dog" className="image-preview" />}
                 <button className="btn btn-dark">Edit the Dog</button>
             </form>
 

@@ -28,42 +28,7 @@ export default function DogDetail({ dog, handleDelete, setDog }) {
     ));
 
 
-    // const renderEmojisWithOpacity = (label, value, tooltipText) => {
-    //   const maxScore = 5;
-    //   const emojis = Array.from({ length: maxScore }, (_, index) => (
-    //     <span
-    //       key={index}
-    //       style={{
-    //         opacity: index < value ? 1 : 0.2,
-    //         marginRight: '5px',
-    //         fontSize: '1.5rem',
-    //       }}
-    //     >
-    //       🐶
-    //     </span>
-    //   ));
 
-
-
-
-
-    //   return (
-    //     <div className="emoji-section">
-    //       <div className="emoji-title">
-    //         <span
-    //           className="bi bi-info-circle text-dark custom-tooltip"
-    //           data-bs-toggle="tooltip"
-    //           data-bs-placement="top"
-    //           title={tooltipText}
-    //         ></span>
-    //         <h4>
-    //           {label}:
-    //         </h4>
-    //         <span className="emoji-container">{emojis}</span>
-    //       </div>
-    //     </div>
-    //   );
-    // };
     return (
       <div className="progress-section">
         <div className="progress-text">
@@ -86,28 +51,37 @@ export default function DogDetail({ dog, handleDelete, setDog }) {
   return (
     <div className="container mt-5 detail-container">
       <h1 className="dog-breed-title">{dog.breed}</h1>
-      {/* <div className="dog-image">
-      <img src={dog.image} alt={dog.breed} />
-      </div> */}
+      <div className="dog-image">
+        <img src={dog.image} alt={dog.breed} />
+      </div>
       <div className="dog-about lead mb-5">
         <p>{dog.about}</p>
       </div>
-      <div className="row text-center">
-        <div className="col-md-4">
-          <div className="dog-info">
-            <h4>Size:</h4> <h5>{dog.sizeActual}</h5>
+      <div className="row text-center dog-info-row justify-content-center">
+        <div className="col-md-5 mb-4">
+          <div className="card card-fluid dog-card">
+            <div className="card-body">
+              <h4 className="dog-card-title">Weight:</h4>
+              <h5 className="dog-card-text">{dog.sizeActual}</h5>
+            </div>
           </div>
         </div>
-        <div className="col-md-4">
-          <div className="dog-info">
-            <h4>Coat Type:</h4> <h5>{dog.coatType}</h5>
+        <div className="col-md-5 mb-4">
+          <div className="card card-fluid dog-card">
+            <div className="card-body">
+              <h4 className="dog-card-title">Coat:</h4>
+              <h5 className="dog-card-text">{dog.coatType}, {dog.coatLength}</h5>
+            </div>
           </div>
         </div>
-        <div className="col-md-4">
-          <div className="dog-info">
-            <h4>Coat Length:</h4> <h5>{dog.coatLength}</h5>
+        {/* <div className="col-md-4 mb-4">
+          <div className="card card-fluid dog-card">
+            <div className="card-body">
+              <h4 className="dog-card-title">Coat Length:</h4>
+              <h5 className="card-text">{dog.coatLength}</h5>
+            </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="row m-2">
         <div className="col-md-6">

@@ -1,6 +1,7 @@
 import DogsListItem from "./DogListItem/DogListItem"
 import React, { useState } from 'react';
 
+
 export default function DogsList({dogs, handleDelete}){
     const [selectedLetter, setSelectedLetter] = useState(null);
 
@@ -11,7 +12,7 @@ export default function DogsList({dogs, handleDelete}){
     };
 
     const showAllDogs = () => {
-        setSelectedLetter(null); 
+        setSelectedLetter(null);
     };
 
     const filteredDogs = selectedLetter
@@ -19,21 +20,21 @@ export default function DogsList({dogs, handleDelete}){
     : dogs;
     return (
         <>
-            <div className="letterButtons">
-                    <button onClick={showAllDogs} className={`btn btn-dark m-1 ${selectedLetter === null ? "selected" : ""}`}>
-                        Show All
+            <div className="letterButtons text-center">
+                    <button onClick={showAllDogs} className={`btn btn-primary m-1 ${selectedLetter === null ? "selected" : ""}`}>
+                        All Breeds
                     </button>
                 {firstLetters.map((letter, index) => (
                     <button
                         key={index}
                         onClick={() => filterDogsByLetter(letter)}
                         id={selectedLetter === letter ? "selected" : ""}
-                        className="btn btn-dark m-1"
+                        className="btn btn-outline-primary m-1"
                     >
                         {letter}
                     </button>
                 ))}
-                    
+
             </div>
 
             <div className="row m-3">
