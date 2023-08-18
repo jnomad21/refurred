@@ -4,6 +4,7 @@ import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
 import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';
 import BreederPage from '../BreedersPage/BreedersPage';
+import BreederMarkers from './Markers/BreederMarkers/BreederMarkers';
 
 const containerStyle = {
     margin: '5% auto',
@@ -23,6 +24,7 @@ export default function MapSetup() {
 function Map() {
     const [zoom, setZoom] = useState(10)
     const [selectedDistance, setSelectedDistance] = useState(5)
+    const [userLocation, setUserLocation] = useState(null);
     const [center, setCenter] = useState({
         lat: 41.8220656,
         lng: -88.440897,
@@ -30,10 +32,7 @@ function Map() {
 
     const onMapLoad = (map) => {
         map.setMapTypeId('hybrid');
-        map.setTilt(45);
     };
-    const [userLocation, setUserLocation] = useState(null);
-
     
     useEffect(() => {
         switch(selectedDistance){
@@ -55,8 +54,7 @@ function Map() {
             default:
                 setZoom(14)
         }
-    }, [selectedDistance])
-    
+    }, [selectedDistance]) 
 
     useEffect(() => {
         // Grab the user location if it exists. If not, create it
@@ -94,7 +92,6 @@ function Map() {
         <br />
         <h1>Find a nearby Breeder:</h1>
         <form className="">
-
             <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
             <BreedsDropdown />
             <button className="btn btn-primary">Search</button>
@@ -104,7 +101,6 @@ function Map() {
         <div className="row featurette">
             <div className="col-md-3">
             <BreederPage/>
-
              {/*
                 <BreedersByMiles breeders={setBreeders}/>
                 1 - Return selectable Markers of breeders within 'setSelectedDistance' value from the users current lat/lang. Separate list on side (if we build one) needs sorted by closest to furthest, top to bottom, with distance/miles displayed clearly. 
