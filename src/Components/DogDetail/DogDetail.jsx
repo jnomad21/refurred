@@ -51,9 +51,9 @@ export default function DogDetail({ dog, handleDelete, setDog }) {
   return (
     <div className="container mt-5 detail-container">
       <h1 className="dog-breed-title">{dog.breed}</h1>
-      {/* <div className="dog-image">
-        <img src={dog.image} alt={dog.breed} />
-      </div> */}
+      <div className="dog-image">
+      <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(dog.breed)}.jpg`} alt={`${dog.breed}`}/>
+      </div>
       <div className="dog-about lead mb-5">
         <p>{dog.about}</p>
       </div>
