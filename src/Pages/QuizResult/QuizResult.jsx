@@ -16,7 +16,7 @@ export default function QuizResult(){
         }
         getDogs();
     }, []);
-    
+
     let topScoringDogs = [];
 
     dogs.forEach((dog) => {
@@ -123,7 +123,7 @@ export default function QuizResult(){
         } else if (Math.abs(quizResult.play - dog.play) == 3) {
             dogScore += 1;
         }
-        
+
         if (quizResult.protect == dog.protect) {
             dogScore += 5;
         } else if (Math.abs(quizResult.protect - dog.protect) == 1) {
@@ -187,47 +187,169 @@ export default function QuizResult(){
         }
     });
     topScoringDogs.sort((a, b) => b.score - a.score);
-    
-    return(
+
+
+    const renderProgressBar = (score) => {
+        const maxScore = 5;
+        return Array.from({ length: maxScore }, (_, index) => (
+            <div
+                key={index}
+                className={`mini-progress-bar ${index < score ? 'filled' : ''}`}
+            ></div>
+        ));
+    };
+
+
+    return (
         <>
-        <main className="quiz-result-main">
-        {topScoringDogs.map((entry, index) => (
-                    <div key={index}>
+            <main>
+                <div className="container quiz-result-main">
+                {topScoringDogs.map((entry, index) => (
+                    <div className="breed-result" key={index}>
                         {index === 0 ? (
                             <>
-                            <h2 className="winner-dog">We've re<span className="furr">furr</span>ed this breed: {entry.dog.breed}.</h2>
-                            <br />
-                            <h3>Also, strongly consider the following breeds:</h3>
+                                <h1 className="winner-dog-title">We've re<span className="furr">furr</span>ed:</h1>
+                                <h1 className="winner-dog">The {entry.dog.breed}</h1>
+                                <hr />
+                                <h3 className="runner-ups-title furr">Runner Ups:</h3>
                             </>
                         ) : (
-                            <h4>{entry.dog.breed}</h4>
+                            <h4 className="runner-ups">{entry.dog.breed}</h4>
                         )}
-                        
+
                     </div>
                 ))}
-                <br />
-                <br />
-    <div>
-        <h3>User Quiz Results</h3>
-        <h4>Size Group: {quizResult.sizeGroup}</h4>
-        <h4>Affection: {quizResult.affection}</h4>
-        <h4>Children: {quizResult.children}</h4>
-        <h4>Other Dogs: {quizResult.otherDogs}</h4>
-        <h4>Shedding Level: {quizResult.shed}</h4>
-        <h4>Grooming Requirement: {quizResult.groom}</h4>
-        <h4>Drool Level: {quizResult.drool}</h4>
-        <h4>Oppenness to Strangers: {quizResult.strangers}</h4>
-        <h4>Playfulness Level: {quizResult.play}</h4>
-        <h4>Watchdog/Protection Level: {quizResult.protect}</h4>
-        <h4>Adaptability Level: {quizResult.adapt}</h4>
-        <h4>Trainability Level: {quizResult.train}</h4>
-        <h4>Energy Level: {quizResult.energy}</h4>
-        <h4>Vocalility/Barking Level: {quizResult.vocal}</h4>
-        <h4>Mental Stimulation Needs: {quizResult.mentalStim}</h4>
-        </div>
+                <hr />
 
-        </main>
-        
+                <div className="user-quiz-results">
+                    <h2 className="quiz-results-title">Breed Selector Quiz Results</h2>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Size Group:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.sizeGroup)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Affectionate with Family:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.affection)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Good with Children:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.children)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Good with Other Dogs:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.otherDogs)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Shedding Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.shed)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Coat Grooming Frequency:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.groom)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Drooling Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.drool)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Openness to Strangers:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.strangers)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Playfulness Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.play)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Watchdog/Protective Nature:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.protect)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Adaptability Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.adapt)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Trainability Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.train)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Energy Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.energy)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Barking Level:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.vocal)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-section">
+                        <div className="progress-text">
+                            <span className="progress-title">Mental Stimulation Needs:</span>
+                            <div className="mini-progress-bars-container justify-content-center">
+                                {renderProgressBar(quizResult.mentalStim)}
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+
         </>
     )
 }

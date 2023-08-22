@@ -1,5 +1,4 @@
 import './HomePage.css';
-import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
@@ -7,21 +6,17 @@ export default function HomePage() {
       <div className="hero-image">
         <img src="/images/heroPlaceholder2.jpg" alt="Hero" width="100%" height="100%" />
         <div className="container">
-        <div className="hero-text">
-  <h2 className="home-h1">Welcome to re
-    <span className="gradient-text">furr</span>ed
-  </h2>
-  <h3 className="home-p">
-    Discover the perfect companion for your family. Browse through a variety
-    of dog breeds and find the ideal furry friend to join your household.
-  </h3>
-  <br />
-  {/* <Link className="btn btn-success btn-lg mb-4" to="/dogs">
-    View Dog Breeds
-  </Link> */}
-</div>
-</div>
-</div>
+          <div className="hero-text">
+            <h2 className="home-h1">Welcome to re
+              <span className="gradient-text">furr</span>ed
+            </h2>
+            <h3 className="home-p">
+              Discover the perfect companion for your family. Browse through a variety
+              of dog breeds and find the ideal furry friend to join your household.
+            </h3>
+          </div>
+        </div>
+      </div>
       <br /> <br />
 
 
@@ -33,7 +28,7 @@ export default function HomePage() {
             <p className="lead">Not sure which breed is right for you? Take our fun and interactive breed selector quiz. Answer a few questions about your lifestyle and preferences, and we'll recommend dog breeds that match your personality and living situation.</p>
           </div>
           <div className="col-md-5">
-            <img src="/images/pawraise.jpg" alt="pawraise" width="575" height="440" />
+            <img src="/images/pawraise.jpg" alt="pawraise" className="img-fluid" width="575" height="440" />
           </div>
         </div>
 
@@ -58,7 +53,7 @@ export default function HomePage() {
 
           </div>
           <div className="col-md-5">
-            <img src="/images/dogmagazine.jpg" alt="dogmagazine" width="575" height="440" />
+            <img src="/images/dogmagazine.jpg" alt="dogmagazine" className="img-fluid" width="575" height="440" />
           </div>
         </div>
       </section>

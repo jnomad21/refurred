@@ -98,3 +98,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.dog-image img{
+  width: 20vw;
+}
