@@ -32,7 +32,6 @@ body {
 }
 
 
-
 .features {
   margin: 0 2rem;
 }
@@ -49,39 +48,72 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(35deg, rgba(221,78,19,1) 0%, rgba(253,128,29,1) 35%, rgba(252,202,69,1) 60%);
+  background: linear-gradient(35deg, rgba(221, 78, 19, 1) 0%, rgba(253, 128, 29, 1) 35%, rgba(252, 202, 69, 1) 60%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
 
+.featurette-heading {
+  font-size: 50px;
+  margin-top: 6rem;
 
-
+}
 
 .featurette-divider {
   margin: 5rem 0;
 }
 
 
+
 @media (max-width: 768px) {
+  .featurette-heading {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
   .home-h1 {
-    font-size: 2.5rem;
+    font-size: 1.55rem;
   }
 
   .home-p {
-    font-size: 1rem;
+    font-size: .75rem;
   }
 }
 
-@media (min-width: 40em) {
+
+@media (min-width: 769px) and (max-width: 1200px) {
   .featurette-heading {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .home-h1 {
+    font-size: 3rem;
+  }
+
+  .home-p {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 1201px) {
+  .featurette-heading {
+    margin-top: 6rem;
     font-size: 50px;
   }
-}
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
+  .home-h1 {
+    font-size: 5rem;
+  }
+
+  .home-p {
+    font-size: 2rem;
   }
 }
