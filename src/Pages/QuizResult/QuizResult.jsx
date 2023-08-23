@@ -210,7 +210,9 @@ export default function QuizResult(){
                             <>
                                 <h1 className="winner-dog-title">We've re<span className="furr">furr</span>ed:</h1>
                                 <h1 className="winner-dog">The {entry.dog.breed}</h1>
+                                <div className="dog-image">
                                 <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(entry.dog.breed)}.jpg`} alt={`${entry.dog.breed}`}/>
+                                </div>
                                 <hr />
                                 <h3 className="runner-ups-title furr">Runner Ups:</h3>
                             </>
