@@ -108,13 +108,13 @@ export default function DogDetail({ dog, handleDelete, setDog }) {
           </div>
         </div>
       </div> <br />
-      <div className="button-section">
+      {/* <div className="button-section">
         <Link to={`/dogs/${dog._id}/edit`}>
           <button className="btn btn-dark" >Edit {dog.breed}</button>
         </Link>
         <button className="btn btn-danger me-2" onClick={handleDelete}>Delete {dog.breed}</button>
 
-      </div>
+      </div> */}
     </div>
   );
 }

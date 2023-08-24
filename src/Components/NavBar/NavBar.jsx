@@ -43,9 +43,9 @@ export default function NavBar() {
                                     Admin
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li className="nav-item dropdown">
+                                    {/* <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/new">Add a dog</Link>
-                                    </li>
+                                    </li> */}
 
                                     <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/newbreeder">Add a Breeder</Link>
