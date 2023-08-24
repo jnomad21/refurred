@@ -1,0 +1,11 @@
+.index-auto-filter{
+    width: 30vw;
+    position:relative;
+    
+}
+.index-auto-filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
