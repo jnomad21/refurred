@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState } from 'react';
-import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import React, { useEffect, useState, useRef } from 'react';
+import { GoogleMap, Marker, useLoadScript, Autocomplete, DirectionsRenderer } from '@react-google-maps/api';
 import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
 import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';
 import BreederPage from '../BreedersPage/BreedersPage';
@@ -14,7 +14,8 @@ const containerStyle = {
 
 export default function MapSetup() {
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE,
+        libraries: ["places"]
     })
 
     if(!isLoaded) return <div>Loading...</div>
@@ -33,28 +34,23 @@ function Map() {
     const onMapLoad = (map) => {
         map.setMapTypeId('hybrid');
     };
+
+      /** @type React.MutableRefObject<HTMLInputElement> */
+    const originRef = useRef()
+    /** @type React.MutableRefObject<HTMLInputElement> */
+    const destinationRef = useRef()
+    
+    const distanceToZoomMap = {
+        10: 10,
+        25: 9,
+        75: 8,
+        150: 7,
+        500: 5,
+    };
     
     useEffect(() => {
-        switch(selectedDistance){
-            case 10:
-                setZoom(10)
-                break
-            case 25:
-                setZoom(9)
-                break
-            case 75:
-                setZoom(8)
-                break
-            case 150:
-                setZoom(7)
-                break
-            case 500:
-                setZoom(5)
-                break
-            default:
-                setZoom(14)
-        }
-    }, [selectedDistance]) 
+        setZoom(distanceToZoomMap[selectedDistance] || 14);
+    }, [selectedDistance])
 
     useEffect(() => {
         // Grab the user location if it exists. If not, create it
@@ -95,6 +91,18 @@ function Map() {
             <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
             <BreedsDropdown />
             <button className="btn btn-primary">Search</button>
+        </form>
+        <br />
+        <br />
+        <form className="">
+            <div>
+                <Autocomplete>
+                <input type='text' placeholder=' Enter Origin' ref={originRef}></input>
+                </Autocomplete>
+            </div>
+                <input type='text' placeholder=' Enter Destination' ref={destinationRef}></input>
+            <div>
+            </div>
         </form>
         <br />
         <br />
