@@ -12,10 +12,12 @@ const containerStyle = {
     height: '700px',
 };
 
+const places = ["places"]
+
 export default function MapSetup() {
     const {isLoaded} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE,
-        libraries: ["places"]
+        libraries: places
     })
 
     if(!isLoaded) return <div>Loading...</div>
@@ -23,19 +25,19 @@ export default function MapSetup() {
 }
 
 function Map() {
+    const [map, setMap] = useState(/** @type google.maps.Map */ (null))
     const [zoom, setZoom] = useState(10)
     const [selectedDistance, setSelectedDistance] = useState(5)
     const [userLocation, setUserLocation] = useState(null);
+    const [directionResponse, setDirectionsResponse] = useState(null)
+    const [distance, setDistance] = useState('')
+    const [duration, setDuration] = useState('')
     const [center, setCenter] = useState({
         lat: 41.8220656,
         lng: -88.440897,
     });
 
-    const onMapLoad = (map) => {
-        map.setMapTypeId('hybrid');
-    };
-
-      /** @type React.MutableRefObject<HTMLInputElement> */
+    /** @type React.MutableRefObject<HTMLInputElement> */
     const originRef = useRef()
     /** @type React.MutableRefObject<HTMLInputElement> */
     const destinationRef = useRef()
@@ -80,6 +82,32 @@ function Map() {
         }
     }, []);
     
+    async function calculcateRoute() {
+        if(originRef.current.value === '' || destinationRef.current.value === '') {
+          return
+        }
+        // eslint-disable-next-line no-undef
+        const directionsService = new google.maps.DirectionsService()
+        console.log(directionsService)
+        const results = await directionsService.route({
+          origin: originRef.current.value,
+          destination :destinationRef.current.value,
+          // eslint-disable-next-line no-undef
+          travelMode: google.maps.TravelMode.DRIVING
+        })
+        console.log(results)
+        setDirectionsResponse(results)
+        setDistance(results.routes[0].legs[0].distance.text)
+        setDuration(results.routes[0].legs[0].duration.text)
+      }
+      function clearRoute() {
+        setDirectionsResponse(null)
+        setDistance('')
+        setDuration('')
+        originRef.current.value = ''
+        destinationRef.current.value = ''
+      }
+
     return (
         <>
         <br />
@@ -97,12 +125,16 @@ function Map() {
         <form className="">
             <div>
                 <Autocomplete>
-                <input type='text' placeholder=' Enter Origin' ref={originRef}></input>
+                    <input type='text' placeholder=' Enter Origin' ref={originRef}></input>
                 </Autocomplete>
+                <button type='submit' onClick={calculcateRoute}>Calculate Route</button>
             </div>
-                <input type='text' placeholder=' Enter Destination' ref={destinationRef}></input>
-            <div>
-            </div>
+                <Autocomplete>
+                    <input type='text' placeholder=' Enter Destination' ref={destinationRef}></input>
+                </Autocomplete>
+                <button onClick={clearRoute}>X</button>
+                <p>Distance: {distance}</p>
+                <p>Duration: {duration}</p>
         </form>
         <br />
         <br />
@@ -131,11 +163,12 @@ function Map() {
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={zoom}
-                onLoad={onMapLoad}
+                onLoad={(map) => setMap(map)}
             >
                 {userLocation && (
                     <Marker position={userLocation} />
                 )} 
+                {directionResponse && <DirectionsRenderer directions={directionResponse}/> }
             </GoogleMap>
         </div>
         </div>
