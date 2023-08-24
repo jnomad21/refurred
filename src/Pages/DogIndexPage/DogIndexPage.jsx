@@ -9,7 +9,6 @@ export default function DogIndexPage(){
         async function getDogs(){
             const dogs = await dogsIndexRequest();
             setDogs(dogs)
-            console.log(dogs)
         }
         getDogs();
 
