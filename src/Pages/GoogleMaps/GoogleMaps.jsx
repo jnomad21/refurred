@@ -82,7 +82,8 @@ function Map() {
         }
     }, []);
     
-    async function calculcateRoute() {
+    async function calculcateRoute(e) {
+        e.preventDefault()
         if(originRef.current.value === '' || destinationRef.current.value === '') {
           return
         }
@@ -125,14 +126,14 @@ function Map() {
         <form className="">
             <div>
                 <Autocomplete>
-                    <input type='text' placeholder=' Enter Origin' ref={originRef}></input>
+                    <input type='text' placeholder=' Origin' ref={originRef}></input>
                 </Autocomplete>
                 <button type='submit' onClick={calculcateRoute}>Calculate Route</button>
             </div>
                 <Autocomplete>
-                    <input type='text' placeholder=' Enter Destination' ref={destinationRef}></input>
+                    <input type='text' placeholder=' Destination' ref={destinationRef}></input>
                 </Autocomplete>
-                <button onClick={clearRoute}>X</button>
+                <button onClick={clearRoute}>Clear Route</button>
                 <p>Distance: {distance}</p>
                 <p>Duration: {duration}</p>
         </form>
@@ -168,7 +169,8 @@ function Map() {
                 {userLocation && (
                     <Marker position={userLocation} />
                 )} 
-                {directionResponse && <DirectionsRenderer directions={directionResponse}/> }
+                {directionResponse && 
+                <DirectionsRenderer directions={directionResponse}/> }
             </GoogleMap>
         </div>
         </div>
