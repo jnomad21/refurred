@@ -29,6 +29,7 @@ main h1{
   color: white;
   --bs-btn-bg: #198754;
   --bs-btn-border-color:#198754;
+  --bs-btn-hover-bg: #198754;
 }
 
 @media (prefers-reduced-motion: no-preference) {
