@@ -23,8 +23,6 @@ const dogsSchema = new Schema({
     mentalStim: { type: Number,enum:[1, 2, 3, 4, 5], required: true},
     about: { type: String},
     image: { type: String },
-
-
 },
 );
 
