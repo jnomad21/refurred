@@ -1,15 +1,13 @@
 .index-auto-filter{
     width: 30vw;
     position:relative;
+    z-index: 3;
     
 }
 .index-auto-filter-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1%;
+    margin-bottom: 1%; 
 }
-.clear-filter-btn{
-    border-radius: 50px;
-    margin-left:1.2vw;
-}
+
