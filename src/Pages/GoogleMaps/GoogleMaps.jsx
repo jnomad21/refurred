@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { GoogleMap, Marker, useLoadScript, Autocomplete, DirectionsRenderer } from '@react-google-maps/api';
-import BreedsDropdown from '../../Components/Dropdowns/BreedsDropdown/BreedsDropdown';
 import DistanceDropdown from '../../Components/Dropdowns/DistanceDropdown/DistanceDropdown';
 import BreederPage from '../BreedersPage/BreedersPage';
 import BreederMarkers from './Markers/BreederMarkers/BreederMarkers';
+import DogAutoCompleteFilter from '../../Components/DogAutoCompleteFilter/DogAutoCompleteFilter';
+import { dogsIndexRequest } from '../../utilities/dogs-api';
 
 const containerStyle = {
     margin: '5% auto',
@@ -24,7 +25,8 @@ export default function MapSetup() {
     return <Map />
 }
 
-function Map() {
+function Map({handleFilter}) {
+    const [dogs, setDogs] = useState([])
     const [map, setMap] = useState(/** @type google.maps.Map */ (null))
     const [zoom, setZoom] = useState(10)
     const [selectedDistance, setSelectedDistance] = useState(5)
@@ -49,6 +51,15 @@ function Map() {
         150: 7,
         500: 5,
     };
+
+    useEffect(()=>{
+        async function getDogs(){
+            const dogs = await dogsIndexRequest();
+            setDogs(dogs)
+        }
+        getDogs();
+
+    }, [])
     
     useEffect(() => {
         setZoom(distanceToZoomMap[selectedDistance] || 14);
@@ -89,24 +100,24 @@ function Map() {
         }
         // eslint-disable-next-line no-undef
         const directionsService = new google.maps.DirectionsService()
-        console.log(directionsService)
         const results = await directionsService.route({
           origin: originRef.current.value,
           destination :destinationRef.current.value,
           // eslint-disable-next-line no-undef
           travelMode: google.maps.TravelMode.DRIVING
         })
-        console.log(results)
         setDirectionsResponse(results)
-        setDistance(results.routes[0].legs[0].distance.text)
-        setDuration(results.routes[0].legs[0].duration.text)
+        setDistance(results.routes[0].legs[0].distance.text + 'les')
+        setDuration(results.routes[0].legs[0].duration.text.slice(0,5) + 'utes')
       }
-      function clearRoute() {
+      function clearRoute(e) {
+        e.preventDefault()
         setDirectionsResponse(null)
         setDistance('')
         setDuration('')
         originRef.current.value = ''
         destinationRef.current.value = ''
+
       }
 
     return (
@@ -118,7 +129,7 @@ function Map() {
         <h1>Find a nearby Breeder:</h1>
         <form className="">
             <DistanceDropdown selectedDistance={selectedDistance} setSelectedDistance={setSelectedDistance}/>
-            <BreedsDropdown />
+            <DogAutoCompleteFilter dogs={dogs} />
             <button className="btn btn-primary">Search</button>
         </form>
         <br />
