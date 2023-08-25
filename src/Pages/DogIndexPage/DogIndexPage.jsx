@@ -19,7 +19,7 @@ export default function DogIndexPage(){
     }, [])
 
     const handleFilter = (breed) => {
-        setFilteredBreed(breed); // Update the selected breed for filtering
+        setFilteredBreed(breed || null); // Update the selected breed for filtering
       };
 
       const filteredDogs = filteredBreed
