@@ -22,6 +22,7 @@ export default function DogAutoCompleteFilter({ dogs, handleFilter }) {
         <ReactSearchAutocomplete
           items={items}
           onSelect={handleSelect}
+          onClick={handleClear}
           onClear={handleClear}
           autoFocus
           placeholder="Search for a breed..."
@@ -30,9 +31,6 @@ export default function DogAutoCompleteFilter({ dogs, handleFilter }) {
         />
         
       </div>
-      <button className="clear-filter-btn" onClick={handleClear}>
-          Clear Filter
-        </button>
     </div>
   );
 }
