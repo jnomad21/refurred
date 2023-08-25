@@ -42,6 +42,9 @@
 	background-color: black;
 	color: white;
 }
+.nav-link.dropdown-toggle{
+	margin-right: 1vw;
+}
 
 
 .nav-link{
