@@ -16,8 +16,8 @@ main h1{
 }
 
 .btn-outline-primary{
-  color: white;
-  --bs-btn-bg: #198754;
+  color: #198754;
+  --bs-btn-bg: white;
   --bs-btn-border-color:#198754;
   
 }
