@@ -19,6 +19,9 @@ main h1{
   color: #198754;
   --bs-btn-bg: white;
   --bs-btn-border-color:#198754;
+  --bs-btn-hover-bg: #198754;
+  --bs-btn-active-bg: #198754;
+  --bs-btn-active-border-color: #198754;
   
 }
 
