@@ -100,6 +100,13 @@
 }
 
 .dog-image img{
-  width: 20vw;
-  
+  width: 25vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.aws-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
