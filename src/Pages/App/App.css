@@ -22,6 +22,7 @@ main h1{
   --bs-btn-hover-bg: #198754;
   --bs-btn-active-bg: #198754;
   --bs-btn-active-border-color: #198754;
+  --bs-btn-hover-border-color: #198754;
   
 }
 
@@ -30,6 +31,9 @@ main h1{
   --bs-btn-bg: #198754;
   --bs-btn-border-color:#198754;
   --bs-btn-hover-bg: #198754;
+  --bs-btn-active-bg: #198754;
+  --bs-btn-active-border-color: #198754;
+  --bs-btn-hover-border-color: #198754;
 }
 
 @media (prefers-reduced-motion: no-preference) {
