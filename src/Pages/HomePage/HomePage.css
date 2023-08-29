@@ -69,7 +69,7 @@ body {
 
 @media (max-width: 768px) {
   .featurette-heading {
-    margin-top: 1rem;
+    margin-top: 0rem;
     font-size: 2rem;
   }
 
@@ -83,6 +83,9 @@ body {
 
   .home-p {
     font-size: .75rem;
+  }
+  .hero-text{
+    margin-top: 1rem;
   }
 }
 
