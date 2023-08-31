@@ -6,8 +6,8 @@ export default function BreederListItem({ breeder }) {
   return (
     <div className="col-md-12 d-flex justify-content-center mb-4">
       <div className="card breeder-card-fluid breeder-list-card">
-        <div className="card-body">
-          <h5 className="card-title mt-0">
+        <div className="breeder-card-body">
+          <h5 className="breeder-card-title mt-0">
             <Link className="breeder-links" to={`/dogs/breeders/${breeder._id}`}>
               {breeder.orgName}
             </Link>
