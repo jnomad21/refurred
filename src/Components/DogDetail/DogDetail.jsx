@@ -62,15 +62,15 @@ export default function DogDetail({ dog, handleDelete, setDog }) {
       <div className="row text-center dog-info-row justify-content-center">
         <div className="col-md-5 mb-4">
           <div className="card card-fluid dog-card">
-            <div className="card-body">
-              <h4 className="dog-card-title">Weight:</h4>
+            <div className="dog-detail-card-body">
+              <h4 className="dog-detail-card-title">Weight:</h4>
               <h5 className="dog-card-text">{dog.sizeActual}</h5>
             </div>
           </div>
         </div>
         <div className="col-md-5 mb-4">
           <div className="card card-fluid dog-card">
-            <div className="card-body">
+            <div className="dog-detail-card-body">
               <h4 className="dog-card-title">Coat:</h4>
               <h5 className="dog-card-text">{dog.coatType}, {dog.coatLength}</h5>
             </div>
