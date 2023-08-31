@@ -12,6 +12,7 @@
 .breeder-list-card {
   width: 100%;
   max-width: 30rem;
+  padding: 1rem;
 }
 
 .breeder-links {
@@ -20,12 +21,13 @@
 }
 
 
-.card-title {
+.breeder-card-title {
   margin-bottom: 10px;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.card-title a {
+.creeder-card-title a {
   font-weight: bold;
 }
 
