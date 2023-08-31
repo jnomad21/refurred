@@ -57,28 +57,28 @@ export default function NavBar() {
                         <div>
                         <div className="nav d-lg-flex col-lg-3 justify-content-lg-end">
 
-                        <ul className="navbar-nav">
+                        {/* <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin
-                                </a>
-                                <ul className="dropdown-menu dropdown-menu-end">
+                                </a> */}
+                                {/* <ul className="dropdown-menu dropdown-menu-end">
                                     {/* <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/new">Add a dog</Link>
                                     </li> */}
 
-                                    <li className="nav-item dropdown">
+                                    {/* <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/newbreeder" onClick={handleLinkClick}>Add a Breeder</Link>
                                     </li>
                                     <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/map" onClick={handleLinkClick}>Google Maps</Link>
-                                    </li>
+                                    </li> */}
 
-                                </ul>
+                                {/* </ul>
 
                             </li>
 
-                            </ul>
+                            </ul> */}
                             {/* <li >
                                 <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
                             </li> */}
