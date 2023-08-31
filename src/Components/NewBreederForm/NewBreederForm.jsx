@@ -89,7 +89,7 @@ export default function NewBreederForm(){
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="website">Website:</label>
-                    <input type="text" id="website" className="form-control" ref={websiteRef} />
+                    <input type="text" id="website" className="form-control" placeholder="https://www.website.com" ref={websiteRef} />
                 </div>
                 <button type="submit" className="btn btn-primary" id="newDogButton">Add the Breeder</button>
                 
