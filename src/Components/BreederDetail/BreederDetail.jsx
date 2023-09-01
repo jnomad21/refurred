@@ -14,7 +14,7 @@ export default function BreederDetail({ breeder }) {
                 <h4 className="text-center mb-2 breeder-detail-title">Address:</h4>
                 <p className="text-center">
                   {breeder.address} <br />
-                  {breeder.city},{breeder.state}, {breeder.zipCode}
+                  {breeder.city}, {breeder.state}, {breeder.zipCode}
                 </p>
                 <h4 className="text-center mb-2 breeder-detail-title">Phone Number:</h4>
                 <p className="text-center">{breeder.phone}</p>

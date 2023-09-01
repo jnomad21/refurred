@@ -13,7 +13,7 @@ export default function BreederListItem({ breeder }) {
             </Link>
           </h5>
           <h5>Breeds: {breeder.breed}</h5>
-          <h5>Location: {breeder.state}</h5>
+          <h5>State: {breeder.state}</h5>
           {/* <h5>
             <a href={breeder.website} rel="noreferrer" target="_blank">
               Website
