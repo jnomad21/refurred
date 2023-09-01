@@ -31,3 +31,7 @@ export async function breederIndexRequest(){
 export async function getBreederRequest(breederId){
     return sendRequest(`${BASE_URL}/breeders/${breederId}`) 
 }
+
+export async function updateBreederRequest(breederId, breederData){
+    return sendRequest(`${BASE_URL}/breeders/${breederId}`, "PUT", breederData)
+}
