@@ -31,10 +31,12 @@ export default function EditBreederForm({breeder, setBreeder}){
     async function handleSubmit(e) {
         e.preventDefault()
         
-        const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
+        const breeds = breedRef.current.value
+        .split(',')
+        .map((breed) => capitalizeFirstLetter(breed.trim()));
 
         const updatedBreeder = {
-            breed: capitalizedBreed,
+            breed: breeds,
             orgName: orgNameRef.current.value,
             contactName: contactNameRef.current.value,
             address: addressRef.current.value,
@@ -57,8 +59,8 @@ export default function EditBreederForm({breeder, setBreeder}){
         {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
-                    <label htmlFor="breed">Breed:</label>
-                    <input type="text" id="breed" className="form-control" ref={breedRef} defaultValue={breeder.breed} />
+                    <label htmlFor="breeds">Breeds:</label>
+                    <input type="text" id="breeds" className="form-control" ref={breedRef} defaultValue={breeder.breeds} />
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="orgName">Breeding Company:</label>

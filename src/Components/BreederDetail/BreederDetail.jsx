@@ -10,7 +10,7 @@ export default function BreederDetail({ breeder }) {
             <div className="breeder-details">
               <div className="breeder-info">
                 <h4 className="text-center mb-2 breeder-detail-title">Breeds Available:</h4>
-                <p className="text-center">{breeder.breed}</p>
+                <p className="text-center">{breeder.breeds.join(', ')}</p>
                 <h4 className="text-center mb-2 breeder-detail-title">Address:</h4>
                 <p className="text-center">
                   {breeder.address} <br />

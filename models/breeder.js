@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const breederSchema = new Schema({
-    breed: {type: String},
+    breeds: [{ type: String }],
     orgName: { type: String},
     contactName: {type: String},
     address: { type: String},

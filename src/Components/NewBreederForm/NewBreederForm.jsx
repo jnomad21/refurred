@@ -27,15 +27,18 @@ export default function NewBreederForm(){
         return str.replace(/\b\w/g, (char) => char.toUpperCase());
     }
 
+    
+
     async function handleSubmit(e) {
         e.preventDefault()
         setError('')
 
-        const capitalizedBreed = capitalizeFirstLetter(breedRef.current.value);
-    
+        const breeds = breedRef.current.value
+        .split(',')
+        .map((breed) => capitalizeFirstLetter(breed.trim()));
 
         const newBreeder = {
-            breed: capitalizedBreed,
+            breeds: breeds,
             orgName: orgNameRef.current.value,
             contactName: contactNameRef.current.value,
             address: addressRef.current.value,
@@ -58,8 +61,8 @@ export default function NewBreederForm(){
         {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
-                    <label htmlFor="breed">Breed:</label>
-                    <input type="text" id="breed" className="form-control" ref={breedRef} />
+                    <label htmlFor="breeds">Breeds:</label>
+                    <input type="text" id="breeds" className="form-control" ref={breedRef} />
                 </div>
                 <div className="form-group mb-3">
                     <label htmlFor="orgName">Breeding Company:</label>
