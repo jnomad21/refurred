@@ -17,6 +17,7 @@ export default function NewBreederForm(){
     const orgNameRef = useRef('')
     const contactNameRef = useRef('')
     const addressRef = useRef('')
+    const cityRef= useRef('')
     const stateRef = useRef('')
     const zipCodeRef = useRef('')
     const phoneRef = useRef('')
@@ -39,6 +40,7 @@ export default function NewBreederForm(){
             contactName: contactNameRef.current.value,
             address: addressRef.current.value,
             state: stateRef.current.value,
+            city: cityRef.current.value,
             zipCode: zipCodeRef.current.value,
             phone: phoneRef.current.value,
             website: websiteRef.current.value,
@@ -72,7 +74,11 @@ export default function NewBreederForm(){
                     <input type="text" id="address" className="form-control" ref={addressRef} />
                 </div>
                 <div className="form-group mb-3">
-                    <label htmlFor="state">State</label>
+                    <label htmlFor="city">City:</label>
+                    <input type="text" id="city" className="form-control" ref={cityRef} />
+                </div>
+                <div className="form-group mb-3">
+                    <label htmlFor="state">State:</label>
                     <select name="state" id="state" className="form-control" ref={stateRef}>
                         {statesEnum.map((state, index) => (
                             <option key={index} value={state}>{state}</option>

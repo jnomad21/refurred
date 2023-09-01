@@ -6,6 +6,7 @@ const breederSchema = new Schema({
     orgName: { type: String},
     contactName: {type: String},
     address: { type: String},
+    city: {type: String},
     state: {type: String, enum: [
         'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
         'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
