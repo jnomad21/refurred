@@ -61,7 +61,7 @@ export default function NewBreederForm(){
         {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
-                    <label htmlFor="breeds">Breeds:</label>
+                    <label htmlFor="breeds">Breeds (comma-separated):</label>
                     <input type="text" id="breeds" className="form-control" ref={breedRef} />
                 </div>
                 <div className="form-group mb-3">
