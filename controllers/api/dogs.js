@@ -11,6 +11,8 @@ module.exports = {
     breederCreate,
     breederIndex,
     breederDetail,
+    breederEdit,
+    breederUpdate,
 }
 
 async function index(req, res){
@@ -104,6 +106,25 @@ async function breederDetail(req, res){
         res.status(400).json(err)
     }
 }
+async function breederEdit(req, res){
+    try{
+        const breeder = await Breeder.findById(req.params.id)
+        res.status(200).json(breeder)
+    }catch(err){
+        console.log(err)
+        res.status(400).json(err)
+    }
+}
+async function breederUpdate(req, res){
+    try{
+        const updatedBreeder = await Breeder.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.status(200).json(updatedBreeder)
+    }catch(err){
+        console.log(err);
+        res.status(400).json('Bad Request')
+    }
+}
+
 
 
 
