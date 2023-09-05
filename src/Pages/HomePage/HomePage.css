@@ -22,7 +22,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   color: #fff;
   text-align: center;
   padding: 20px;

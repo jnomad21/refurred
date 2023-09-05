@@ -32,6 +32,7 @@
 }
 
 .details-button {
-    text-align: right;
-    margin-top: 6.8rem;
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
 }

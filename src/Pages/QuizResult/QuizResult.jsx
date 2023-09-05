@@ -205,6 +205,7 @@ export default function QuizResult(){
         <>
             <main>
                 <div className="container quiz-result-main">
+
                 {topScoringDogs.map((entry, index) => (
                     <div className="breed-result" key={index}>
                         {index === 0 ? (
@@ -348,10 +349,15 @@ export default function QuizResult(){
                                 {renderProgressBar(quizResult.mentalStim)}
                                 <br />
                             </div>
+
                         </div>
+
                     </div>
                 </div>
+                <Link to="/dogs/quiz" className="btn btn-dark">Retake Quiz</Link>
+
                 </div>
+
             </main>
 
         </>
