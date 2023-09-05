@@ -1,42 +1,39 @@
-import { dogsIndexRequest, deleteDogRequest } from '../../utilities/dogs-api';
-import { useEffect, useState } from 'react'
+import { dogsIndexRequest } from '../../utilities/dogs-api';
+import { useEffect, useState } from 'react';
 import DogsList from '../../Components/DogsList/DogsList';
 import DogAutoCompleteFilter from '../../Components/DogAutoCompleteFilter/DogAutoCompleteFilter';
 
+export default function DogIndexPage() {
+  const [dogs, setDogs] = useState([]);
+  const [filteredBreed, setFilteredBreed] = useState(null);
 
-export default function DogIndexPage(){
-    const [dogs, setDogs] = useState([])
-    const [filteredBreed, setFilteredBreed] = useState(null);
+  useEffect(() => {
+    async function getDogs() {
+      const dogs = await dogsIndexRequest();
+      setDogs(dogs);
+    }
+    getDogs();
+  }, []);
 
-    useEffect(()=>{
-        async function getDogs(){
-            const dogs = await dogsIndexRequest();
-            setDogs(dogs)
-        }
-        getDogs();
+  const handleFilter = (breed) => {
+    setFilteredBreed(breed); // Update the selected breed for filtering
+  };
 
-    }, [])
+  const handleFilterChange = (breed) => {
+    setFilteredBreed(breed); // Function to change the filtered breed
+  };
 
-    const handleFilter = (breed) => {
-        setFilteredBreed(breed || null); // Update the selected breed for filtering
-      };
-
-      const filteredDogs = filteredBreed
-    ? dogs.filter((dog) => dog.breed === filteredBreed)
-    : dogs;
-
-    return(
-        <>
-        <main>
+  return (
+    <>
+      <main>
+        <h1 className="display-4">Dog Breed Directory</h1>
 
         <DogAutoCompleteFilter dogs={dogs} handleFilter={handleFilter} />
 
-        <h1 className="display-4">Dog Breed Directory</h1>
         <div className="myDogs">
-          <DogsList dogs={filteredDogs} />
-        {/* <DogsList dogs={dogs} handleDelete={handleDelete}/> */}
+          <DogsList dogs={dogs} filteredBreed={filteredBreed} handleFilterChange={handleFilterChange} />
         </div>
-        </main>
-        </>
-    )
+      </main>
+    </>
+  );
 }

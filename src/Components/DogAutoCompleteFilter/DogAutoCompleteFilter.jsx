@@ -6,7 +6,7 @@ export default function DogAutoCompleteFilter({ dogs, handleFilter }) {
   const [inputValue, setInputValue] = useState('');
 
   const handleSelect = (selected) => {
-    handleFilter(selected.name); // Pass the selected breed to the parent component
+    handleFilter(selected.name); // Pass the selected breed to the parent component (DogIndexPage)
   };
 
   const handleClear = () => {
@@ -29,7 +29,6 @@ export default function DogAutoCompleteFilter({ dogs, handleFilter }) {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        
       </div>
     </div>
   );
