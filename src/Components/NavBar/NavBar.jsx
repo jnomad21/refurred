@@ -18,7 +18,7 @@ export default function NavBar() {
         <>
             <nav className="navbar navbar-expand-lg navbar-bg-body-tertiary navbar-custom fixed-top">
                 <div className="container-fluid">
-                <div className="navbar-brand d-flex align-items-center col-lg-4 me-0">
+                <div className="navbar-brand col-lg-3 me-0">
                         <img
                             alt="templogo"
                             src="/templogo.png"
@@ -41,8 +41,8 @@ export default function NavBar() {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className={`collapse navbar-collapse${isNavOpen ? ' show' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav col-lg-12 justify-content-center justify-content-lg-start">
+                    <div className={`collapse navbar-collapse d-lg-flex${isNavOpen ? ' show' : ''}`} id="navbarNav">
+                    <ul className="navbar-nav col-lg-8 justify-content-lg-center">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dogs" onClick={handleLinkClick}>Dog Breeds</Link>
                             </li>
@@ -61,24 +61,25 @@ export default function NavBar() {
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin
-                                </a> */}
-                                {/* <ul className="dropdown-menu dropdown-menu-end">
-                                    {/* <li className="nav-item dropdown">
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end">
+                                    <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/new">Add a dog</Link>
-                                    </li> */}
+                                    </li>
 
-                                    {/* <li className="nav-item dropdown">
+                                    <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/dogs/newbreeder" onClick={handleLinkClick}>Add a Breeder</Link>
                                     </li>
                                     <li className="nav-item dropdown">
                                         <Link className="nav-link" to="/map" onClick={handleLinkClick}>Google Maps</Link>
-                                    </li> */}
+                                    </li>
 
-                                {/* </ul>
+                                </ul>
 
                             </li>
 
                             </ul> */}
+                            
                             {/* <li >
                                 <Link className="btn btn-light auth" to="/dogs/auth">Sign In</Link>
                             </li> */}

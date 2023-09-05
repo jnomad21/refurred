@@ -1,0 +1,38 @@
+.quiz-form{
+    margin-top: 10rem;
+}
+
+#rangeLabel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+#sizeGroupLabel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+
+
+.size-group-labels .label {
+    flex: 2;
+    text-align: center;
+}
+
+.min-label {
+    flex: 1;
+    text-align: left;
+}
+
+
+.max-label {
+    flex: 1;
+    text-align: right;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #ccc;
+}

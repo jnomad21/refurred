@@ -1,18 +1,31 @@
 .index-auto-filter{
-    width: 30vw;
+    width: 20vw;
     position:relative;
     z-index: 3;
+
 
 }
 .index-auto-filter-container{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     margin-bottom: 1%;
+    margin-right: 1rem;
 }
+
+
+
 
 @media (max-width: 768px) {
     .index-auto-filter{
         width: 60vw;
     }
   }
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .index-auto-filter{
+        width: 30vw;
+    }
+  }
+
+

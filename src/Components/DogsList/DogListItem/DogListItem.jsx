@@ -8,7 +8,7 @@ export default function DogsListItem({ dog }) {
 
     return (
         <>
-            <div className="col-md-4 mb-4">
+            <div className="col-md-3 mb-3">
                 <div className="card card-fluid index-card">
                     <div className="card-background" style={{ backgroundImage: `url(https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(dog.breed)}.jpg)` }}>
                         <div className="card-body">

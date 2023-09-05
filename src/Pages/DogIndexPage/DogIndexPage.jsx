@@ -6,8 +6,8 @@ import DogAutoCompleteFilter from '../../Components/DogAutoCompleteFilter/DogAut
 
 export default function DogIndexPage(){
     const [dogs, setDogs] = useState([])
-    const [filteredBreed, setFilteredBreed] = useState(null);    
-    
+    const [filteredBreed, setFilteredBreed] = useState(null);
+
     useEffect(()=>{
         async function getDogs(){
             const dogs = await dogsIndexRequest();
@@ -28,9 +28,11 @@ export default function DogIndexPage(){
     return(
         <>
         <main>
-        <h1>Dog Breeds</h1>
-        <div className="myDogs">
+
         <DogAutoCompleteFilter dogs={dogs} handleFilter={handleFilter} />
+
+        <h1 className="display-4">Dog Breed Directory</h1>
+        <div className="myDogs">
           <DogsList dogs={filteredDogs} />
         {/* <DogsList dogs={dogs} handleDelete={handleDelete}/> */}
         </div>
