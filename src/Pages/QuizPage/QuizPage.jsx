@@ -38,14 +38,14 @@ export default function QuizPage(quiz, setQuizForm) {
                                                     </div>
                                                 <h4 className="fw-semibold mb-0 ">A Pawsitive Step
                                                 </h4>
-                                                <p className="text-body-secondary lead">Whether you're looking for an active outdoor companion or a calm indoor friend, this quiz will help you make an educated choice</p>
+                                                <p className="text-body-secondary lead quiz-p">Whether you're looking for an active outdoor companion or an indoor friend, this quiz will help you make an educated choice</p>
                                             </div>
                                             <div className="col d-flex flex-column gap-2">
                                                 <div className="feature-icon-small d-inline-flex align-items-center justify-content-center">
                                                 <i className="fa-solid fa-bone fa-xl" style={{ color: "orange" }}></i>
                                                 </div>
                                                 <h4 className="fw-semibold mb-0">Your Ideal Companion</h4>
-                                                <p className="text-body-secondary lead">Taking into account your preferences and lifestyle, we'll match you with a dog breed that's tailor-made for you</p>
+                                                <p className="text-body-secondary lead quiz-p">Taking into account your preferences and lifestyle, we'll match you with a dog breed that's tailor-made for you</p>
                                             </div>
 
                                             <div className="col d-flex flex-column gap-2">
@@ -54,7 +54,7 @@ export default function QuizPage(quiz, setQuizForm) {
                                                 </div>
                                                 <h4 className="fw-semibold mb-0">Choose Wisely
                                                 </h4>
-                                                <p className="text-body-secondary lead">Each breed recommendation will come with a more detailed description of the breed's characteristics and traits</p>
+                                                <p className="text-body-secondary lead quiz-p">Each breed recommendation will come with a more detailed description of the breed's characteristics and traits</p>
                                             </div>
 
                                             <div className="col d-flex flex-column gap-2">
@@ -63,7 +63,7 @@ export default function QuizPage(quiz, setQuizForm) {
                                                 </div>
                                                 <h4 className="fw-semibold mb-0">A Furrever Family
                                                 </h4>
-                                                <p className="text-body-secondary lead">A valuable tool to assist you in finding the right dog breed that will be a loving and harmonious addition to your family</p>
+                                                <p className="text-body-secondary lead quiz-p">A valuable tool to assist you in finding the right dog breed that will be a loving and harmonious addition to your family</p>
                                             </div>
                                         </div>
                                     </div>
