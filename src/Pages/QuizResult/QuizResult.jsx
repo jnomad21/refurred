@@ -195,7 +195,7 @@ export default function QuizResult(){
         return Array.from({ length: maxScore }, (_, index) => (
             <div
                 key={index}
-                className={`mini-progress-bar ${index < score ? 'filled' : ''}`}
+                className={`quiz-mini-progress-bar ${index < score ? 'filled' : ''}`}
             ></div>
         ));
     };
@@ -205,159 +205,147 @@ export default function QuizResult(){
         <>
             <main>
                 <div className="container quiz-result-main">
+                    <h1 className="display-3 winner-dog-title">We've re<span className="furr">furr</span>ed:</h1>
+                    {topScoringDogs.map((entry, index) => (
+                        <div className="breed-result" key={index}>
+                            {index === 0 ? (
+                                <>
+                                    <Link to={`/dogs/${entry.dog._id}`} style={{ textDecoration: 'none' }}>
+                                        <div className="card quiz-image">
+                                            <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(entry.dog.breed)}.jpg`} alt={`${entry.dog.breed}`} className="winner-img"/>
+                                            <div className="dog-overlay winner-dog">The {entry.dog.breed}</div>
+                                        </div>
+                                    </Link>
+                                    <hr />
+                                    <h3 className="display-4 runner-ups-title">Runner Ups:</h3>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="runner-ups-container">
+                                        <div className="runner-ups-grid">
+                                            {topScoringDogs.splice(1).map((runnerUp, runnerUpIndex) => (
+                                                <div className="runner-up" key={runnerUpIndex}>
+                                                    <Link to={`/dogs/${runnerUp.dog._id}`} style={{ textDecoration: 'none' }}>
+                                                        <div className="card quiz-image">
+                                                            <div className="dog-overlay">{runnerUp.dog.breed}</div>
+                                                            <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(runnerUp.dog.breed)}.jpg`} alt={`${runnerUp.dog.breed}`} className="runner-up-img"/>
+                                                        </div>
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
+                        </div>
+                    ))}
 
-                {topScoringDogs.map((entry, index) => (
-                    <div className="breed-result" key={index}>
-                        {index === 0 ? (
-                            <>
-                                <h1 className="winner-dog-title">We've re<span className="furr">furr</span>ed:</h1>
-                                <Link to={`/dogs/${entry.dog._id}`}style={{ textDecoration: 'none' }}><h1 className="winner-dog">The {entry.dog.breed}</h1></Link>
-                                <div className="dog-image">
-                                <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(entry.dog.breed)}.jpg`} alt={`${entry.dog.breed}`}/>
+                    <hr />
+
+                    <div className="user-quiz-results">
+
+                        <h2 className="display-5 quiz-results-title">Breed Selector Quiz Results</h2>
+                        <div className="progress-grid">
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Size Group:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.sizeGroup)}
                                 </div>
-                                <hr />
-                                <h3 className="runner-ups-title furr">Runner Ups:</h3>
-                            </>
-                        ) : (
-                            <Link to={`/dogs/${entry.dog._id}`}style={{ textDecoration: 'none' }}><h4 className="runner-ups">{entry.dog.breed}</h4></Link>
-                        )}
-
-                    </div>
-                ))}
-                <hr />
-
-                <div className="user-quiz-results">
-                    <h2 className="quiz-results-title">Breed Selector Quiz Results</h2>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Size Group:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.sizeGroup)}
                             </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Affectionate with Family:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.affection)}
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Affectionate with Family:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.affection)}
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Good with Children:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.children)}
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Good with Children:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.children)}
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Good with Other Dogs:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.otherDogs)}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Shedding Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.shed)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Coat Grooming Frequency:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.groom)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Drooling Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.drool)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Openness to Strangers:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.strangers)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Playfulness Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.play)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Watchdog/Protective Nature:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.protect)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Adaptability Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.adapt)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Trainability Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.train)}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Energy Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.energy)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Barking Level:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.vocal)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="progress-section">
-                        <div className="progress-text">
-                            <span className="progress-title">Mental Stimulation Needs:</span>
-                            <div className="mini-progress-bars-container justify-content-center">
-                                {renderProgressBar(quizResult.mentalStim)}
-                                <br />
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Good with Other Dogs:</span>
+                                <div className="mini-progress-bars-container ">
+                                    {renderProgressBar(quizResult.otherDogs)}
+                                </div>
                             </div>
 
-                        </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Shedding Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.shed)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Coat Grooming Frequency:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.groom)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Drooling Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.drool)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Openness to Strangers:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.strangers)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Playfulness Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.play)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Watchdog/Protective Nature:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.protect)}
+                                </div>
+                            </div>
 
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Adaptability Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.adapt)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Trainability Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.train)}
+                                </div>
+                            </div>
+
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Energy Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.energy)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Barking Level:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.vocal)}
+                                </div>
+                            </div>
+                            <div className="quiz-progress-section">
+                                <span className="quiz-progress-title">Mental Stimulation Needs:</span>
+                                <div className="mini-progress-bars-container">
+                                    {renderProgressBar(quizResult.mentalStim)}
+                                    {/* <br /> <br /> */}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <Link to="/dogs/quiz" className="btn btn-dark">Retake Quiz</Link>
-
+                <div className="text-center mt-4">
+                    <Link to="/dogs/quiz" className="btn btn-dark">Retake Quiz</Link>
                 </div>
-
             </main>
 
         </>

@@ -1,4 +1,6 @@
 import './HomePage.css';
+import { Link } from 'react-router-dom';
+
 
 export default function HomePage() {
   return (
@@ -14,6 +16,9 @@ export default function HomePage() {
               Discover the perfect companion for your family. Browse through a variety
               of dog breeds and find the ideal furry friend to join your household.
             </h3>
+            <div className="text-center mt-4">
+              <Link to="/dogs/quiz" className="btn btn-success quiz-btn">Breed Selector Quiz</Link>
+            </div>
           </div>
         </div>
       </div>
@@ -26,21 +31,26 @@ export default function HomePage() {
           <div className="col-md-7">
             <h2 className="featurette-heading fw-normal lh-1">Find Your Match with Our Breed Selector.<span className="text-body-secondary"> Discover Your Perfect Breed.</span></h2>
             <p className="lead">Not sure which breed is right for you? Take our fun and interactive breed selector quiz. Answer a few questions about your lifestyle and preferences, and we'll recommend dog breeds that match your personality and living situation.</p>
+            <Link to="/dogs/quiz" className="btn btn-outline-success mb-3">Breed Selector Quiz</Link>
+
           </div>
+
           <div className="col-md-5">
             <img src="/images/pawraise.jpg" alt="pawraise" className="img-fluid" width="575" height="440" />
           </div>
         </div>
 
         <hr className="featurette-divider"></hr>
-
         <div className="row featurette">
           <div className="col-md-7 order-md-2">
             <h2 className="featurette-heading fw-normal lh-1">Discover Breed Traits.<span className="text-body-secondary"> Get to Know Them.</span></h2>
-            <p className="lead">Learn about the unique qualities of different dog breeds. From size and energy level to grooming needs and compatibility with children, our breed profiles provide valuable insights to help you make an informed decision.</p>
+            <p className="lead">Access a wide range of dog breeds, each with unique characteristics and traits. Whether you're looking for a playful companion or a loyal guardian, refurred has the perfect match for you.</p>
+            <Link to="/dogs" className="btn btn-outline-success mb-3">Breed Directory</Link>
+
+
           </div>
-          <div className="col-md-5 order-md-1">
-            <img src="/images/dogcomputer.jpg" alt="dogcomputer" className="img-fluid" width="575" height="420" />
+          <div className="col-md-5">
+            <img src="/images/dogmagazine.jpg" alt="dogmagazine" className="img-fluid" width="575" height="440" />
           </div>
         </div>
 
@@ -48,14 +58,18 @@ export default function HomePage() {
 
         <div className="row featurette">
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">Browse for your buddy.<span className="text-body-secondary"> Explore Breeds.</span></h2>
-            <p className="lead">Access a wide range of dog breeds, each with unique characteristics and traits. Whether you're looking for a playful companion or a loyal guardian, refurred has the perfect match for you.</p>
+            <h2 className="featurette-heading fw-normal lh-1">Browse for Breeders.<span className="text-body-secondary"> More to Come Soon.</span></h2>
+            <p className="lead">Find reliable dog breeders in your vicinity using our Breeder Finder feature. Our tool helps you connect with trustworthy breeders nearby.</p>
+            <Link to="/dogs/breeders" className="btn btn-outline-success mb-3">Breed Finder</Link>
 
           </div>
-          <div className="col-md-5">
-            <img src="/images/dogmagazine.jpg" alt="dogmagazine" className="img-fluid" width="575" height="440" />
+          <div className="col-md-5 order-md-1">
+            <img src="/images/dogcomputer.jpg" alt="dogcomputer" className="img-fluid" width="575" height="420" />
           </div>
         </div>
+
+
+
       </section>
 
 

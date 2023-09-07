@@ -41,8 +41,9 @@
 
 @media (max-width: 768px) {
     .custom-video {
-        height: 115%;
+        display: none;
     }
+
     .quiz-h1 {
         font-size: 2.2rem;
     }

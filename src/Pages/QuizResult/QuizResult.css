@@ -1,46 +1,130 @@
 .quiz-result-main{
     text-align: center;
     padding: 20px;
-    background-color: #f5f5f5;
-    border: 2px solid #ddd;
+    background-color: #fff;
+    border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.winner-dog-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-.winner-dog{
-    font-weight: bold;
-    font-size: 3rem;
 
 }
 
-.runner-ups-title {
-    font-size: 2.2rem;
-    font-style: italic;
+.runner-up-img{
+    width: 20rem;
 }
 
-.runner-ups{
+.runner-ups-container {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.runner-ups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.runner-up {
+    text-align: center;
+}
+
+.runner-up-name {
     font-size: 1.8rem;
     font-weight: bold;
-
 }
-
 
 .user-quiz-results {
     margin-top: 5rem;
     margin-bottom: 1rem;
+
 }
 
 
-.progress-title{
+.quiz-progress-title{
     font-weight: bold;
+    font-size: 1.2rem;
+
 }
 
 .quiz-results-title {
-    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.quiz-mini-progress-bar {
+    width: 100%;
+    height: 0.8rem;
+    background-color: #ccc;
+    margin-top: 0.5rem;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.quiz-mini-progress-bar.filled {
+    background-color: green;
+    border-radius: 5px;
+}
+
+
+
+.dog-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
     font-weight: bold;
+
+
+}
+
+.quiz-image{
+    max-width: 30rem;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+
+
+}
+
+.quiz-image:hover {
+    transform: translateY(-5px);
+  }
+
+
+
+  @media (max-width: 768px) {
+    .runner-ups-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .progress-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .progress-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
 }
