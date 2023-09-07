@@ -1,0 +1,28 @@
+.pag-nav{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+.page-link {
+    color: #198754;
+    background-color: white;
+    border-color: #198754;
+    margin:4px;
+    border-radius: 8px;
+    text-align: center;
+}
+.page-link :active{
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.page-link :hover{
+    background-color: #198754;
+    border-color: #198754;
+}
+.pagination :hover{
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+}
