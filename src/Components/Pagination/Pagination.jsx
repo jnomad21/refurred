@@ -14,8 +14,8 @@ export default function Pagination({
   const isLastPage = currentPage === totalPages;
 
   return (
-    <nav className='pag-nav .btn-outline-primary'>
-      <ul className='pagination .btn-outline-primary'>
+    <nav className='pag-nav '>
+      <ul className='pagination '>
         <li >
           <button
             className="page-link"

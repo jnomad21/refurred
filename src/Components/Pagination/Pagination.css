@@ -13,16 +13,19 @@
     text-align: center;
 }
 .page-link :active{
-    background-color: #198754;
+    border-radius: 8px;
     border-color: #198754;
+    border-radius: 8px;
 }
 
 .page-link :hover{
-    background-color: #198754;
+    border-radius: 8px;
     border-color: #198754;
 }
-.pagination :hover{
+.pagination li :hover{
     background-color: #198754;
     border-color: #198754;
     color: white;
+    border-radius: 8px;
+    
 }
