@@ -2,6 +2,11 @@ body {
   padding-bottom: 3rem;
 }
 
+.quiz-btn{
+  font-weight: bold;
+
+}
+
 .home-h1 {
   font-size: 5rem;
 }
@@ -85,8 +90,13 @@ body {
     font-size: .75rem;
   }
   .hero-text{
-    margin-top: 1rem;
+    margin-top: 3rem;
+    width: 90%;
   }
+  .quiz-btn{
+    font-size: .75rem;
+  }
+
 }
 
 
