@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import QuizForm from "../../Components/QuizForm/QuizForm";
 import { Link } from 'react-router-dom';
 import './QuizPage.css'
 
 export default function QuizPage(quiz, setQuizForm) {
     const [quizFormIsOpen, setQuizFormIsOpen] = useState(false);
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (video) {
+            if (window.innerWidth <= 768) {
+                video.pause();
+            } else {
+                video.play();
+            }
+        }
+    }, []);
+
+
 
     function toggleQuizForm() {
         setQuizFormIsOpen((prevState) => !prevState);
@@ -19,7 +34,7 @@ export default function QuizPage(quiz, setQuizForm) {
                 {!quizFormIsOpen && (
 
                     <div className="hero-video-quiz">
-                        <video autoPlay loop muted className="custom-video" src="/images/temp-video.mp4" type="video/mp4" alt="Hero-Quiz" width="100%" height="100%" />
+                        <video ref={videoRef} autoPlay loop muted className="custom-video" src="/images/temp-video.mp4" type="video/mp4" alt="Hero-Quiz" width="100%" height="100%" />
                         <div className="hero-text-quiz-overlay">
 
                             <div className="container d-flex flex-column justify-content-center align-items-center h-100">
