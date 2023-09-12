@@ -17,7 +17,7 @@ export default function HomePage() {
               of dog breeds and find the ideal furry friend to join your household.
             </h3>
             <div className="text-center mt-4">
-              <Link to="/dogs/quiz" className="btn btn-success quiz-btn">Breed Selector Quiz</Link>
+              <Link to="/dogs/quiz" className="btn btn-success quiz-btn">Breed Selector Tool</Link>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@ export default function HomePage() {
         <div className="row featurette">
           <div className="col-md-7">
             <h2 className="featurette-heading fw-normal lh-1">Find Your Match with Our Breed Selector.<span className="text-body-secondary"> Discover Your Perfect Breed.</span></h2>
-            <p className="lead">Not sure which breed is right for you? Take our fun and interactive breed selector quiz. Answer a few questions about your lifestyle and preferences, and we'll recommend dog breeds that match your personality and living situation.</p>
-            <Link to="/dogs/quiz" className="btn btn-outline-success mb-3">Breed Selector Quiz</Link>
+            <p className="lead">Not sure which breed is right for you? Take our fun and interactive breed selector assessment. Answer a few questions about your lifestyle and preferences, and we'll recommend dog breeds that match your personality and living situation.</p>
+            <Link to="/dogs/quiz" className="btn btn-outline-success mb-3">Breed Selector Tool</Link>
 
           </div>
 
