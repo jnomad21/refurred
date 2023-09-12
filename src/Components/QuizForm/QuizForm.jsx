@@ -68,7 +68,7 @@ export default function QuizForm() {
             <form onSubmit={handleSubmit} className="quiz-form">
 
                 <div className="form-group mb-3">
-                <h1 className="display-6">Dog Breed Selector Quiz</h1>
+                    <h1 className="display-6">Dog Breed Selector Quiz</h1>
 
                     <label htmlFor="sizeGroup">Size Group</label>
                     <div id="sizeGroupLabel" className="size-group-labels">
@@ -96,18 +96,19 @@ export default function QuizForm() {
 
 
                 <div className="form-group mb-3">
+                    <label htmlFor="affection">Affection Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.affection}
                     ></span>
-                    <label htmlFor="affection">Affection Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Independent</span>
                         <span className="mid-label">Friendly</span>
                         <span className="max-label">Lovey-Dovey</span>
                     </div>
+
                     <input
                         type="range"
                         name="affection"
@@ -118,19 +119,17 @@ export default function QuizForm() {
                         ref={affectionRef}
                         aria-labelledby="affectionLabel"
                         defaultValue="1"
-
-
                     />
                 </div>
 
                 <div className="form-group mb-3">
+                    <label htmlFor="children">Good with Young Children</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.children}
                     ></span>
-                    <label htmlFor="children">Good with Young Children</label>
                     <div id="rangeLabel">
                         <span className="min-label">Not Recommended</span>
                         <span className="mid-label">Friendly</span>
@@ -146,18 +145,17 @@ export default function QuizForm() {
                         aria-labelledby="childrenLabel"
                         ref={childrenRef}
                         defaultValue="1"
-
                     />
                 </div>
 
                 <div className="form-group mb-3">
+                    <label htmlFor="otherDogs">Good with Other Dogs</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.otherDogs}
                     ></span>
-                    <label htmlFor="otherDogs">Good with other dogs</label>
                     <div id="rangeLabel">
                         <span className="min-label">Not Recommended</span>
                         <span className="mid-label">Friendly</span>
@@ -173,17 +171,16 @@ export default function QuizForm() {
                         aria-labelledby="otherDogsLabel"
                         ref={otherDogsRef}
                         defaultValue="1"
-
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="shed">Level of Shedding</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.shed}
                     ></span>
-                    <label htmlFor="shed">Level of Shedding</label>
                     <div id="rangeLabel">
                         <span className="min-label">Not Shedding</span>
                         <span className="mid-label">Semi-Frequent</span>
@@ -199,17 +196,16 @@ export default function QuizForm() {
                         aria-labelledby="shedLabel"
                         ref={shedRef}
                         defaultValue="1"
-
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="groom">Grooming Requirement</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.groom}
                     ></span>
-                    <label htmlFor="groom">Grooming Requirement</label>
                     <div id="rangeLabel">
                         <span className="min-label">Monthly</span>
                         <span className="mid-label">Weekly</span>
@@ -229,13 +225,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="drool">Drooling Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.drool}
                     ></span>
-                    <label htmlFor="drool">Drooling Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Less Likely to Drool</span>
                         <span className="mid-label">Semi-Frequent</span>
@@ -255,13 +251,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="strangers">Openness to Strangers</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.strangers}
                     ></span>
-                    <label htmlFor="strangers">Openness to Strangers</label>
                     <div id="rangeLabel">
                         <span className="min-label">Reserved</span>
                         <span className="mid-label">Semi-Open</span>
@@ -281,13 +277,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="play">Playfulness Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.play}
                     ></span>
-                    <label htmlFor="play">Playfulness Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Only When You Want To</span>
                         <span className="mid-label">Likes to Play</span>
@@ -307,13 +303,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="protect">Watchdog/Protection Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.protect}
                     ></span>
-                    <label htmlFor="protect">Watchdog/Protection Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">What's Mine is Yours</span>
                         <span className="mid-label">Semi-Protective</span>
@@ -333,13 +329,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="adapt">Adaptability Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.adapt}
                     ></span>
-                    <label htmlFor="adapt">Adaptability Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Lives for Routine</span>
                         <span className="mid-label">Likes Structure</span>
@@ -359,13 +355,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="train">Trainability Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.train}
                     ></span>
-                    <label htmlFor="train">Trainability Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Self-Willed</span>
                         <span className="mid-label">Listens Well</span>
@@ -385,13 +381,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="energy">Energy Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.energy}
                     ></span>
-                    <label htmlFor="energy">Energy Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Couch Potato</span>
                         <span className="mid-label">Semi-Energetic</span>
@@ -411,13 +407,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="vocal">Barking Level</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.vocal}
                     ></span>
-                    <label htmlFor="vocal">Barking Level</label>
                     <div id="rangeLabel">
                         <span className="min-label">Only to Alert</span>
                         <span className="mid-label">Semi-Vocal</span>
@@ -437,13 +433,13 @@ export default function QuizForm() {
                     />
                 </div>
                 <div className="form-group mb-3">
+                    <label htmlFor="mentalStim">Mental Stimulation Needs</label>
                     <span
-                        className="bi bi-info-circle text-dark custom-tooltip"
+                        className="bi bi-info-circle text-dark custom-tooltip mx-1"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="left"
+                        data-bs-placement="right"
                         title={toolTipData.mentalStim}
                     ></span>
-                    <label htmlFor="mentalStim">Mental Stimulation Needs</label>
                     <div id="rangeLabel">
                         <span className="min-label">Happy to Lounge</span>
                         <span className="mid-label">Sometimes Busy</span>
