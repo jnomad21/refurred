@@ -31,10 +31,13 @@ export default function QuizForm() {
     const energyRef = useRef('')
     const vocalRef = useRef('')
     const mentalStimRef = useRef('')
+    const sizeGroupPoint = useRef('0')
+    
 
     async function handleSubmit(e) {
         e.preventDefault()
         setError('')
+        
 
         const quizResult = {
             sizeGroup: sizeGroupRef.current.value,
@@ -52,10 +55,16 @@ export default function QuizForm() {
             energy: energyRef.current.value,
             vocal: vocalRef.current.value,
             mentalStim: mentalStimRef.current.value,
+            sizeGroupPoint: sizeGroupPoint.current.value,
         }
+        console.log(quizResult)
         navigate('/dogs/quizResult', { state: { quizResult } });
 
 
+
+    }
+
+    function clickInput (){
 
     }
 
@@ -93,6 +102,8 @@ export default function QuizForm() {
                     defaultValue="1"
 
                 />
+                
+               Priority  <input type="number" className = "priority-input" max={3} min={1} ref={sizeGroupPoint} />
 
 
                 <div className="form-group mb-3">

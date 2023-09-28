@@ -20,10 +20,8 @@ import EditBreederPage from '../EditBreederPage/EditBreederPage';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
-
   return (
     <>
-
       <NavBar />
       <Routes>
         <Route path="/map" element={<GoogleMaps/>} />

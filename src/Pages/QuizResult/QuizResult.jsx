@@ -32,19 +32,19 @@ export default function QuizResult(){
         } else if (Math.abs(quizResult.affection - dog.affection) == 3) {
             dogScore += 1;
         }
-
+        // test
         if (quizResult.sizeGroup == dog.sizeGroup) {
-            dogScore += 6;
+            dogScore += (quizResult.sizeGroupPoint == 1) ? 12 : 6;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 1) {
-            dogScore += 4;
+            dogScore += (quizResult.sizeGroupPoint == 1) ? 8 : 4;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 2) {
-            dogScore += 3;
+            dogScore += (quizResult.sizeGroupPoint == 1) ? 6 : 3;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 3) {
-            dogScore += 2;
-        }else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 4) {
-            dogScore += 1;
+            dogScore += (quizResult.sizeGroupPoint == 1) ? 4 : 2;
+        } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 4) {
+            dogScore += (quizResult.sizeGroupPoint == 1) ? 2 : 1;
         }
-
+        // test
         if (quizResult.adapt == dog.adapt) {
             dogScore += 5;
         } else if (Math.abs(quizResult.adapt - dog.adapt) == 1) {
@@ -213,7 +213,7 @@ export default function QuizResult(){
                                     <Link to={`/dogs/${entry.dog._id}`} style={{ textDecoration: 'none' }}>
                                         <div className="card quiz-image">
                                             <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(entry.dog.breed)}.jpg`} alt={`${entry.dog.breed}`} className="winner-img"/>
-                                            <div className="dog-overlay winner-dog">The {entry.dog.breed}</div>
+                                            <div className="dog-overlay winner-dog">The {entry.dog.breed} {entry.score}</div>
                                         </div>
                                     </Link>
                                     <hr />
