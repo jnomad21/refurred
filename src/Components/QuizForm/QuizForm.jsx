@@ -462,6 +462,7 @@ export default function QuizForm() {
                 <div className="priority-container">
                     <p>1st Priority?</p>
                         <select name="Pri1" id="Pri1">
+                            <option value="null1">None</option>
                             <option value="sizeGroup1">Size Group</option>
                             <option value="affection1">Affection Level</option>
                             <option value="children1">Good with Children</option>
@@ -480,6 +481,7 @@ export default function QuizForm() {
                         </select>
                         <p>2nd Priority?</p>
                         <select name="Pri2" id="Pri2">
+                            <option value="null2">None</option>
                             <option value="sizeGroup2">Size Group</option>
                             <option value="affection2">Affection Level</option>
                             <option value="children2">Good with Children</option>
@@ -498,6 +500,7 @@ export default function QuizForm() {
                         </select>
                         <p>3rd Priority?</p>
                         <select name="Pri3" id="Pri3">
+                            <option value="null1">None</option>
                             <option value="sizeGroup3">Size Group</option>
                             <option value="affection3">Affection Level</option>
                             <option value="children3">Good with Children</option>
