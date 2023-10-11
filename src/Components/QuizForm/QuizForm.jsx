@@ -500,7 +500,7 @@ export default function QuizForm() {
                         </select>
                         <p>3rd Priority?</p>
                         <select name="Pri3" id="Pri3">
-                            <option value="null1">None</option>
+                            <option value="null3">None</option>
                             <option value="sizeGroup3">Size Group</option>
                             <option value="affection3">Affection Level</option>
                             <option value="children3">Good with Children</option>
