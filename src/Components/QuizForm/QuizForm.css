@@ -1,5 +1,6 @@
 .quiz-form{
     margin-top: 10rem;
+    min-width: 50rem;
 }
 
 #rangeLabel {
@@ -39,5 +40,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .priority-container{
     display: flex;
-    max-width: 35rem;
+    margin: 2rem 0rem;
+    width: 50rem;
+
+    
 }

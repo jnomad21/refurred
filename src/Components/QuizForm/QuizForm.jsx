@@ -68,16 +68,17 @@ export default function QuizForm() {
             <form onSubmit={handleSubmit} className="quiz-form">
 
                 <div className="form-group mb-3">
-                    <h1 className="display-6">Dog Breed Selector Quiz</h1>
-
-                    <label htmlFor="sizeGroup">Size Group</label>
+                    <h1 className="display-6 mb-2">Dog Breed Selector</h1>
+                    <p className="lead text-center">Designed to assist you in selecting the ideal dog breed for your lifestyle. Adjust the sliders to indicate your preferences for each trait.</p>
+                    <hr />
+                    <label htmlFor="sizeGroup">Size Group(lbs)</label>
                     <div id="sizeGroupLabel" className="size-group-labels">
-                        <span className="min-label">1-10 lbs</span>
-                        <span className="label">11-20 lbs</span>
-                        <span className="label">21-40 lbs</span>
-                        <span className="label">41-70 lbs</span>
-                        <span className="label">71-90 lbs</span>
-                        <span className="max-label">91+ lbs</span>
+                        <span className="min-label">1-10</span>
+                        <span className="label">11-20</span>
+                        <span className="label">21-40</span>
+                        <span className="label">41-70</span>
+                        <span className="label">71-90</span>
+                        <span className="max-label">91+</span>
                     </div>
                 </div>
 
@@ -458,63 +459,65 @@ export default function QuizForm() {
 
                     />
                 </div>
-                    <h4>Priority</h4>
+                <hr />
+                <h4 className="text-center mt-4">Top Preferences</h4>
                 <div className="priority-container">
-                    <p>1st Priority?</p>
-                        <select name="Pri1" id="Pri1">
-                            <option value="sizeGroup1">Size Group</option>
-                            <option value="affection1">Affection Level</option>
-                            <option value="children1">Good with Children</option>
-                            <option value="otherDogs1">Good with Other Dogs</option>
-                            <option value="shedding1">Level of Shedding</option>
-                            <option value="grooming1">Grooming Level</option>
-                            <option value="drool1">Drooling Level</option>
-                            <option value="strangers1">Openess to Strangers</option>
-                            <option value="play1">Playfulness Level</option>
-                            <option value="protect1">Watchdog/Protection Level</option>
-                            <option value="adapt1">Adaptability Level</option>
-                            <option value="train1">Trainability Level</option>
-                            <option value="energy1">Energy Level</option>
-                            <option value="vocal1">Barking Level</option>
-                            <option value="mental1">Mental Stimulation Needs</option>
-                        </select>
-                        <p>2nd Priority?</p>
-                        <select name="Pri2" id="Pri2">
-                            <option value="sizeGroup2">Size Group</option>
-                            <option value="affection2">Affection Level</option>
-                            <option value="children2">Good with Children</option>
-                            <option value="otherDogs2">Good with Other Dogs</option>
-                            <option value="shedding2">Level of Shedding</option>
-                            <option value="grooming2">Grooming Level</option>
-                            <option value="drool2">Drooling Level</option>
-                            <option value="strangers2">Openess to Strangers</option>
-                            <option value="play2">Playfulness Level</option>
-                            <option value="protect2">Watchdog/Protection Level</option>
-                            <option value="adapt2">Adaptability Level</option>
-                            <option value="train2">Trainability Level</option>
-                            <option value="energy2">Energy Level</option>
-                            <option value="vocal2">Barking Level</option>
-                            <option value="mental2">Mental Stimulation Needs</option>
-                        </select>
-                        <p>3rd Priority?</p>
-                        <select name="Pri3" id="Pri3">
-                            <option value="sizeGroup3">Size Group</option>
-                            <option value="affection3">Affection Level</option>
-                            <option value="children3">Good with Children</option>
-                            <option value="otherDogs3">Good with Other Dogs</option>
-                            <option value="shedding3">Level of Shedding</option>
-                            <option value="grooming3">Grooming Level</option>
-                            <option value="drool3">Drooling Level</option>
-                            <option value="strangers3">Openess to Strangers</option>
-                            <option value="play3">Playfulness Level</option>
-                            <option value="protect3">Watchdog/Protection Level</option>
-                            <option value="adapt3">Adaptability Level</option>
-                            <option value="train3">Trainability Level</option>
-                            <option value="energy3">Energy Level</option>
-                            <option value="vocal3">Barking Level</option>
-                            <option value="mental3">Mental Stimulation Needs</option>
-                        </select>
-                    </div>
+                    <select name="Pri1" id="Pri1" className="btn">
+                        <option value="" disabled selected>1st Priority</option>
+                        <option value="sizeGroup1">Size Group</option>
+                        <option value="affection1">Affection Level</option>
+                        <option value="children1">Good with Children</option>
+                        <option value="otherDogs1">Good with Other Dogs</option>
+                        <option value="shedding1">Level of Shedding</option>
+                        <option value="grooming1">Grooming Level</option>
+                        <option value="drool1">Drooling Level</option>
+                        <option value="strangers1">Openess to Strangers</option>
+                        <option value="play1">Playfulness Level</option>
+                        <option value="protect1">Watchdog/Protection Level</option>
+                        <option value="adapt1">Adaptability Level</option>
+                        <option value="train1">Trainability Level</option>
+                        <option value="energy1">Energy Level</option>
+                        <option value="vocal1">Barking Level</option>
+                        <option value="mental1">Mental Stimulation Needs</option>
+                    </select>
+                    <select name="Pri2" id="Pri2" className="btn">
+                        <option value="" disabled selected>2nd Priority</option>
+                        <option value="sizeGroup2">Size Group</option>
+                        <option value="affection2">Affection Level</option>
+                        <option value="children2">Good with Children</option>
+                        <option value="otherDogs2">Good with Other Dogs</option>
+                        <option value="shedding2">Level of Shedding</option>
+                        <option value="grooming2">Grooming Level</option>
+                        <option value="drool2">Drooling Level</option>
+                        <option value="strangers2">Openess to Strangers</option>
+                        <option value="play2">Playfulness Level</option>
+                        <option value="protect2">Watchdog/Protection Level</option>
+                        <option value="adapt2">Adaptability Level</option>
+                        <option value="train2">Trainability Level</option>
+                        <option value="energy2">Energy Level</option>
+                        <option value="vocal2">Barking Level</option>
+                        <option value="mental2">Mental Stimulation Needs</option>
+                    </select>
+                    <select name="Pri3" id="Pri3" className="btn">
+                        <option value="" disabled selected>3rd Priority</option>
+                        <option value="sizeGroup3">Size Group</option>
+                        <option value="affection3">Affection Level</option>
+                        <option value="children3">Good with Children</option>
+                        <option value="otherDogs3">Good with Other Dogs</option>
+                        <option value="shedding3">Level of Shedding</option>
+                        <option value="grooming3">Grooming Level</option>
+                        <option value="drool3">Drooling Level</option>
+                        <option value="strangers3">Openess to Strangers</option>
+                        <option value="play3">Playfulness Level</option>
+                        <option value="protect3">Watchdog/Protection Level</option>
+                        <option value="adapt3">Adaptability Level</option>
+                        <option value="train3">Trainability Level</option>
+                        <option value="energy3">Energy Level</option>
+                        <option value="vocal3">Barking Level</option>
+                        <option value="mental3">Mental Stimulation Needs</option>
+                    </select>
+                </div>
+                <hr />
 
                 <button type="submit" className="btn btn-success" id="newDogButton">See Results</button>
             </form>
