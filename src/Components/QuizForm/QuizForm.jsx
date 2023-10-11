@@ -75,16 +75,18 @@ export default function QuizForm() {
             <form onSubmit={handleSubmit} className="quiz-form">
 
                 <div className="form-group mb-3">
-                    <h1 className="display-6">Dog Breed Selector Quiz</h1>
+                    <h1 className="display-6">Dog Breed Selector</h1>
+                    <p className="lead text-center">Designed to assist you in selecting the ideal dog breed for your lifestyle. Adjust the sliders to indicate your preferences for each trait.</p>
+                    <hr />
 
-                    <label htmlFor="sizeGroup">Size Group</label>
+                    <label htmlFor="sizeGroup">Size Group(lbs)</label>
                     <div id="sizeGroupLabel" className="size-group-labels">
-                        <span className="min-label">1-10 lbs</span>
-                        <span className="label">11-20 lbs</span>
-                        <span className="label">21-40 lbs</span>
-                        <span className="label">41-70 lbs</span>
-                        <span className="label">71-90 lbs</span>
-                        <span className="max-label">91+ lbs</span>
+                        <span className="min-label">1-10</span>
+                        <span className="label">11-20</span>
+                        <span className="label">21-40</span>
+                        <span className="label">41-70</span>
+                        <span className="label">71-90</span>
+                        <span className="max-label">91+</span>
                     </div>
                 </div>
 
@@ -465,11 +467,11 @@ export default function QuizForm() {
 
                     />
                 </div>
-                    <h4>Priority</h4>
+                <hr />
+                    <h4 className="text-center mt-4">Top Preferences</h4>
                 <div className="priority-container">
-                    <p>1st Priority?</p>
-                        <select name="Pri1" id="Pri1" ref={pri1Ref}>
-                            <option value="null1">None</option>
+                        <select name="Pri1" id="Pri1" ref={pri1Ref} className="btn">
+                            <option value="" disabled selected>1st Priority</option>
                             <option value="size1">Size Group</option>
                             <option value="affection1">Affection Level</option>
                             <option value="children1">Good with Children</option>
@@ -486,9 +488,9 @@ export default function QuizForm() {
                             <option value="vocal1">Barking Level</option>
                             <option value="mental1">Mental Stimulation Needs</option>
                         </select>
-                        <p>2nd Priority?</p>
-                        <select name="Pri2" id="Pri2" ref={pri2Ref}>
-                            <option value="null2">None</option>
+
+                        <select name="Pri2" id="Pri2" ref={pri2Ref} className="btn">
+                            <option value="" disabled selected>2nd Priority</option>
                             <option value="size2">Size Group</option>
                             <option value="affection2">Affection Level</option>
                             <option value="children2">Good with Children</option>
@@ -505,9 +507,9 @@ export default function QuizForm() {
                             <option value="vocal2">Barking Level</option>
                             <option value="mental2">Mental Stimulation Needs</option>
                         </select>
-                        <p>3rd Priority?</p>
-                        <select name="Pri3" id="Pri3" ref={pri3Ref}>
-                            <option value="null3">None</option>
+
+                        <select name="Pri3" id="Pri3" ref={pri3Ref} className="btn">
+                            <option value="" disabled selected>3rd Priority</option>
                             <option value="size3">Size Group</option>
                             <option value="affection3">Affection Level</option>
                             <option value="children3">Good with Children</option>
@@ -525,6 +527,7 @@ export default function QuizForm() {
                             <option value="mental3">Mental Stimulation Needs</option>
                         </select>
                     </div>
+                    <hr />
 
                 <button type="submit" className="btn btn-success" id="newDogButton">See Results</button>
             </form>
