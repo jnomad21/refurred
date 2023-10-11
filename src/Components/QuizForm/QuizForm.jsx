@@ -470,12 +470,12 @@ export default function QuizForm() {
                     <p>1st Priority?</p>
                         <select name="Pri1" id="Pri1" ref={pri1Ref}>
                             <option value="null1">None</option>
-                            <option value="sizeGroup1">Size Group</option>
+                            <option value="size1">Size Group</option>
                             <option value="affection1">Affection Level</option>
                             <option value="children1">Good with Children</option>
                             <option value="otherDogs1">Good with Other Dogs</option>
-                            <option value="shedding1">Level of Shedding</option>
-                            <option value="grooming1">Grooming Level</option>
+                            <option value="shed1">Level of Shedding</option>
+                            <option value="groom1">Grooming Level</option>
                             <option value="drool1">Drooling Level</option>
                             <option value="strangers1">Openess to Strangers</option>
                             <option value="play1">Playfulness Level</option>
@@ -489,12 +489,12 @@ export default function QuizForm() {
                         <p>2nd Priority?</p>
                         <select name="Pri2" id="Pri2" ref={pri2Ref}>
                             <option value="null2">None</option>
-                            <option value="sizeGroup2">Size Group</option>
+                            <option value="size2">Size Group</option>
                             <option value="affection2">Affection Level</option>
                             <option value="children2">Good with Children</option>
                             <option value="otherDogs2">Good with Other Dogs</option>
-                            <option value="shedding2">Level of Shedding</option>
-                            <option value="grooming2">Grooming Level</option>
+                            <option value="shed2">Level of Shedding</option>
+                            <option value="groom2">Grooming Level</option>
                             <option value="drool2">Drooling Level</option>
                             <option value="strangers2">Openess to Strangers</option>
                             <option value="play2">Playfulness Level</option>
@@ -508,12 +508,12 @@ export default function QuizForm() {
                         <p>3rd Priority?</p>
                         <select name="Pri3" id="Pri3" ref={pri3Ref}>
                             <option value="null3">None</option>
-                            <option value="sizeGroup3">Size Group</option>
+                            <option value="size3">Size Group</option>
                             <option value="affection3">Affection Level</option>
                             <option value="children3">Good with Children</option>
                             <option value="otherDogs3">Good with Other Dogs</option>
-                            <option value="shedding3">Level of Shedding</option>
-                            <option value="grooming3">Grooming Level</option>
+                            <option value="shed3">Level of Shedding</option>
+                            <option value="groom3">Grooming Level</option>
                             <option value="drool3">Drooling Level</option>
                             <option value="strangers3">Openess to Strangers</option>
                             <option value="play3">Playfulness Level</option>
