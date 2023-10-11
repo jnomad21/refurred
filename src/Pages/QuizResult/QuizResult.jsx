@@ -23,157 +23,291 @@ export default function QuizResult(){
     dogs.forEach((dog) => {
         let dogScore = 0;
 
+        let affectionScore = 0
         if (quizResult.affection == dog.affection) {
-            dogScore += 5;
+            affectionScore += 5;
         } else if (Math.abs(quizResult.affection - dog.affection) == 1) {
-            dogScore += 3;
+            affectionScore += 3;
         } else if (Math.abs(quizResult.affection - dog.affection) == 2) {
-            dogScore += 2;
+            affectionScore += 2;
         } else if (Math.abs(quizResult.affection - dog.affection) == 3) {
-            dogScore += 1;
+            affectionScore += 1;
         }
+        if (quizResult.pri1==="affection1"){
+            affectionScore = affectionScore *2.5
+        } else if(quizResult.pri2==="affection2"){
+            affectionScore = affectionScore *2
+        } else if(quizResult.pri3==="affection3"){
+            affectionScore = affectionScore *1.5
+        }
+        dogScore=dogScore+affectionScore
 
+        let sizeScore = 0
         if (quizResult.sizeGroup == dog.sizeGroup) {
-            dogScore += 6;
+            sizeScore += 6;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 1) {
-            dogScore += 4;
+            sizeScore += 4;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 2) {
-            dogScore += 3;
+            sizeScore += 3;
         } else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 3) {
-            dogScore += 2;
+            sizeScore += 2;
         }else if (Math.abs(quizResult.sizeGroup - dog.sizeGroup) == 4) {
-            dogScore += 1;
+            sizeScore += 1;
         }
+        if (quizResult.pri1==="size1"){
+            sizeScore = sizeScore *2.5
+        } else if(quizResult.pri2==="size2"){
+            sizeScore = sizeScore *2
+        } else if(quizResult.pri3==="size3"){
+            sizeScore = sizeScore *1.5
+        }
+        dogScore=dogScore+sizeScore
 
+        let adaptScore = 0
         if (quizResult.adapt == dog.adapt) {
-            dogScore += 5;
+            adaptScore += 5;
         } else if (Math.abs(quizResult.adapt - dog.adapt) == 1) {
-            dogScore += 3;
+            adaptScore += 3;
         } else if (Math.abs(quizResult.adapt - dog.adapt) == 2) {
-            dogScore += 2;
+            adaptScore += 2;
         } else if (Math.abs(quizResult.adapt - dog.adapt) == 3) {
-            dogScore += 1;
+            adaptScore += 1;
         }
+        if (quizResult.pri1==="adapt1"){
+            adaptScore = adaptScore *2.5
+        } else if(quizResult.pri2==="adapt2"){
+            adaptScore = adaptScore *2
+        } else if(quizResult.pri3==="adapt3"){
+            adaptScore = adaptScore *1.5
+        }
+        dogScore=dogScore+adaptScore
 
+        let childrenScore = 0
         if (quizResult.children == dog.children) {
-            dogScore += 5;
+            childrenScore += 5;
         } else if (Math.abs(quizResult.children - dog.children) == 1) {
-            dogScore += 3;
+            childrenScore += 3;
         } else if (Math.abs(quizResult.children - dog.children) == 2) {
-            dogScore += 2;
+            childrenScore += 2;
         } else if (Math.abs(quizResult.children - dog.children) == 3) {
-            dogScore += 1;
+            childrenScore += 1;
         }
+        if (quizResult.pri1==="children1"){
+            childrenScore = childrenScore *2.5
+        } else if(quizResult.pri2==="children2"){
+            childrenScore = childrenScore *2
+        } else if(quizResult.pri3==="children3"){
+            childrenScore = childrenScore *1.5
+        }
+        dogScore=dogScore+childrenScore
 
+        let droolScore=0
         if (quizResult.drool == dog.drool) {
-            dogScore += 5;
+            droolScore += 5;
         } else if (Math.abs(quizResult.drool - dog.drool) == 1) {
-            dogScore += 3;
+            droolScore += 3;
         } else if (Math.abs(quizResult.drool - dog.drool) == 2) {
-            dogScore += 2;
+            droolScore += 2;
         } else if (Math.abs(quizResult.drool - dog.drool) == 3) {
-            dogScore += 1;
+            droolScore += 1;
         }
+        if (quizResult.pri1==="drool1"){
+            droolScore = droolScore *2.5
+        } else if(quizResult.pri2==="drool2"){
+            droolScore = droolScore *2
+        } else if(quizResult.pri3==="drool3"){
+            droolScore = droolScore *1.5
+        }
+        dogScore=dogScore+droolScore
 
+        let energyScore=0
         if (quizResult.energy == dog.energy) {
-            dogScore += 5;
+            energyScore += 5;
         } else if (Math.abs(quizResult.energy - dog.energy) == 1) {
-            dogScore += 3;
+            energyScore += 3;
         } else if (Math.abs(quizResult.energy - dog.energy) == 2) {
-            dogScore += 2;
+            energyScore += 2;
         } else if (Math.abs(quizResult.energy - dog.energy) == 3) {
-            dogScore += 1;
+            energyScore += 1;
+        }if (quizResult.pri1==="energy1"){
+            energyScore = energyScore *2.5
+        } else if(quizResult.pri2==="energy2"){
+            energyScore = energyScore *2
+        } else if(quizResult.pri3==="energy3"){
+            energyScore = energyScore *1.5
         }
+        dogScore=dogScore+energyScore
 
+        let groomScore = 0
         if (quizResult.groom == dog.groom) {
-            dogScore += 5;
+            groomScore += 5;
         } else if (Math.abs(quizResult.groom - dog.groom) == 1) {
-            dogScore += 3;
+            groomScore += 3;
         } else if (Math.abs(quizResult.groom - dog.groom) == 2) {
-            dogScore += 2;
+            groomScore += 2;
         } else if (Math.abs(quizResult.groom - dog.groom) == 3) {
-            dogScore += 1;
+            groomScore += 1;
         }
+        if (quizResult.pri1==="groom1"){
+            groomScore = groomScore *2.5
+        } else if(quizResult.pri2==="groom2"){
+            groomScore = groomScore *2
+        } else if(quizResult.pri3==="groom3"){
+            groomScore = groomScore *1.5
+        }
+        dogScore=dogScore+groomScore
 
+        let mentalScore = 0
         if (quizResult.mentalStim == dog.mentalStim) {
-            dogScore += 5;
+            mentalScore += 5;
         } else if (Math.abs(quizResult.mentalStim - dog.mentalStim) == 1) {
-            dogScore += 3;
+            mentalScore += 3;
         } else if (Math.abs(quizResult.mentalStim - dog.mentalStim) == 2) {
-            dogScore += 2;
+            mentalScore += 2;
         } else if (Math.abs(quizResult.mentalStim - dog.mentalStim) == 3) {
-            dogScore += 1;
+            mentalScore += 1;
         }
+        if (quizResult.pri1==="mentalStim1"){
+            mentalScore = mentalScore *2.5
+        } else if(quizResult.pri2==="mentalStim2"){
+            mentalScore = mentalScore *2
+        } else if(quizResult.pri3==="mentalStim3"){
+            mentalScore = mentalScore *1.5
+        }
+        dogScore=dogScore+mentalScore
 
+        let otherDogsScore = 0
         if (quizResult.otherDogs == dog.otherDogs) {
-            dogScore += 5;
+            otherDogsScore += 5;
         } else if (Math.abs(quizResult.otherDogs - dog.otherDogs) == 1) {
-            dogScore += 3;
+            otherDogsScore += 3;
         } else if (Math.abs(quizResult.otherDogs - dog.otherDogs) == 2) {
-            dogScore += 2;
+            otherDogsScore += 2;
         } else if (Math.abs(quizResult.otherDogs - dog.otherDogs) == 3) {
-            dogScore += 1;
+            otherDogsScore += 1;
         }
+        if (quizResult.pri1==="otherDogs1"){
+            otherDogsScore = otherDogsScore *2.5
+        } else if(quizResult.pri2==="otherDogs2"){
+            otherDogsScore = otherDogsScore *2
+        } else if(quizResult.pri3==="otherDogs3"){
+            otherDogsScore = otherDogsScore *1.5
+        }
+        dogScore=dogScore+otherDogsScore
 
+        let playScore = 0
         if (quizResult.play == dog.play) {
-            dogScore += 5;
+            playScore += 5;
         } else if (Math.abs(quizResult.play - dog.play) == 1) {
-            dogScore += 3;
+            playScore += 3;
         } else if (Math.abs(quizResult.play - dog.play) == 2) {
-            dogScore += 2;
+            playScore += 2;
         } else if (Math.abs(quizResult.play - dog.play) == 3) {
-            dogScore += 1;
+            playScore += 1;
         }
+        if (quizResult.pri1==="play1"){
+            playScore = playScore *2.5
+        } else if(quizResult.pri2==="play2"){
+            playScore = playScore *2
+        } else if(quizResult.pri3==="play3"){
+            playScore = playScore *1.5
+        }
+        dogScore=dogScore+playScore
 
+        let protectScore = 0
         if (quizResult.protect == dog.protect) {
-            dogScore += 5;
+            protectScore += 5;
         } else if (Math.abs(quizResult.protect - dog.protect) == 1) {
-            dogScore += 3;
+            protectScore += 3;
         } else if (Math.abs(quizResult.protect - dog.protect) == 2) {
-            dogScore += 2;
+            protectScore += 2;
         } else if (Math.abs(quizResult.protect - dog.protect) == 3) {
-            dogScore += 1;
+            protectScore += 1;
         }
+        if (quizResult.pri1==="protect1"){
+            protectScore = protectScore *2.5
+        } else if(quizResult.pri2==="protect2"){
+            protectScore = protectScore *2
+        } else if(quizResult.pri3==="protect3"){
+            protectScore = protectScore *1.5
+        }
+        dogScore=dogScore+protectScore
 
+        let shedScore =0
         if (quizResult.shed == dog.shed) {
-            dogScore += 5;
+            shedScore += 5;
         } else if (Math.abs(quizResult.shed - dog.shed) == 1) {
-            dogScore += 3;
+            shedScore += 3;
         } else if (Math.abs(quizResult.shed - dog.shed) == 2) {
-            dogScore += 2;
+            shedScore += 2;
         } else if (Math.abs(quizResult.shed - dog.shed) == 3) {
-            dogScore += 1;
+            shedScore += 1;
         }
+        if (quizResult.pri1==="shed1"){
+            shedScore = shedScore *2.5
+        } else if(quizResult.pri2==="shed2"){
+            shedScore = shedScore *2
+        } else if(quizResult.pri3==="shed3"){
+            shedScore = shedScore *1.5
+        }
+        dogScore=dogScore+shedScore
 
+        let strangersScore = 0
         if (quizResult.strangers == dog.strangers) {
-            dogScore += 5;
+            strangersScore += 5;
         } else if (Math.abs(quizResult.strangers - dog.strangers) == 1) {
-            dogScore += 3;
+            strangersScore += 3;
         } else if (Math.abs(quizResult.strangers - dog.strangers) == 2) {
-            dogScore += 2;
+            strangersScore += 2;
         } else if (Math.abs(quizResult.strangers - dog.strangers) == 3) {
-            dogScore += 1;
+            strangersScore += 1;
         }
+        if (quizResult.pri1==="strangers1"){
+            strangersScore = strangersScore *2.5
+        } else if(quizResult.pri2==="strangers2"){
+            strangersScore = strangersScore *2
+        } else if(quizResult.pri3==="strangers3"){
+            strangersScore = strangersScore *1.5
+        }
+        dogScore=dogScore+strangersScore
 
+        let trainScore = 0
         if (quizResult.train == dog.train) {
-            dogScore += 5;
+            trainScore += 5;
         } else if (Math.abs(quizResult.train - dog.train) == 1) {
-            dogScore += 3;
+            trainScore += 3;
         } else if (Math.abs(quizResult.train - dog.train) == 2) {
-            dogScore += 2;
+            trainScore += 2;
         } else if (Math.abs(quizResult.train - dog.train) == 3) {
-            dogScore += 1;
+            trainScore += 1;
         }
+        if (quizResult.pri1==="train1"){
+            trainScore = trainScore *2.5
+        } else if(quizResult.pri2==="train2"){
+            trainScore = trainScore *2
+        } else if(quizResult.pri3==="train3"){
+            trainScore = trainScore *1.5
+        }
+        dogScore=dogScore+trainScore
 
+        let vocalScore = 0
         if (quizResult.vocal == dog.vocal) {
-            dogScore += 5;
+            vocalScore += 5;
         } else if (Math.abs(quizResult.vocal - dog.vocal) == 1) {
-            dogScore += 3;
+            vocalScore += 3;
         } else if (Math.abs(quizResult.vocal - dog.vocal) == 2) {
-            dogScore += 2;
+            vocalScore += 2;
         } else if (Math.abs(quizResult.vocal - dog.vocal) == 3) {
-            dogScore += 1;
+            vocalScore += 1;
         }
+        if (quizResult.pri1==="vocal1"){
+            vocalScore = vocalScore *2.5
+        } else if(quizResult.pri2==="vocal2"){
+            vocalScore = vocalScore *2
+        } else if(quizResult.pri3==="vocal3"){
+            vocalScore = vocalScore *1.5
+        }
+        dogScore=dogScore+vocalScore
 
         if (topScoringDogs.length < 5) {
             topScoringDogs.push({ dog, score: dogScore });
@@ -213,7 +347,7 @@ export default function QuizResult(){
                                     <Link to={`/dogs/${entry.dog._id}`} style={{ textDecoration: 'none' }}>
                                         <div className="card quiz-image">
                                             <img src={`https://pet-app.s3.us-west-1.amazonaws.com/${encodeURIComponent(entry.dog.breed)}.jpg`} alt={`${entry.dog.breed}`} className="winner-img"/>
-                                            <div className="dog-overlay winner-dog">The {entry.dog.breed}</div>
+                                            <div className="dog-overlay winner-dog">The {entry.dog.breed} {entry.score}</div>
                                         </div>
                                     </Link>
                                     <hr />
