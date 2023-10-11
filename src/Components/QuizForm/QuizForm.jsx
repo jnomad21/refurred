@@ -31,6 +31,9 @@ export default function QuizForm() {
     const energyRef = useRef('')
     const vocalRef = useRef('')
     const mentalStimRef = useRef('')
+    const pri1Ref = useRef('')
+    const pri2Ref = useRef('')
+    const pri3Ref = useRef('')
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -52,7 +55,11 @@ export default function QuizForm() {
             energy: energyRef.current.value,
             vocal: vocalRef.current.value,
             mentalStim: mentalStimRef.current.value,
+            pri1: pri1Ref.current.value,
+            pri2: pri2Ref.current.value,
+            pri3: pri3Ref.current.value
         }
+        console.log(quizResult)
         navigate('/dogs/quizResult', { state: { quizResult } });
 
 
@@ -461,7 +468,7 @@ export default function QuizForm() {
                     <h4>Priority</h4>
                 <div className="priority-container">
                     <p>1st Priority?</p>
-                        <select name="Pri1" id="Pri1">
+                        <select name="Pri1" id="Pri1" ref={pri1Ref}>
                             <option value="null1">None</option>
                             <option value="sizeGroup1">Size Group</option>
                             <option value="affection1">Affection Level</option>
@@ -480,7 +487,7 @@ export default function QuizForm() {
                             <option value="mental1">Mental Stimulation Needs</option>
                         </select>
                         <p>2nd Priority?</p>
-                        <select name="Pri2" id="Pri2">
+                        <select name="Pri2" id="Pri2" ref={pri2Ref}>
                             <option value="null2">None</option>
                             <option value="sizeGroup2">Size Group</option>
                             <option value="affection2">Affection Level</option>
@@ -499,7 +506,7 @@ export default function QuizForm() {
                             <option value="mental2">Mental Stimulation Needs</option>
                         </select>
                         <p>3rd Priority?</p>
-                        <select name="Pri3" id="Pri3">
+                        <select name="Pri3" id="Pri3" ref={pri3Ref}>
                             <option value="null3">None</option>
                             <option value="sizeGroup3">Size Group</option>
                             <option value="affection3">Affection Level</option>
