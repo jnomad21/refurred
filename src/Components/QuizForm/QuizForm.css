@@ -36,3 +36,8 @@
 input[type="range"]::-webkit-slider-runnable-track {
     background-color: #ccc;
 }
+
+.priority-container{
+    display: flex;
+    max-width: 35rem;
+}

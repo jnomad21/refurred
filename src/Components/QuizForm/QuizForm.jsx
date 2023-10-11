@@ -458,7 +458,63 @@ export default function QuizForm() {
 
                     />
                 </div>
-                <br />
+                    <h4>Priority</h4>
+                <div className="priority-container">
+                    <p>1st Priority?</p>
+                        <select name="Pri1" id="Pri1">
+                            <option value="sizeGroup1">Size Group</option>
+                            <option value="affection1">Affection Level</option>
+                            <option value="children1">Good with Children</option>
+                            <option value="otherDogs1">Good with Other Dogs</option>
+                            <option value="shedding1">Level of Shedding</option>
+                            <option value="grooming1">Grooming Level</option>
+                            <option value="drool1">Drooling Level</option>
+                            <option value="strangers1">Openess to Strangers</option>
+                            <option value="play1">Playfulness Level</option>
+                            <option value="protect1">Watchdog/Protection Level</option>
+                            <option value="adapt1">Adaptability Level</option>
+                            <option value="train1">Trainability Level</option>
+                            <option value="energy1">Energy Level</option>
+                            <option value="vocal1">Barking Level</option>
+                            <option value="mental1">Mental Stimulation Needs</option>
+                        </select>
+                        <p>2nd Priority?</p>
+                        <select name="Pri2" id="Pri2">
+                            <option value="sizeGroup2">Size Group</option>
+                            <option value="affection2">Affection Level</option>
+                            <option value="children2">Good with Children</option>
+                            <option value="otherDogs2">Good with Other Dogs</option>
+                            <option value="shedding2">Level of Shedding</option>
+                            <option value="grooming2">Grooming Level</option>
+                            <option value="drool2">Drooling Level</option>
+                            <option value="strangers2">Openess to Strangers</option>
+                            <option value="play2">Playfulness Level</option>
+                            <option value="protect2">Watchdog/Protection Level</option>
+                            <option value="adapt2">Adaptability Level</option>
+                            <option value="train2">Trainability Level</option>
+                            <option value="energy2">Energy Level</option>
+                            <option value="vocal2">Barking Level</option>
+                            <option value="mental2">Mental Stimulation Needs</option>
+                        </select>
+                        <p>3rd Priority?</p>
+                        <select name="Pri3" id="Pri3">
+                            <option value="sizeGroup3">Size Group</option>
+                            <option value="affection3">Affection Level</option>
+                            <option value="children3">Good with Children</option>
+                            <option value="otherDogs3">Good with Other Dogs</option>
+                            <option value="shedding3">Level of Shedding</option>
+                            <option value="grooming3">Grooming Level</option>
+                            <option value="drool3">Drooling Level</option>
+                            <option value="strangers3">Openess to Strangers</option>
+                            <option value="play3">Playfulness Level</option>
+                            <option value="protect3">Watchdog/Protection Level</option>
+                            <option value="adapt3">Adaptability Level</option>
+                            <option value="train3">Trainability Level</option>
+                            <option value="energy3">Energy Level</option>
+                            <option value="vocal3">Barking Level</option>
+                            <option value="mental3">Mental Stimulation Needs</option>
+                        </select>
+                    </div>
 
                 <button type="submit" className="btn btn-success" id="newDogButton">See Results</button>
             </form>
