@@ -75,7 +75,7 @@ export default function QuizForm() {
             <form onSubmit={handleSubmit} className="quiz-form">
 
                 <div className="form-group mb-3">
-                    <h1 className="display-6">Dog Breed Selector</h1>
+                    <h1 className="display-6 mb-2">Dog Breed Selector</h1>
                     <p className="lead text-center">Designed to assist you in selecting the ideal dog breed for your lifestyle. Adjust the sliders to indicate your preferences for each trait.</p>
                     <hr />
 
